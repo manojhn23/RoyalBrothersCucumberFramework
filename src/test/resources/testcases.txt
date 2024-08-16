@@ -4,21 +4,12 @@
 3. Filter - Location
             Bike Model
 
--- Store
-
 4. Sort By - A to Z
            - Z to A
            - Price - Low to High
                    - High to Low
 5. Add to Cart
 
-Shipping charge check on store - valid address
-                                 invalid address
-
-checkout page display of product from store
-
-Search a product on store
-------
 6.Login - Valid
           Invalid
 
@@ -34,3 +25,10 @@ Search a product on store
 
 12.Reach us -   Valid details
                 Invalid details
+
+13.Shipping charge check on store - valid address
+                                 invalid address
+
+14.checkout page display of product from store
+
+15.Search a product on store
