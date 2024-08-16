@@ -7,7 +7,7 @@ import java.util.Properties;
 public class ConfigReader {
     static Properties props;
 
-    public static void initReader(){
+    public static void initReader() {
         props = new Properties();
         try {
             props.load(new FileInputStream("src/test/resources/config/config.properties"));
@@ -16,7 +16,7 @@ public class ConfigReader {
         }
     }
 
-    public static String getConfigValue(String key){
+    public static String getConfigValue(String key) {
         return props.getProperty(key);
     }
 }
