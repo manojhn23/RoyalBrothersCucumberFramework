@@ -13,4 +13,18 @@
 5. Add to Cart
 
 ------
+6.Login - Valid
+          Invalid
 
+7.logout
+
+8.Inter-City Travel
+
+9.bike booking checkout
+
+10.Booking request submit button bug
+
+11.verify search by location
+
+12.Reach us -   Valid details
+                Invalid details
