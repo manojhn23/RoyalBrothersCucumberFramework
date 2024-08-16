@@ -12,5 +12,11 @@
                    - High to Low
 5. Add to Cart
 
+Shipping charge check on store - valid address
+                                 invalid address
+
+checkout page display of product from store
+
+Search a product on store
 ------
 
