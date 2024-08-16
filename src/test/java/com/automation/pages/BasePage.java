@@ -1,4 +1,9 @@
 package com.automation.pages;
 
-public class BasePage {
+public abstract class BasePage {
+
+    public BasePage(){
+
+    }
+
 }
