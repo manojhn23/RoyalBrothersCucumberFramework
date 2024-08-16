@@ -1,0 +1,16 @@
+1. Location selection - Data driven - positive & negative
+2. Sort By - Price - Low to High
+                   - High to Low
+3. Filter - Location
+            Bike Model
+
+-- Store
+
+4. Sort By - A to Z
+           - Z to A
+           - Price - Low to High
+                   - High to Low
+5. Add to Cart
+
+------
+
