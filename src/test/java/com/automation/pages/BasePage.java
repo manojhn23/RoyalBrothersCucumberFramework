@@ -33,12 +33,19 @@ public abstract class BasePage {
         actions.pause(Duration.ofSeconds(seconds)).build().perform();
     }
 
-    public boolean isDisplayed(WebElement ele){
+    public boolean isDisplayed(WebElement ele) {
         try {
+            setImplicitWait(3);
             return ele.isDisplayed();
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
+        } finally {
+            setImplicitWait(20);
         }
+    }
+
+    public void setImplicitWait(long seconds) {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
     }
 
 }

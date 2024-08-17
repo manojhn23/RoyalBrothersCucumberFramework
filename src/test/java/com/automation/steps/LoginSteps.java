@@ -32,9 +32,11 @@ public class LoginSteps {
 
     @When("user enter invalid phone number {string} and password {string}")
     public void userEnterInvalidPhoneNumberAndPassword(String phoneNumber, String password) {
+        loginPage.enterPhoneAndPasswordDetails(phoneNumber, password);
     }
 
     @Then("verify error message is displayed {string}")
     public void verifyErrorMessageIsDisplayed(String errorMessage) {
+        Assert.assertEquals(loginPage.errorMessage(),ConfigReader.getConfigValue(errorMessage));
     }
 }

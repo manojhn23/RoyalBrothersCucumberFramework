@@ -97,4 +97,14 @@ public class HomeSteps {
     public void entersTheDesiredLocationAs(String locationName) {
         homePage.entersLocationName(ConfigReader.getConfigValue(locationName));
     }
+
+    @When("user click on  hamburger menu")
+    public void userClickOnHamburgerMenu() {
+        homePage.clickOnHamburgerMenu();
+    }
+
+    @And("selects {string} from the menu")
+    public void selectsFromTheMenu(String menuOption) {
+        homePage.selectMenuOption(menuOption);
+    }
 }

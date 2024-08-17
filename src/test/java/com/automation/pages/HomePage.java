@@ -23,12 +23,17 @@ public class HomePage extends BasePage {
 
     @FindBy(id = "wzrk-cancel")
     WebElement notificationNotNow;
-    
+
     @FindBy(id = "one")
     WebElement locationOption;
 
     @FindBy(xpath = "//i[contains(@class,'clear-all-btn')]")
     WebElement clearBtn;
+
+    @FindBy(id = "svg-menu-container")
+    WebElement hamburgerMenu;
+
+    String menuOptionPath = "//ul[@id='slide-out']/li/a[contains(text(),'%s')]";
 
     public void openWebsite() {
         driver.navigate().to(ConfigReader.getConfigValue("base.url"));
@@ -87,5 +92,15 @@ public class HomePage extends BasePage {
 
     public boolean isInputFieldNull() {
         return searchCityInput.getText().isEmpty();
+    }
+
+    public void clickOnHamburgerMenu() {
+        notificationNotNow.click();
+        hamburgerMenu.click();
+    }
+
+    public void selectMenuOption(String menuOption) {
+        WebElement option = driver.findElement(By.xpath(String.format(menuOptionPath, menuOption)));
+        option.click();
     }
 }
