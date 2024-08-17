@@ -23,6 +23,12 @@ public class HomePage extends BasePage {
 
     @FindBy(id = "wzrk-cancel")
     WebElement notificationNotNow;
+    
+    @FindBy(id = "one")
+    WebElement locationOption;
+
+    @FindBy(xpath = "//i[contains(@class,'clear-all-btn')]")
+    WebElement clearBtn;
 
     public void openWebsite() {
         driver.navigate().to(ConfigReader.getConfigValue("base.url"));
@@ -53,5 +59,36 @@ public class HomePage extends BasePage {
 
     public boolean isLoginSuccessFul() {
         return userLoginName.getText().equals(ConfigReader.getConfigValue("user.name"));
+    }
+
+    public void clicksOnLocationOption() {
+        locationOption.click();
+    }
+
+    public void entersLocationName(String locationName) {
+        searchCityInput.sendKeys(locationName);
+        ConfigReader.setConfigValue("search.location", locationName);
+    }
+
+    public void clicksOnEnteredLocation() {
+        WebElement cityEle = driver.findElement(By.xpath(String.format(citySelectPath, ConfigReader.getConfigValue("search.location"))));
+        cityEle.click();
+    }
+
+    public boolean isSelectedLocationDisplayed() {
+        return citySelected.getText().equals(ConfigReader.getConfigValue("search.location"));
+    }
+
+    public boolean isSelectedLocationNotDisplayed() {
+        WebElement cityEle = driver.findElement(By.xpath(String.format(citySelectPath, ConfigReader.getConfigValue("search.location"))));
+        return isDisplayed(cityEle);
+    }
+
+    public void clicksClearOnLocationSearch() {
+        clearBtn.click();
+    }
+
+    public boolean isInputFieldNull() {
+        return searchCityInput.getText().isEmpty();
     }
 }

@@ -54,37 +54,37 @@ public class HomeSteps {
 
     @When("clicks on the location option")
     public void clicksOnTheLocationOption() {
-
+        homePage.clicksOnLocationOption();
     }
 
     @When("enters the location as {string}")
     public void enters_the_location_as(String locationName) {
-
+        homePage.entersLocationName(locationName);
     }
 
     @When("clicks on the entered location")
     public void clicks_on_the_entered_location() {
-
+        homePage.clicksOnEnteredLocation();
     }
 
     @Then("verify the location of user chosen")
     public void verify_the_location_of_user_chosen() {
-
+        Assert.assertTrue(homePage.isSelectedLocationDisplayed());
     }
 
     @Then("verify the location of user chosen not getting")
     public void verifyTheLocationOfUserChosenNotGetting() {
-
+        Assert.assertTrue(homePage.isSelectedLocationNotDisplayed());
     }
 
     @And("clicks on clear button")
     public void clicksOnClearButton() {
-
+        homePage.clicksClearOnLocationSearch();
     }
 
     @Then("verify user can get empty on search input field")
     public void verifyUserCanGetEmptyOnSearchInputField() {
-
+        Assert.assertTrue(homePage.isInputFieldNull());
     }
 
 
@@ -93,5 +93,8 @@ public class HomeSteps {
 
     }
 
-
+    @When("enters the desired location as {string}")
+    public void entersTheDesiredLocationAs(String locationName) {
+        homePage.entersLocationName(ConfigReader.getConfigValue(locationName));
+    }
 }
