@@ -1,7 +1,9 @@
 package com.automation.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage {
 
@@ -17,7 +19,7 @@ public class LoginPage extends BasePage {
     @FindBy(id = "whatsAppLoginCheckBox")
     WebElement whatsAppLoginCheck;
 
-    @FindBy(xpath = "//span[@id='recaptcha-anchor']/div[1]")
+    @FindBy(id = "recaptcha-anchor")
     WebElement captchaCheckBox;
 
     public boolean isUserOnLoginPage() {
@@ -31,10 +33,14 @@ public class LoginPage extends BasePage {
     }
 
     public void clickImNotARobotCheckBox() {
+        driver.switchTo().frame(1);
         captchaCheckBox.click();
+        driver.switchTo().defaultContent();
     }
 
     public void clickOnLoginWithPassword() {
-        loginWithPasswordButton.click();
+        pause(3);
+        wait.until(ExpectedConditions.elementToBeClickable(loginWithPasswordButton));
+        click(loginWithPasswordButton);
     }
 }
