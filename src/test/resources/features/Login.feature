@@ -1,8 +1,8 @@
 Feature: user login with valid and invalid credentials
 
   Background:
-    Given user opens website
-    When user select his desired city
+    Given user is on website
+    When user select his desired city "city.name"
     Then verify user is on the home page
     And user can view city-specific services
     When user click on login button

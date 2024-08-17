@@ -1,8 +1,12 @@
 package com.automation.pages;
 
 import com.automation.utils.DriverManager;
+import io.cucumber.java.en_old.Ac;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+
+import java.time.Duration;
 
 public abstract class BasePage {
 
@@ -12,4 +16,10 @@ public abstract class BasePage {
         driver = DriverManager.getDriver();
         PageFactory.initElements(driver, this);
     }
+
+    public void pause(int seconds) {
+        Actions actions = new Actions(driver);
+        actions.pause(Duration.ofSeconds(seconds)).build().perform();
+    }
+
 }
