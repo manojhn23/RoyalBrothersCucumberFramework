@@ -1,4 +1,4 @@
 package com.automation.pages;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 }
