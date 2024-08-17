@@ -12,6 +12,7 @@ Feature: user login with valid and invalid credentials
     When user enter valid phone number "login.phone" and password "login.password"
     And click on I'm not a robot checkbox
     And click on login with Password button
+    And user select his desired city "city.name"
     Then verify login is successful
 
   Scenario Outline: Unsuccessful login with invalid credentials

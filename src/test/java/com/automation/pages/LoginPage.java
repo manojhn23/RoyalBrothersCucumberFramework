@@ -22,6 +22,9 @@ public class LoginPage extends BasePage {
     @FindBy(id = "recaptcha-anchor")
     WebElement captchaCheckBox;
 
+    @FindBy(id = "rc-imageselect")
+    WebElement verifyCaptchaImage;
+
     public boolean isUserOnLoginPage() {
         return loginWithPasswordButton.isDisplayed();
     }
@@ -39,7 +42,11 @@ public class LoginPage extends BasePage {
     }
 
     public void clickOnLoginWithPassword() {
-        pause(3);
+//        pause(3);
+//        if (verifyCaptchaImage.isDisplayed()) {
+//            pause(60);
+//        }
+        pause(10);
         wait.until(ExpectedConditions.elementToBeClickable(loginWithPasswordButton));
         click(loginWithPasswordButton);
     }
