@@ -1,8 +1,8 @@
 Feature: Validate on Location selection functionality
 
   Background:
-    Given user opens website
-    When user select his desired city
+    Given user is on website
+    When user select his desired city "city.name"
     Then verify user is on the home page
     When clicks on the location option
 
@@ -70,7 +70,7 @@ Feature: Validate on Location selection functionality
       | Shimla        |
 
   Scenario: Verify user can clears on location search text
-    When enters the location as "location.name"
+    When enters the desired location as "city.name"
     And clicks on clear button
     Then verify user can get empty on search input field
 

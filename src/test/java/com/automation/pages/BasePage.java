@@ -33,4 +33,12 @@ public abstract class BasePage {
         actions.pause(Duration.ofSeconds(seconds)).build().perform();
     }
 
+    public boolean isDisplayed(WebElement ele){
+        try {
+            return ele.isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+    }
+
 }
