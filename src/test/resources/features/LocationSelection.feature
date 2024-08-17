@@ -3,7 +3,7 @@ Feature: Validate on Location selection functionality
   Background:
     Given user opens website
     When user select his desired city
-    Then verify user is on homepage
+    Then verify user is on the home page
     When clicks on the location option
 
   Scenario Outline: Verify user can selects the city as location
