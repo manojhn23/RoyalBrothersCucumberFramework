@@ -36,17 +36,14 @@ public class HomePage extends BasePage {
     }
 
     public boolean isUserOnHomePage() {
-        pause(3);
         return loginButton.isDisplayed();
     }
 
     public boolean verifyCitySelected() {
-        pause(3);
         return citySelected.getText().equals(ConfigReader.getConfigValue("city.name"));
     }
 
     public void clickOnLoginButton() {
-        pause(3);
         notificationNotNow.click();
         loginButton.click();
     }
