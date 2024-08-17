@@ -9,8 +9,8 @@ public class HomeSteps {
 
     HomePage homePage = new HomePage();
 
-    @Given("user is on website")
-    public void user_is_on_website() {
+    @Given("user opens website")
+    public void user_opens_website() {
 
     }
 

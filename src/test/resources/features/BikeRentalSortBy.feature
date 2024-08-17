@@ -2,6 +2,7 @@ Feature: Validate on sort by functionality on bike credentials
 
   Background:
     Given user opens website
+    When user select his desired city
     Then verify user is on homepage
     When user enters the details for ride "pickup.date", "pickup.time", "drop.off.date" and "drop.off.time"
     And clicks on search button
