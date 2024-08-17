@@ -1,8 +1,8 @@
 package com.automation.steps;
 
 import com.automation.pages.HomePage;
-import io.cucumber.java.en.And;
 import com.automation.utils.ConfigReader;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -44,12 +44,13 @@ public class HomeSteps {
 
     @When("user enters the details for ride {string}, {string}, {string} and {string}")
     public void user_enters_the_details_for_ride_and(String pickupDate, String pickupTime, String dropOffDate, String dropOffTime) {
-
+        homePage.entersDetailsForRide(ConfigReader.getConfigValue(pickupDate), ConfigReader.getConfigValue(pickupTime),
+                ConfigReader.getConfigValue(dropOffDate), ConfigReader.getConfigValue(dropOffTime));
     }
 
     @When("clicks on search button")
     public void clicks_on_search_button() {
-
+        homePage.clicksOnSearchBtn();
     }
 
     @When("clicks on the location option")
@@ -74,7 +75,7 @@ public class HomeSteps {
 
     @Then("verify the location of user chosen not getting")
     public void verifyTheLocationOfUserChosenNotGetting() {
-        Assert.assertTrue(homePage.isSelectedLocationNotDisplayed());
+        Assert.assertFalse(homePage.isSelectedLocationNotDisplayed());
     }
 
     @And("clicks on clear button")

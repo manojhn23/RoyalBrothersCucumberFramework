@@ -2,6 +2,7 @@ package com.automation.pages;
 
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -23,12 +24,33 @@ public class HomePage extends BasePage {
 
     @FindBy(id = "wzrk-cancel")
     WebElement notificationNotNow;
-    
+
     @FindBy(id = "one")
     WebElement locationOption;
 
     @FindBy(xpath = "//i[contains(@class,'clear-all-btn')]")
     WebElement clearBtn;
+
+    @FindBy(xpath = "//input[@id='pickup-date-desk']")
+    WebElement pickupDateInput;
+
+    @FindBy(id = "pickup-time-desk")
+    WebElement pickupTimeInput;
+
+    @FindBy(id = "dropoff-date-desk")
+    WebElement dropOffDateInput;
+
+    @FindBy(id = "dropoff-time-desk")
+    WebElement dropOffTimeInput;
+
+    String pickupDateXpath = "//table[@id='pickup-date-desk_table']//div[@aria-label='%s']";
+    String pickupTimeXpath = "//div[@id='pickup-time-desk_root']//li[@aria-label='%s']";
+
+    String dropOffDateXpath = "//table[@id='dropoff-date-desk_table']//div[@aria-label='%s']";
+    String dropOffTimeXpath = "//div[@id='dropoff-time-desk_root']//li[@aria-label='%s']";
+
+    @FindBy(xpath = "(//button[@type='submit'])[3]")
+    WebElement searchBtn;
 
     public void openWebsite() {
         driver.navigate().to(ConfigReader.getConfigValue("base.url"));
@@ -39,6 +61,7 @@ public class HomePage extends BasePage {
         searchCityInput.sendKeys(cityName);
         WebElement selectCity = driver.findElement(By.xpath(String.format(citySelectPath, cityName)));
         selectCity.click();
+        notificationNotNow.click();
     }
 
     public boolean isUserOnHomePage() {
@@ -50,7 +73,6 @@ public class HomePage extends BasePage {
     }
 
     public void clickOnLoginButton() {
-        notificationNotNow.click();
         loginButton.click();
     }
 
@@ -59,7 +81,7 @@ public class HomePage extends BasePage {
     }
 
     public void clicksOnLocationOption() {
-        locationOption.click();
+        click(locationOption);
     }
 
     public void entersLocationName(String locationName) {
@@ -77,7 +99,7 @@ public class HomePage extends BasePage {
     }
 
     public boolean isSelectedLocationNotDisplayed() {
-        WebElement cityEle = driver.findElement(By.xpath(String.format(citySelectPath, ConfigReader.getConfigValue("search.location"))));
+        WebElement cityEle = driver.findElement(By.xpath("//div[@class='city-icons']/a"));
         return isDisplayed(cityEle);
     }
 
@@ -86,6 +108,34 @@ public class HomePage extends BasePage {
     }
 
     public boolean isInputFieldNull() {
-        return searchCityInput.getText().isEmpty();
+        return searchCityInput.getAttribute("value").isEmpty();
+    }
+
+    public void entersDetailsForRide(String pickupDate, String pickupTime, String dropOffDate, String dropOffTime) {
+
+        actions.sendKeys(Keys.PAGE_DOWN).build().perform();
+
+        click(pickupDateInput);
+
+        pause(1);
+        WebElement pickupDateEle = driver.findElement(By.xpath(String.format(pickupDateXpath, pickupDate)));
+        click(pickupDateEle);
+
+        pause(1);
+        WebElement pickupTimeEle = driver.findElement(By.xpath(String.format(pickupTimeXpath, pickupTime)));
+        click(pickupTimeEle);
+
+        pause(1);
+        WebElement dropOffDateEle = driver.findElement(By.xpath(String.format(dropOffDateXpath, dropOffDate)));
+        click(dropOffDateEle);
+
+        pause(1);
+        WebElement dropOffTimeEle = driver.findElement(By.xpath(String.format(dropOffTimeXpath, dropOffTime)));
+        click(dropOffTimeEle);
+
+    }
+
+    public void clicksOnSearchBtn() {
+        click(searchBtn);
     }
 }

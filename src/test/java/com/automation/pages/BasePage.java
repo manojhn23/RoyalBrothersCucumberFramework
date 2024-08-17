@@ -16,11 +16,13 @@ public abstract class BasePage {
 
     WebDriverWait wait;
     JavascriptExecutor executor;
+    Actions actions;
 
     public BasePage() {
         driver = DriverManager.getDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         executor = (JavascriptExecutor) driver;
+        actions = new Actions(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -29,14 +31,13 @@ public abstract class BasePage {
     }
 
     public void pause(int seconds) {
-        Actions actions = new Actions(driver);
         actions.pause(Duration.ofSeconds(seconds)).build().perform();
     }
 
-    public boolean isDisplayed(WebElement ele){
+    public boolean isDisplayed(WebElement ele) {
         try {
             return ele.isDisplayed();
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
