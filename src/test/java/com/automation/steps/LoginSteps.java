@@ -37,6 +37,6 @@ public class LoginSteps {
 
     @Then("verify error message is displayed {string}")
     public void verifyErrorMessageIsDisplayed(String errorMessage) {
-        Assert.assertEquals(loginPage.errorMessage(),ConfigReader.getConfigValue(errorMessage));
+        Assert.assertEquals(loginPage.errorMessage(), ConfigReader.getConfigValue(errorMessage));
     }
 }

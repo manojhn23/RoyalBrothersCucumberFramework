@@ -66,7 +66,9 @@ public class HomePage extends BasePage {
         searchCityInput.sendKeys(cityName);
         WebElement selectCity = driver.findElement(By.xpath(String.format(citySelectPath, cityName)));
         selectCity.click();
-        notificationNotNow.click();
+        if(isDisplayed(notificationNotNow)){
+            click(notificationNotNow);
+        }
     }
 
     public boolean isUserOnHomePage() {
@@ -118,8 +120,9 @@ public class HomePage extends BasePage {
 
     public void entersDetailsForRide(String pickupDate, String pickupTime, String dropOffDate, String dropOffTime) {
 
-        actions.sendKeys(Keys.PAGE_DOWN).build().perform();
-
+//        actions.sendKeys(Keys.PAGE_DOWN).build().perform();
+//        executor.executeScript("arguments[0].scrollIntoView(true);",searchBtn);
+        actions.moveToElement(searchBtn).build().perform();
         click(pickupDateInput);
 
         pause(1);
