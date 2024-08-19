@@ -148,7 +148,6 @@ public class HomePage extends BasePage {
     }
 
     public void clickOnHamburgerMenu() {
-        notificationNotNow.click();
         hamburgerMenu.click();
     }
 

@@ -1,26 +1,29 @@
 Feature: Validate Sort By functionality on store
 
   Background:
-    Given user opens website
-    When user select his desired city
+    Given user is on website
+    When user select his desired city "city.name"
     Then verify user is on the home page
-    When user selects the store option
+    When user click on  hamburger menu
+    And selects "Store by RB" from the menu
     Then verify user is on store page
-    When user selects the product "product.name"
-    Then verify user is product page of "product.name"
 
-  Scenario: Verify user can get prices from low to high
-    When user selects the sort by option as low to high
-    Then verify user get all prices from low to high
+  Scenario: Verify user can get prices sorted from low to high
+    When user selects the product "product.category"
+    And the user selects the Sort by option and chooses "Price, low to high"
+    Then verify that the prices of all listed products are displayed in ascending order
 
-  Scenario: Verify user can get prices from high to low
-    When user selects the sort by option as high to low
-    Then verify user get all prices from high to low
+  Scenario: Verify user can get prices sorted from high to low
+    When user selects the product "product.category"
+    And the user selects the Sort by option and chooses "Price, high to low"
+    Then verify that the prices of all listed products are displayed in descending order
 
-  Scenario: Verify user can get product names from a to z
-    When user selects the sort by option as a to z
-    Then verify user get all names from a to z
+  Scenario: Verify user can get prices sorted from a to z
+    When user selects the product "product.category"
+    And the user selects the Sort by option and chooses "Alphabetically, A-Z"
+    Then verify user should see product names sorted alphabetically from A to Z
 
-  Scenario: Verify user can get product names from z to a
-    When user selects the sort by option as z to a
-    Then verify user get all names from z to a
+  Scenario:  Verify user can get prices sorted from z to a
+    When user selects the product "product.category"
+    And the user selects the Sort by option and chooses "Alphabetically, Z-A"
+    Then verify user should see product names sorted alphabetically from Z to A
