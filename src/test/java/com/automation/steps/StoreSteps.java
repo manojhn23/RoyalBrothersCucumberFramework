@@ -2,7 +2,6 @@ package com.automation.steps;
 
 import com.automation.pages.StorePage;
 import com.automation.utils.ConfigReader;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -21,14 +20,4 @@ public class StoreSteps {
         storePage.selectProductCategory(ConfigReader.getConfigValue(productCategory));
     }
 
-
-    @And("adds the product to the cart {string} and {string}")
-    public void addsTheProductToTheCartAnd(String product1, String product2) {
-        storePage.addProductsToTheCart(ConfigReader.getConfigValue(product1), ConfigReader.getConfigValue(product2));
-    }
-
-    @Then("verify that the product is successfully added to the cart")
-    public void verifyThatTheProductIsSuccessfullyAddedToTheCart() {
-        Assert.assertTrue(storePage.isProductAddedSuccessFully());
-    }
 }

@@ -66,7 +66,9 @@ public class HomePage extends BasePage {
         searchCityInput.sendKeys(cityName);
         WebElement selectCity = driver.findElement(By.xpath(String.format(citySelectPath, cityName)));
         selectCity.click();
-        notificationNotNow.click();
+        if (isDisplayed(notificationNotNow)) {
+            notificationNotNow.click();
+        }
     }
 
     public boolean isUserOnHomePage() {
@@ -145,7 +147,6 @@ public class HomePage extends BasePage {
     }
 
     public void clickOnHamburgerMenu() {
-        notificationNotNow.click();
         hamburgerMenu.click();
     }
 

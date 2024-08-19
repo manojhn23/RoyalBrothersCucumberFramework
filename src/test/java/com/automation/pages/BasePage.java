@@ -36,7 +36,7 @@ public abstract class BasePage {
 
     public boolean isDisplayed(WebElement ele) {
         try {
-            setImplicitWait(3);
+            setImplicitWait(0);
             return ele.isDisplayed();
         } catch (Exception e) {
             return false;

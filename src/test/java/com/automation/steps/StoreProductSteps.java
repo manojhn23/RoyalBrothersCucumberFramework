@@ -1,53 +1,43 @@
 package com.automation.steps;
 
+import com.automation.pages.StoreProductPage;
+import com.automation.utils.ConfigReader;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import org.junit.Assert;
+
 
 public class StoreProductSteps {
 
-    @Then("verify user is product page of {string}")
-    public void verify_user_is_product_page_of(String productName) {
+    StoreProductPage storeProductPage = new StoreProductPage();
 
+    @And("adds the product to the cart {string} and {string}")
+    public void addsTheProductToTheCartAnd(String product1, String product2) {
+        storeProductPage.addProductsToTheCart(ConfigReader.getConfigValue(product1), ConfigReader.getConfigValue(product2));
     }
 
-    @When("user selects the sort by option as low to high")
-    public void user_selects_the_sort_by_option_as_low_to_high() {
-
+    @And("the user selects the Sort by option and chooses {string}")
+    public void theUserSelectsTheSortByOptionAndChooses(String sortByOption) {
+        storeProductPage.sortProductBy(sortByOption);
     }
 
-    @Then("verify user get all prices from low to high")
-    public void verify_user_get_all_prices_from_low_to_high() {
-
+    @Then("verify that the prices of all listed products are displayed in ascending order")
+    public void verifyThatThePricesOfAllListedProductsAreDisplayedInAscendingOrder() {
+        Assert.assertTrue(storeProductPage.isProductSortedFromPriceLowToHigh());
     }
 
-    @When("user selects the sort by option as high to low")
-    public void user_selects_the_sort_by_option_as_high_to_low() {
-
+    @Then("verify that the prices of all listed products are displayed in descending order")
+    public void verifyThatThePricesOfAllListedProductsAreDisplayedInDescendingOrder() {
+        Assert.assertTrue(storeProductPage.isProductSortedFromPriceHighToLow());
     }
 
-    @Then("verify user get all prices from high to low")
-    public void verify_user_get_all_prices_from_high_to_low() {
-
+    @Then("verify user should see product names sorted alphabetically from A to Z")
+    public void verifyUserShouldSeeProductNamesSortedAlphabeticallyFromAToZ() {
+        Assert.assertTrue(storeProductPage.isProductSortedFromAtoZ());
     }
 
-    @When("user selects the sort by option as a to z")
-    public void user_selects_the_sort_by_option_as_a_to_z() {
-
+    @Then("verify user should see product names sorted alphabetically from Z to A")
+    public void verifyUserShouldSeeProductNamesSortedAlphabeticallyFromZToA() {
+        Assert.assertTrue(storeProductPage.isProductSortedFromZtoA());
     }
-
-    @Then("verify user get all names from a to z")
-    public void verify_user_get_all_names_from_a_to_z() {
-
-    }
-
-    @When("user selects the sort by option as z to a")
-    public void user_selects_the_sort_by_option_as_z_to_a() {
-
-    }
-
-    @Then("verify user get all names from z to a")
-    public void verify_user_get_all_names_from_z_to_a() {
-
-    }
-
 }

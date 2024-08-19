@@ -40,9 +40,9 @@ public class LoginPage extends BasePage {
     }
 
     public void clickOnLoginWithPassword() {
-        pause(3);
+        pause(5);
         if (isDisplayed(verifyCaptchaImage)) {
-            pause(10);
+            pause(20);
         }
         wait.until(ExpectedConditions.elementToBeClickable(loginWithPasswordButton));
         click(loginWithPasswordButton);
