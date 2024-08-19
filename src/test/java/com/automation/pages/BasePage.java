@@ -27,7 +27,11 @@ public abstract class BasePage {
     }
 
     public void click(WebElement element) {
-        executor.executeScript("arguments[0].click();", element);
+        try {
+            element.click();
+        } catch (Exception e){
+            executor.executeScript("arguments[0].click();", element);
+        }
     }
 
     public void pause(int seconds) {
