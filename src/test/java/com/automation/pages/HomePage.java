@@ -52,6 +52,11 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "(//button[@type='submit'])[3]")
     WebElement searchBtn;
 
+    @FindBy(id = "svg-menu-container")
+    WebElement hamburgerMenu;
+
+    String menuOptionPath = "//ul[@id='slide-out']/li/a[contains(text(),'%s')]";
+
     public void openWebsite() {
         driver.navigate().to(ConfigReader.getConfigValue("base.url"));
     }
@@ -99,7 +104,7 @@ public class HomePage extends BasePage {
     }
 
     public boolean isSelectedLocationNotDisplayed() {
-        WebElement cityEle = driver.findElement(By.xpath("//div[@class='city-icons']/a"));
+        WebElement cityEle = driver.findElement(By.xpath(String.format(citySelectPath, ConfigReader.getConfigValue("search.location"))));
         return isDisplayed(cityEle);
     }
 
@@ -137,5 +142,15 @@ public class HomePage extends BasePage {
 
     public void clicksOnSearchBtn() {
         click(searchBtn);
+    }
+
+    public void clickOnHamburgerMenu() {
+        notificationNotNow.click();
+        hamburgerMenu.click();
+    }
+
+    public void selectMenuOption(String menuOption) {
+        WebElement option = driver.findElement(By.xpath(String.format(menuOptionPath, menuOption)));
+        option.click();
     }
 }

@@ -15,11 +15,14 @@ public class LoginPage extends BasePage {
     @FindBy(id = "session_password")
     WebElement password;
 
-    @FindBy(id = "whatsAppLoginCheckBox")
-    WebElement whatsAppLoginCheck;
-
     @FindBy(id = "recaptcha-anchor")
     WebElement captchaCheckBox;
+
+    @FindBy(id = "rc-imageselect")
+    WebElement verifyCaptchaImage;
+
+    @FindBy(xpath = "//div[@id='toast-container']/div")
+    WebElement invalidDetailsErrorMessage;
 
     public boolean isUserOnLoginPage() {
         return loginWithPasswordButton.isDisplayed();
@@ -28,7 +31,6 @@ public class LoginPage extends BasePage {
     public void enterPhoneAndPasswordDetails(String phone, String pass) {
         phoneNumber.sendKeys(phone);
         password.sendKeys(pass);
-//        whatsAppLoginCheck.click();
     }
 
     public void clickImNotARobotCheckBox() {
@@ -39,7 +41,15 @@ public class LoginPage extends BasePage {
 
     public void clickOnLoginWithPassword() {
         pause(3);
+        if (isDisplayed(verifyCaptchaImage)) {
+            pause(10);
+        }
         wait.until(ExpectedConditions.elementToBeClickable(loginWithPasswordButton));
         click(loginWithPasswordButton);
+    }
+
+    public String errorMessage() {
+        System.out.println(invalidDetailsErrorMessage.getText());
+        return invalidDetailsErrorMessage.getText();
     }
 }
