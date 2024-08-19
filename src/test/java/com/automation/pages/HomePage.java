@@ -154,4 +154,5 @@ public class HomePage extends BasePage {
         WebElement option = driver.findElement(By.xpath(String.format(menuOptionPath, menuOption)));
         option.click();
     }
+
 }

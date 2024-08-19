@@ -108,4 +108,5 @@ public class HomeSteps {
     public void selectsFromTheMenu(String menuOption) {
         homePage.selectMenuOption(menuOption);
     }
+
 }
