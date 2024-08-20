@@ -42,6 +42,21 @@
 
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>web</id>
+            <properties>
+                <env>Web</env>
+            </properties>
+        </profile>
+        <profile>
+            <id>android</id>
+            <properties>
+                <env>Android</env>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
             <plugin>
@@ -57,7 +72,7 @@
                         </goals>
                         <configuration>
                             <projectName>Module</projectName>
-                            <outputDirectory>CucumberReport</outputDirectory>
+                            <outputDirectory>${env}CucumberReport</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
@@ -69,13 +84,11 @@
                 <version>3.3.1</version>
                 <configuration>
                     <includes>
-                        <include>**/TestRunner.java</include>
+                        <include>**/TestRunner${env}.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
-
 </project>
