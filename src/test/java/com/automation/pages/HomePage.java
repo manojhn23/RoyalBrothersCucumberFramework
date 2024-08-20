@@ -3,6 +3,7 @@ package com.automation.pages;
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
@@ -54,7 +55,13 @@ public class HomePage extends BasePage {
     @FindBy(id = "svg-menu-container")
     WebElement hamburgerMenu;
 
+    @FindBy(xpath = "//li[@data-target='dropdown-user']")
+    WebElement userMenu;
+
     String menuOptionPath = "//ul[@id='slide-out']/li/a[contains(text(),'%s')]";
+
+    @FindBy(xpath = "//li[@class='logout-button']")
+    WebElement logoutButton;
 
     public void openWebsite() {
         driver.navigate().to(ConfigReader.getConfigValue("base.url"));
@@ -153,5 +160,20 @@ public class HomePage extends BasePage {
     public void selectMenuOption(String menuOption) {
         WebElement option = driver.findElement(By.xpath(String.format(menuOptionPath, menuOption)));
         option.click();
+    }
+
+    public void clickOnProfile() {
+        pause(2);
+        actions.moveToElement(userMenu).build().perform();
+        pause(2);
+    }
+
+
+    public void clickOnLogoutOption() {
+        logoutButton.click();
+    }
+
+    public boolean isLogOutSuccessFull() {
+        return loginButton.isDisplayed();
     }
 }

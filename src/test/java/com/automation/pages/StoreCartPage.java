@@ -22,6 +22,14 @@ public class StoreCartPage extends BasePage {
 
     String categoryPath = "//ul[@class='list-menu list-menu--inline']//span[text()='%s']";
 
+    @FindBy(xpath = "//button[@name='checkout']")
+    WebElement checkOutButton;
+
+    @FindBy(xpath = "//div[@class='product-quantity']//dd[@class='price']//bdi")
+    List<WebElement> listOfPrices;
+
+    static double cartPageTotalAmount;
+
     public boolean isProductAddedSuccessFully() {
         driver.navigate().back();
         WebElement category = driver.findElement(By.xpath(String.format(categoryPath, ConfigReader.getConfigValue("product.category"))));
@@ -40,5 +48,19 @@ public class StoreCartPage extends BasePage {
     public boolean isProductRemovedSuccessFully() {
         pause(3);
         return cartProductTitles.size() == 1;
+    }
+
+    public double calculateTotalAmount() {
+        double price = 0;
+        for (WebElement element : listOfPrices) {
+            price = price + Double.parseDouble(element.getText().split("\\.")[1].replace(",", ""));
+        }
+        return price;
+    }
+
+    public void clickOnCheckOutButton() {
+        cartPageTotalAmount = calculateTotalAmount();
+        System.out.println(calculateTotalAmount());
+        checkOutButton.click();
     }
 }

@@ -117,8 +117,7 @@ public class StoreProductPage extends BasePage {
 
     public boolean isProductSortedFromPriceHighToLow() {
         priceListAfterSort = getListOfPrices();
-        Collections.sort(priceListBeforeSort);
-        Collections.reverse(priceListBeforeSort);
+        priceListBeforeSort.sort(Collections.reverseOrder());
         System.out.println(priceListBeforeSort);
         System.out.println(priceListAfterSort);
         return priceListBeforeSort.equals(priceListAfterSort);
@@ -134,8 +133,7 @@ public class StoreProductPage extends BasePage {
 
     public boolean isProductSortedFromZtoA() {
         alphabeticListAfterSort = getListOfProductNames();
-        Collections.sort(alphabeticListBeforeSort);
-        Collections.reverse(alphabeticListBeforeSort);
+        alphabeticListBeforeSort.sort(Collections.reverseOrder());
         System.out.println(alphabeticListBeforeSort);
         System.out.println(alphabeticListAfterSort);
         return alphabeticListBeforeSort.equals(alphabeticListAfterSort);

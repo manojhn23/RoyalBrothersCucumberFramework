@@ -24,4 +24,9 @@ public class StoreCartSteps {
     public void verifyProductIsRemovedFromTheCartSuccessfully() {
         Assert.assertTrue(cartPage.isProductRemovedSuccessFully());
     }
+
+    @When("user click on check out button")
+    public void userClickOnCheckOutButton() {
+        cartPage.clickOnCheckOutButton();
+    }
 }

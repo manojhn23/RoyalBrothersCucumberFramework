@@ -1,5 +1,6 @@
 package com.automation.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -41,9 +42,11 @@ public class LoginPage extends BasePage {
 
     public void clickOnLoginWithPassword() {
         pause(5);
+        driver.switchTo().frame(4);
         if (isDisplayed(verifyCaptchaImage)) {
-            pause(20);
+            pause(60);
         }
+        driver.switchTo().defaultContent();
         wait.until(ExpectedConditions.elementToBeClickable(loginWithPasswordButton));
         click(loginWithPasswordButton);
     }
