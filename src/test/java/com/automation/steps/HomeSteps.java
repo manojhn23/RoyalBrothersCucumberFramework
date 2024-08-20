@@ -109,4 +109,18 @@ public class HomeSteps {
         homePage.selectMenuOption(menuOption);
     }
 
+    @When("user click on profile")
+    public void userClickOnProfile() {
+        homePage.clickOnProfile();
+    }
+
+    @And("the user selects the Logout option from the profile menu")
+    public void theUserSelectsTheLogoutOptionFromTheProfileMenu() {
+        homePage.clickOnLogoutOption();
+    }
+
+    @Then("verify successful user logout")
+    public void verifySuccessfulUserLogout() {
+        Assert.assertTrue(homePage.isLogOutSuccessFull());
+    }
 }
