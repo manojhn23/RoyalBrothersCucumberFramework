@@ -29,7 +29,7 @@ public abstract class BasePage {
     public void click(WebElement element) {
         try {
             element.click();
-        } catch (Exception e){
+        } catch (Exception e) {
             executor.executeScript("arguments[0].click();", element);
         }
     }

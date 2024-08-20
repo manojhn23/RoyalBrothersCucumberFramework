@@ -3,7 +3,7 @@ package com.automation.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class BikeCheckoutPage extends BasePage{
+public class BikeCheckoutPage extends BasePage {
 
     @FindBy(xpath = "//h5[text()='CHECKOUT']")
     WebElement checkoutHeader;
@@ -11,7 +11,7 @@ public class BikeCheckoutPage extends BasePage{
     @FindBy(xpath = "//a[contains(@class,'make_payment_button') and contains(@class,'right')]")
     WebElement makePaymentBtn;
 
-    public boolean isMakePaymentOptionDisplayed(){
+    public boolean isMakePaymentOptionDisplayed() {
         return checkoutHeader.isDisplayed();
     }
 

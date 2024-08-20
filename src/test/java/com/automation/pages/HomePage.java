@@ -2,7 +2,6 @@ package com.automation.pages;
 
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -66,7 +65,7 @@ public class HomePage extends BasePage {
         searchCityInput.sendKeys(cityName);
         WebElement selectCity = driver.findElement(By.xpath(String.format(citySelectPath, cityName)));
         selectCity.click();
-        if(isDisplayed(notificationNotNow)){
+        if (isDisplayed(notificationNotNow)) {
             click(notificationNotNow);
         }
     }
