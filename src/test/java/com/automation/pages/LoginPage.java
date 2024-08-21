@@ -43,8 +43,11 @@ public class LoginPage extends BasePage {
     public void clickOnLoginWithPassword() {
         pause(5);
         driver.switchTo().frame(4);
-        if (isDisplayed(verifyCaptchaImage)) {
-            pause(60);
+        while (isDisplayed(verifyCaptchaImage)) {
+            try {
+                verifyCaptchaImage = driver.findElement(By.id("rc-imageselect"));
+            } catch (Exception ignored) {
+            }
         }
         driver.switchTo().defaultContent();
         wait.until(ExpectedConditions.elementToBeClickable(loginWithPasswordButton));
