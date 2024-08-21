@@ -1,4 +1,4 @@
-Feature: User Logout
+Feature: Validate user can logout successfully
 
   Background:
     Given user is on website

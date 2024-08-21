@@ -1,6 +1,9 @@
 package com.automation.steps;
 
-import com.automation.pages.web.InterCityTravelPage;
+import com.automation.pages.ui.InterCityTravelPage;
+import com.automation.pages.web.WebInterCityTravelPage;
+import com.automation.utils.ConfigReader;
+import com.automation.utils.ReportManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,10 +13,17 @@ import java.util.List;
 
 public class InterCityTravelSteps {
 
-    InterCityTravelPage interCityTravelPage = new InterCityTravelPage();
+   InterCityTravelPage interCityTravelPage;
+
+   public InterCityTravelSteps(){
+       if (ConfigReader.getConfigValue("application.type").equals("web")) {
+           interCityTravelPage = new WebInterCityTravelPage();
+       }
+   }
 
     @Then("verify user is on Inter-city travel page")
     public void verifyUserIsOnInterCityTravelPage() {
+        ReportManager.attachScreenshot();
         Assert.assertTrue(interCityTravelPage.isInterCityTravelPageDisplayed());
     }
 

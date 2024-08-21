@@ -1,4 +1,4 @@
-Feature: Cart Validation
+Feature: Validate user can get cart functionalities successfully
 
   Background:
     Given user is on website

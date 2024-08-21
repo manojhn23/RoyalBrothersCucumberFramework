@@ -1,7 +1,9 @@
 package com.automation.steps;
 
-import com.automation.pages.web.HomePage;
+import com.automation.pages.ui.HomePage;
+import com.automation.pages.web.WebHomePage;
 import com.automation.utils.ConfigReader;
+import com.automation.utils.ReportManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,7 +12,13 @@ import org.junit.Assert;
 
 public class HomeSteps {
 
-    HomePage homePage = new HomePage();
+    HomePage homePage;
+
+    public HomeSteps(){
+        if (ConfigReader.getConfigValue("application.type").equals("web")) {
+            homePage = new WebHomePage();
+        }
+    }
 
     @Given("user is on website")
     public void user_is_on_website() {
@@ -24,11 +32,13 @@ public class HomeSteps {
 
     @Then("verify user is on the home page")
     public void verify_user_is_on_the_home_page() {
+        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isUserOnHomePage());
     }
 
     @Then("user can view city-specific services")
     public void user_can_view_city_specific_services() {
+        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.verifyCitySelected());
     }
 
@@ -39,6 +49,7 @@ public class HomeSteps {
 
     @Then("verify login is successful")
     public void verify_login_is_successful() {
+        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isLoginSuccessFul());
     }
 
@@ -70,12 +81,24 @@ public class HomeSteps {
 
     @Then("verify the location of user chosen")
     public void verify_the_location_of_user_chosen() {
+        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isSelectedLocationDisplayed());
+        try {
+            Thread.sleep(100000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Then("verify the location of user chosen not getting")
     public void verifyTheLocationOfUserChosenNotGetting() {
+        ReportManager.attachScreenshot();
         Assert.assertFalse(homePage.isSelectedLocationNotDisplayed());
+        try {
+            Thread.sleep(100000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @And("clicks on clear button")
@@ -85,13 +108,13 @@ public class HomeSteps {
 
     @Then("verify user can get empty on search input field")
     public void verifyUserCanGetEmptyOnSearchInputField() {
+        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isInputFieldNull());
-    }
-
-
-    @When("user selects the store option")
-    public void user_selects_the_store_option() {
-
+        try {
+            Thread.sleep(100000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @When("enters the desired location as {string}")
@@ -121,7 +144,23 @@ public class HomeSteps {
 
     @Then("verify successful user logout")
     public void verifySuccessfulUserLogout() {
+        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isLogOutSuccessFull());
+        try {
+            Thread.sleep(100000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
+    @Then("verify user can get a city selection option")
+    public void verifyUserCanGetACitySelectionOption() {
+        ReportManager.attachScreenshot();
+        Assert.assertTrue(homePage.isCitySelectionDisplayed());
+        try {
+            Thread.sleep(100000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
