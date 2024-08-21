@@ -12,6 +12,8 @@ public class HomeSteps {
 
     HomePage homePage = new HomePage();
 
+    com.automation.pages.android.HomePage androidHomePage=new com.automation.pages.android.HomePage();
+    
     @Given("user is on website")
     public void user_is_on_website() {
         homePage.openWebsite();
@@ -122,6 +124,21 @@ public class HomeSteps {
     @Then("verify successful user logout")
     public void verifySuccessfulUserLogout() {
         Assert.assertTrue(homePage.isLogOutSuccessFull());
+    }
+
+    @Given("user opens application")
+    public void user_opens_application() {
+        androidHomePage.openApplication();
+    }
+
+    @When("user select city {string}")
+    public void user_select_city(String cityName) {
+        
+    }
+
+    @Then("verify user is on home page")
+    public void verify_user_is_on_home_page() {
+        
     }
 
 }
