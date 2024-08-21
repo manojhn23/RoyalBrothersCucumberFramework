@@ -1,7 +1,7 @@
-package com.automation.steps.web;
+package com.automation.steps;
 
 import com.automation.utils.ConfigReader;
-import com.automation.utils.DriverManager;
+import com.automation.utils.WebDriverManager;
 import com.automation.utils.ReportManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -12,12 +12,12 @@ public class Hooks {
     @Before
     public void setUp(Scenario scenario) {
         ConfigReader.initReader();
-        DriverManager.createDriver();
+        WebDriverManager.createDriver();
         ReportManager.initReporter(scenario);
     }
 
     @After
     public void cleanUp() {
-        DriverManager.getDriver().quit();
+        WebDriverManager.getDriver().quit();
     }
 }

@@ -5,7 +5,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 import java.time.Duration;
 
-public class DriverManager {
+public class WebDriverManager {
 
     static WebDriver driver;
 

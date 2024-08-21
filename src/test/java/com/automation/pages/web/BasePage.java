@@ -1,6 +1,6 @@
 package com.automation.pages.web;
 
-import com.automation.utils.DriverManager;
+import com.automation.utils.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,7 +19,7 @@ public abstract class BasePage {
     Actions actions;
 
     public BasePage() {
-        driver = DriverManager.getDriver();
+        driver = WebDriverManager.getDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         executor = (JavascriptExecutor) driver;
         actions = new Actions(driver);

@@ -1,4 +1,4 @@
-package com.automation.steps.web;
+package com.automation.steps;
 
 import com.automation.pages.web.StoreCartPage;
 import com.automation.utils.ConfigReader;

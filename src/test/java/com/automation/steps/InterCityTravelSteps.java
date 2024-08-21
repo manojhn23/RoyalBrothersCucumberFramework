@@ -1,4 +1,4 @@
-package com.automation.steps.web;
+package com.automation.steps;
 
 import com.automation.pages.web.InterCityTravelPage;
 import io.cucumber.java.en.And;

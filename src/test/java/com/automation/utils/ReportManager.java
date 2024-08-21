@@ -17,7 +17,7 @@ public class ReportManager {
     }
 
     private static byte[] takeScreenshot() {
-        TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
+        TakesScreenshot ts = (TakesScreenshot) WebDriverManager.getDriver();
         return ts.getScreenshotAs(OutputType.BYTES);
     }
 }

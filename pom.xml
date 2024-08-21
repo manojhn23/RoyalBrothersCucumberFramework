@@ -18,7 +18,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.20.0</version>
+            <version>4.13.0</version>
         </dependency>
 
         <dependency>
@@ -90,6 +90,7 @@
                 <version>3.3.1</version>
                 <configuration>
                     <includes>
+                        <!--suppress UnresolvedMavenProperty -->
                         <include>**/TestRunner${env}.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
