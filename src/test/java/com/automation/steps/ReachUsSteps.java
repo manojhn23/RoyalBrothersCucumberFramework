@@ -13,7 +13,7 @@ public class ReachUsSteps {
 
     ReachUsPage reachUsPage;
 
-    public ReachUsSteps(){
+    public ReachUsSteps() {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             reachUsPage = new WebReachUsPage();
         }

@@ -50,9 +50,9 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                13,
-                12,
-                61,
+                0,
+                8,
+                46,
                 0,
                 0
             ],
@@ -93,7 +93,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 86) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 54) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -107,7 +107,7 @@ $(document).ready(function() {
         datasets: [{
             data: [
                 0,
-                12
+                8
             ],
             backgroundColor: [
                 "#00B000",
@@ -143,7 +143,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 12) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 8) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -233,7 +233,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>Module</td>
               <td>1</td>
-            <td>22 Aug 2024, 10:16</td>
+            <td>22 Aug 2024, 12:02</td>
     </tr>
   </tbody>
 </table>
@@ -330,26 +330,26 @@ $(document).ready(function() {
           <tr>
         <td class="tagname"><a href="report-feature_file-src-test-resources-features-android-LocationSelection-feature.html">Validate on Location selection functionality</a></td>
         
-        <td      class="passed"    >11</td>
-        <td      class="failed"    >11</td>
-        <td     class="skipped"   >61</td>
+        <td >0</td>
+        <td      class="failed"    >7</td>
+        <td     class="skipped"   >44</td>
         <td >0</td>
         <td >0</td>
-        <td class="total">83</td>
+        <td class="total">51</td>
 
         <td >0</td>
-        <td  class="failed"    >11</td>
-        <td class="total">11</td>
+        <td  class="failed"    >7</td>
+        <td class="total">7</td>
 
-        <td class="duration" data-value="100423270400">1m 40s 423ms</td>
+        <td class="duration" data-value="216417837800">3m 36s 417ms</td>
         <td class="failed">Failed</td>
       </tr>
           <tr>
-        <td class="tagname"><a href="report-feature_file-src-test-resources-features-android-HomePage-feature.html">navigate to home page</a></td>
+        <td class="tagname"><a href="report-feature_file-src-test-resources-features-android-AndroidHomePage-feature.html">navigate to home page</a></td>
         
-        <td      class="passed"    >2</td>
-        <td      class="failed"    >1</td>
         <td >0</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >2</td>
         <td >0</td>
         <td >0</td>
         <td class="total">3</td>
@@ -358,7 +358,7 @@ $(document).ready(function() {
         <td  class="failed"    >1</td>
         <td class="total">1</td>
 
-        <td class="duration" data-value="18870739800">18s 870ms</td>
+        <td class="duration" data-value="27932347500">27s 932ms</td>
         <td class="failed">Failed</td>
       </tr>
       </tbody>
@@ -366,25 +366,25 @@ $(document).ready(function() {
   <tfoot class="total">
     <tr>
       <td>2</td>
-            <td>13</td>
-      <td>12</td>
-      <td>61</td>
+            <td>0</td>
+      <td>8</td>
+      <td>46</td>
       <td>0</td>
       <td>0</td>
-      <td>86</td>
+      <td>54</td>
 
       <td>0</td>
-      <td>12</td>
-      <td>12</td>
+      <td>8</td>
+      <td>8</td>
 
-      <td class="duration">1m 59s 294ms</td>
+      <td class="duration">4m 4s 350ms</td>
       <td></td>
     </tr>
     <tr>
       <td></td>
-            <td>15.12%</td>
-      <td>13.95%</td>
-      <td>70.93%</td>
+            <td>0.00%</td>
+      <td>14.81%</td>
+      <td>85.19%</td>
       <td>0.00%</td>
       <td>0.00%</td>
       <td></td>

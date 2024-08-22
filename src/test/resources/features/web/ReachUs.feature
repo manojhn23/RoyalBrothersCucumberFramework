@@ -30,8 +30,8 @@ Feature: Validate on reach us functionality
       | Pavan |                    |            | It is nice             |
       | Kavya | kavya@outlook.com  | 78605467   | Excellent bike service |
 
-    Scenario: Verify user can submit without a comment message
-      When user enters the details as "reach.us.name","reach.us.email" and "reach.us.mobile"
-      And clicks on submit button
-      Then verify user can get a message "reach.us.comment.error.msg"
+  Scenario: Verify user can submit without a comment message
+    When user enters the details as "reach.us.name","reach.us.email" and "reach.us.mobile"
+    And clicks on submit button
+    Then verify user can get a message "reach.us.comment.error.msg"
 

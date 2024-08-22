@@ -12,7 +12,7 @@ public class BikeDetailsSteps {
 
     BikeDetailsPage bikeDetailsPage;
 
-    public BikeDetailsSteps(){
+    public BikeDetailsSteps() {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             bikeDetailsPage = new WebBikeDetailsPage();
         }

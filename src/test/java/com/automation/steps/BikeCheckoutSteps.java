@@ -2,17 +2,15 @@ package com.automation.steps;
 
 import com.automation.pages.ui.BikeCheckoutPage;
 import com.automation.pages.web.WebBikeCheckoutPage;
-import com.automation.utils.AndroidDriverManager;
 import com.automation.utils.ConfigReader;
 import com.automation.utils.ReportManager;
-import com.automation.utils.WebDriverManager;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
 public class BikeCheckoutSteps {
     BikeCheckoutPage bikeCheckoutPage;
 
-    public BikeCheckoutSteps(){
+    public BikeCheckoutSteps() {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             bikeCheckoutPage = new WebBikeCheckoutPage();
         }

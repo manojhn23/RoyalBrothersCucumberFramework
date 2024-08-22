@@ -35,7 +35,7 @@ public class HomeSteps {
 
     @Then("verify user is on the home page")
     public void verify_user_is_on_the_home_page() {
-//        ReportManager.attachScreenshot();
+        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isUserOnHomePage());
     }
 
@@ -84,7 +84,7 @@ public class HomeSteps {
 
     @Then("verify the location of user chosen")
     public void verify_the_location_of_user_chosen() {
-//        ReportManager.attachScreenshot();
+        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isSelectedLocationDisplayed());
 //        try {
 //            Thread.sleep(100000);

@@ -67,19 +67,17 @@ public abstract class WebBasePage {
         }
     }
 
-    public void moveToElement(WebElement ele){
+    public void moveToElement(WebElement ele) {
         actions.moveToElement(ele).build().perform();
     }
 
-    public void waitTillClickable(WebElement ele){
+    public void waitTillClickable(WebElement ele) {
         wait.until(ExpectedConditions.elementToBeClickable(ele));
     }
 
-    public void waitTillVisible(WebElement ele){
+    public void waitTillVisible(WebElement ele) {
         wait.until(ExpectedConditions.visibilityOf(ele));
     }
-
-
 
 
 }

@@ -6,13 +6,16 @@ public interface LoginPage {
         return false;
     }
 
-    default void enterPhoneAndPasswordDetails(String s1, String s2) {}
+    default void enterPhoneAndPasswordDetails(String s1, String s2) {
+    }
 
-    default void clickImNotARobotCheckBox(){}
+    default void clickImNotARobotCheckBox() {
+    }
 
-    default void clickOnLoginWithPassword(){}
+    default void clickOnLoginWithPassword() {
+    }
 
-    default String errorMessage(){
+    default String errorMessage() {
         return null;
     }
 }

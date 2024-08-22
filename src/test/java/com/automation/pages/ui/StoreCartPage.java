@@ -2,21 +2,23 @@ package com.automation.pages.ui;
 
 public interface StoreCartPage {
 
-    default boolean isProductAddedSuccessFully(){
+    default boolean isProductAddedSuccessFully() {
         return false;
     }
 
-    default void removeProductFromCart(String s){}
+    default void removeProductFromCart(String s) {
+    }
 
-    default boolean isProductRemovedSuccessFully(){
+    default boolean isProductRemovedSuccessFully() {
         return false;
     }
 
-    default double calculateTotalAmount(){
+    default double calculateTotalAmount() {
         return 0;
     }
 
-    default void clickOnCheckOutButton(){}
+    default void clickOnCheckOutButton() {
+    }
 
 
 }
