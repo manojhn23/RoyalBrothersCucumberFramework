@@ -1,4 +1,4 @@
-Feature: user login with valid and invalid credentials
+Feature: Validate on login functionality with valid and invalid credentials
 
   Background:
     Given user is on website
