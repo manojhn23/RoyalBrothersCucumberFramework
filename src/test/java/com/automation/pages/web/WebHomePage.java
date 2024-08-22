@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends BasePage {
+public class WebHomePage extends BasePage {
 
     @FindBy(id = "autocomplete-input")
     WebElement searchCityInput;
@@ -67,7 +67,6 @@ public class HomePage extends BasePage {
     }
 
     public void selectCity(String cityName) {
-        pause(3);
         searchCityInput.sendKeys(cityName);
         WebElement selectCity = driver.findElement(By.xpath(String.format(citySelectPath, cityName)));
         selectCity.click();
@@ -161,9 +160,7 @@ public class HomePage extends BasePage {
     }
 
     public void clickOnProfile() {
-        pause(2);
         actions.moveToElement(userMenu).build().perform();
-        pause(2);
     }
 
 

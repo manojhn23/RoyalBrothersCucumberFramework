@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends BasePage {
 
@@ -25,6 +26,9 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//div[@id='toast-container']/div")
     WebElement invalidDetailsErrorMessage;
 
+    @FindBy(xpath = "//span[@id='recaptcha-anchor']")
+    WebElement captchaChecked;
+
     public boolean isUserOnLoginPage() {
         return loginWithPasswordButton.isDisplayed();
     }
@@ -41,16 +45,9 @@ public class LoginPage extends BasePage {
     }
 
     public void clickOnLoginWithPassword() {
-        pause(5);
-        driver.switchTo().frame(4);
-        while (isDisplayed(verifyCaptchaImage)) {
-            try {
-                verifyCaptchaImage = driver.findElement(By.id("rc-imageselect"));
-            } catch (Exception ignored) {
-            }
-        }
+        driver.switchTo().frame(1);
+        wait.until(ExpectedConditions.attributeToBe(captchaChecked, "aria-checked", "true"));
         driver.switchTo().defaultContent();
-        wait.until(ExpectedConditions.elementToBeClickable(loginWithPasswordButton));
         click(loginWithPasswordButton);
     }
 

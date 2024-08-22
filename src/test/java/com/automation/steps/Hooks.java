@@ -1,5 +1,6 @@
 package com.automation.steps;
 
+import com.automation.utils.AndroidDriverManager;
 import com.automation.utils.ConfigReader;
 import com.automation.utils.WebDriverManager;
 import com.automation.utils.ReportManager;
@@ -12,12 +13,20 @@ public class Hooks {
     @Before
     public void setUp(Scenario scenario) {
         ConfigReader.initReader();
-        WebDriverManager.createDriver();
+        if (ConfigReader.getConfigValue("test").equals("android")) {
+            AndroidDriverManager.createDriver();
+        } else {
+            WebDriverManager.createDriver();
+        }
         ReportManager.initReporter(scenario);
     }
 
     @After
     public void cleanUp() {
-        WebDriverManager.getDriver().quit();
+        if (ConfigReader.getConfigValue("test").equals("android")) {
+            AndroidDriverManager.getDriver().quit();
+        } else {
+            WebDriverManager.getDriver().quit();
+        }
     }
 }

@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class StorePage extends BasePage {
+public class WebStorePage extends BasePage {
 
     @FindBy(css = ".list-menu.list-menu--inline")
     WebElement menuList;
