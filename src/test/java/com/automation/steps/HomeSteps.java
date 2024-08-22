@@ -113,11 +113,11 @@ public class HomeSteps {
     public void verifyUserCanGetEmptyOnSearchInputField() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isInputFieldNull());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @When("enters the desired location as {string}")
