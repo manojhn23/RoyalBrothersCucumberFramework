@@ -10,13 +10,13 @@ import org.junit.Assert;
 
 public class StoreCartSteps {
 
-   StoreCartPage cartPage;
+    StoreCartPage cartPage;
 
-   public StoreCartSteps(){
-       if (ConfigReader.getConfigValue("application.type").equals("web")) {
-           cartPage = new WebStoreCartPage();
-       }
-   }
+    public StoreCartSteps() {
+        if (ConfigReader.getConfigValue("application.type").equals("web")) {
+            cartPage = new WebStoreCartPage();
+        }
+    }
 
     @Then("verify that the product is successfully added to the cart")
     public void verifyThatTheProductIsSuccessfullyAddedToTheCart() {

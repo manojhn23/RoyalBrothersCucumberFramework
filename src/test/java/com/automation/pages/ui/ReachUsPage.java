@@ -6,17 +6,20 @@ public interface ReachUsPage {
         return false;
     }
 
-    default void entersTheDetails(String s1, String s2, String s3, String s4) {}
+    default void entersTheDetails(String s1, String s2, String s3, String s4) {
+    }
 
-    default void entersTheDetails(String s1, String s2, String s3) {}
+    default void entersTheDetails(String s1, String s2, String s3) {
+    }
 
-    default void clicksSubmitBtn(){}
+    default void clicksSubmitBtn() {
+    }
 
-    default boolean isErrorMsgDisplayed(){
+    default boolean isErrorMsgDisplayed() {
         return false;
     }
 
-    default String getErrorMsg(){
+    default String getErrorMsg() {
         return null;
     }
 }

@@ -12,7 +12,7 @@ public class LoginSteps {
 
     LoginPage loginPage;
 
-    public LoginSteps(){
+    public LoginSteps() {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             loginPage = new WebLoginPage();
         }

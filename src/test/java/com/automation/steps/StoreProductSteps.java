@@ -13,7 +13,7 @@ public class StoreProductSteps {
 
     StoreProductPage storeProductPage;
 
-    public StoreProductSteps(){
+    public StoreProductSteps() {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             storeProductPage = new WebStoreProductPage();
         }

@@ -12,7 +12,7 @@ public class InterCityBikeDetailsSteps {
 
     InterCityBikeDetailsPage interCityBikeDetailsPage;
 
-    public InterCityBikeDetailsSteps(){
+    public InterCityBikeDetailsSteps() {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             interCityBikeDetailsPage = new WebInterCityBikeDetailsPage();
         }

@@ -5,21 +5,22 @@ public interface StoreProductPage {
     default void addProductsToTheCart(String s1, String s2) {
     }
 
-    default void sortProductBy(String s){}
+    default void sortProductBy(String s) {
+    }
 
-    default boolean isProductSortedFromPriceLowToHigh(){
+    default boolean isProductSortedFromPriceLowToHigh() {
         return false;
     }
 
-    default boolean isProductSortedFromPriceHighToLow(){
+    default boolean isProductSortedFromPriceHighToLow() {
         return false;
     }
 
-    default boolean isProductSortedFromAtoZ(){
+    default boolean isProductSortedFromAtoZ() {
         return false;
     }
 
-    default boolean isProductSortedFromZtoA(){
+    default boolean isProductSortedFromZtoA() {
         return false;
     }
 

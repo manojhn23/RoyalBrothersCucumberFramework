@@ -10,13 +10,13 @@ import org.junit.Assert;
 
 public class OrderSummarySteps {
 
-   OrderSummaryPage orderSummaryPage;
+    OrderSummaryPage orderSummaryPage;
 
-   public OrderSummarySteps(){
-       if (ConfigReader.getConfigValue("application.type").equals("web")) {
-           orderSummaryPage = new WebOrderSummaryPage();
-       }
-   }
+    public OrderSummarySteps() {
+        if (ConfigReader.getConfigValue("application.type").equals("web")) {
+            orderSummaryPage = new WebOrderSummaryPage();
+        }
+    }
 
     @Then("verify user is on order summary page")
     public void verifyUserIsOnOrderSummaryPage() {

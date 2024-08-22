@@ -2,11 +2,11 @@ package com.automation.pages.ui;
 
 public interface BikeCheckoutPage {
 
-    default boolean isMakePaymentOptionDisplayed(){
+    default boolean isMakePaymentOptionDisplayed() {
         return false;
     }
 
-    default boolean isBikeCheckoutPageDisplayed(){
+    default boolean isBikeCheckoutPageDisplayed() {
         return false;
     }
 }

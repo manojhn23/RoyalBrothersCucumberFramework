@@ -13,13 +13,13 @@ import java.util.List;
 
 public class InterCityTravelSteps {
 
-   InterCityTravelPage interCityTravelPage;
+    InterCityTravelPage interCityTravelPage;
 
-   public InterCityTravelSteps(){
-       if (ConfigReader.getConfigValue("application.type").equals("web")) {
-           interCityTravelPage = new WebInterCityTravelPage();
-       }
-   }
+    public InterCityTravelSteps() {
+        if (ConfigReader.getConfigValue("application.type").equals("web")) {
+            interCityTravelPage = new WebInterCityTravelPage();
+        }
+    }
 
     @Then("verify user is on Inter-city travel page")
     public void verifyUserIsOnInterCityTravelPage() {

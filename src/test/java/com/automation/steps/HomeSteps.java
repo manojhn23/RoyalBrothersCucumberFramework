@@ -14,7 +14,7 @@ public class HomeSteps {
 
     HomePage homePage;
 
-    public HomeSteps(){
+    public HomeSteps() {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             homePage = new WebHomePage();
         }
