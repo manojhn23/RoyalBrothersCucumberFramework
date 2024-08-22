@@ -17,6 +17,7 @@ public class Hooks {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             WebDriverManager.createDriver();
         } else {
+            System.out.println("created A Driver");
             AndroidDriverManager.createDriver();
         }
     }

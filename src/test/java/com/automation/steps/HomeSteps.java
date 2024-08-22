@@ -1,5 +1,6 @@
 package com.automation.steps;
 
+import com.automation.pages.android.AndroidHomePageAndroid;
 import com.automation.pages.ui.HomePage;
 import com.automation.pages.web.WebHomePage;
 import com.automation.utils.ConfigReader;
@@ -17,6 +18,8 @@ public class HomeSteps {
     public HomeSteps() {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             homePage = new WebHomePage();
+        } else {
+            homePage = new AndroidHomePageAndroid();
         }
     }
 
@@ -32,7 +35,7 @@ public class HomeSteps {
 
     @Then("verify user is on the home page")
     public void verify_user_is_on_the_home_page() {
-        ReportManager.attachScreenshot();
+//        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isUserOnHomePage());
     }
 
@@ -81,7 +84,7 @@ public class HomeSteps {
 
     @Then("verify the location of user chosen")
     public void verify_the_location_of_user_chosen() {
-        ReportManager.attachScreenshot();
+//        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isSelectedLocationDisplayed());
         try {
             Thread.sleep(100000);
@@ -164,5 +167,9 @@ public class HomeSteps {
         }
     }
 
-//    added
+    @Given("user opens application")
+    public void userOpensApplication() {
+        homePage.openApplication();
+    }
+
 }

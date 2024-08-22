@@ -72,4 +72,7 @@ public interface HomePage {
     default boolean isLoginSuccessFul() {
         return false;
     }
+
+    default void openApplication() {
+    }
 }

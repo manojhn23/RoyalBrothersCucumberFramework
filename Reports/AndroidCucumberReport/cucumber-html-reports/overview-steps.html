@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+    
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+              <th>Number</th>
+            <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Module</td>
+              <td>1</td>
+            <td>22 Aug 2024, 10:16</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+      </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+          <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+      </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Duration</th>
+            <th>Average</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.clicksOnClearButton()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.clicksOnTheLocationOption()</td>
+              <td>11</td>
+              <td class="duration" data-value="26000">000ms</td>
+              <td class="duration" data-value="2363">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.clicks_on_the_entered_location()</td>
+              <td>16</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.entersTheDesiredLocationAs(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userOpensApplication()</td>
+              <td>12</td>
+              <td class="duration" data-value="104435140400">1m 44s 435ms</td>
+              <td class="duration" data-value="8702928366">8s 702ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.userSelectHisDesiredCity(java.lang.String)</td>
+              <td>22</td>
+              <td class="duration" data-value="14851992100">14s 851ms</td>
+              <td class="duration" data-value="675090550">675ms</td>
+              <td class="failed">4.55%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.verifyTheLocationOfUserChosenNotGetting()</td>
+              <td>5</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.verifyUserCanGetEmptyOnSearchInputField()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.verify_the_location_of_user_chosen()</td>
+              <td>5</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.HomeSteps.verify_user_is_on_the_home_page()</td>
+              <td>12</td>
+              <td class="duration" data-value="6851700">006ms</td>
+              <td class="duration" data-value="570975">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.Hooks.cleanUp()</td>
+              <td>12</td>
+              <td class="duration" data-value="10936861000">10s 936ms</td>
+              <td class="duration" data-value="911405083">911ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</td>
+              <td>12</td>
+              <td class="duration" data-value="138913876600">2m 18s 913ms</td>
+              <td class="duration" data-value="11576156383">11s 576ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                  </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>12</td>
+            <td>110</td>
+            <td class="duration">4m 29s 144ms</td>
+            <td class="duration">2s 446ms</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

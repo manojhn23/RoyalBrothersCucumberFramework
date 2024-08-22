@@ -23,6 +23,7 @@ public class AndroidDriverManager {
 
         driver = new AndroidDriver(capabilities);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        System.out.println("driver created");
     }
 
     public static AppiumDriver getDriver() {
