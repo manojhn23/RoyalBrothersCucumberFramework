@@ -39,12 +39,9 @@ public interface HomePage {
     default void clicksClearOnLocationSearch() {
     }
 
-    default boolean isInputFieldNull() {
-        return false;
-    }
+    boolean isInputFieldNull();
 
-    default void entersDetailsForRide(String s1, String s2, String s3, String s4) {
-    }
+    abstract void entersDetailsForRide(String s1, String s2, String s3, String s4);
 
     default void clicksOnSearchBtn() {
     }

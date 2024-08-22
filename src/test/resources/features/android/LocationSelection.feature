@@ -31,7 +31,7 @@ Feature: Validate on Location selection functionality
       | Coimbatore    |
 
   Scenario: Verify user can clears on location search text
-    When enters the desired location as "city.name"
+    When enters the location as "Coimbatore"
     And clicks on clear button
     Then verify user can get empty on search input field
 
