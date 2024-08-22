@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AndroidHomePageAndroid extends AndroidBasePage implements HomePage {
+public class AndroidHomePage extends AndroidBasePage implements HomePage {
 
     @FindBy(xpath = "//android.widget.Button[@resource-id='android:id/button2']")
     WebElement mayBeLaterOption;
@@ -58,7 +58,7 @@ public class AndroidHomePageAndroid extends AndroidBasePage implements HomePage 
     }
 
     public boolean isSelectedLocationNotDisplayed() {
-        return notFoundMessage.isDisplayed();
+        return !notFoundMessage.isDisplayed();
     }
 
     public void clicksOnEnteredLocation() {

@@ -14,10 +14,10 @@ Feature: Validate on Location selection functionality
     Examples:
       | location name     |
       | Bangalore Airport |
-#      | Chennai           |
-#      | Delhi             |
-#      | Gurugram          |
-#      | Hyderabad         |
+      | Chennai           |
+      | Delhi             |
+      | Gurugram          |
+      | Hyderabad         |
 
   Scenario Outline: Verify user cannot selects the city as location
     When enters the location as "<location name>"

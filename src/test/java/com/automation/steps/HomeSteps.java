@@ -1,6 +1,6 @@
 package com.automation.steps;
 
-import com.automation.pages.android.AndroidHomePageAndroid;
+import com.automation.pages.android.AndroidHomePage;
 import com.automation.pages.ui.HomePage;
 import com.automation.pages.web.WebHomePage;
 import com.automation.utils.ConfigReader;
@@ -19,7 +19,7 @@ public class HomeSteps {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             homePage = new WebHomePage();
         } else {
-            homePage = new AndroidHomePageAndroid();
+            homePage = new AndroidHomePage();
         }
     }
 
@@ -86,22 +86,22 @@ public class HomeSteps {
     public void verify_the_location_of_user_chosen() {
 //        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isSelectedLocationDisplayed());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @Then("verify the location of user chosen not getting")
     public void verifyTheLocationOfUserChosenNotGetting() {
-        ReportManager.attachScreenshot();
+//        ReportManager.attachScreenshot();
         Assert.assertFalse(homePage.isSelectedLocationNotDisplayed());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @And("clicks on clear button")
