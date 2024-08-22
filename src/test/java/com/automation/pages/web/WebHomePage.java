@@ -1,11 +1,13 @@
 package com.automation.pages.web;
 
+import com.automation.pages.ui.HomePage;
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class WebHomePage extends BasePage {
+public class WebHomePage extends WebBasePage implements HomePage {
 
     @FindBy(id = "autocomplete-input")
     WebElement searchCityInput;
@@ -62,113 +64,142 @@ public class WebHomePage extends BasePage {
     @FindBy(xpath = "//li[@class='logout-button']")
     WebElement logoutButton;
 
+    @FindBy(xpath = "//div[@class='modal-content']")
+    WebElement citySelectionTab;
+
+    @Override
     public void openWebsite() {
         driver.navigate().to(ConfigReader.getConfigValue("base.url"));
     }
 
+    @Override
     public void selectCity(String cityName) {
+        pause(3);
         searchCityInput.sendKeys(cityName);
         WebElement selectCity = driver.findElement(By.xpath(String.format(citySelectPath, cityName)));
-        selectCity.click();
+        click(selectCity);
         if (isDisplayed(notificationNotNow)) {
             click(notificationNotNow);
         }
     }
 
+    @Override
     public boolean isUserOnHomePage() {
         return loginButton.isDisplayed();
     }
 
+    @Override
     public boolean verifyCitySelected() {
         return citySelected.getText().equals(ConfigReader.getConfigValue("city.name"));
     }
 
+    @Override
     public void clickOnLoginButton() {
-        loginButton.click();
+        click(loginButton);
     }
 
+    @Override
     public boolean isLoginSuccessFul() {
         return userLoginName.getText().equals(ConfigReader.getConfigValue("user.name"));
     }
 
+    @Override
     public void clicksOnLocationOption() {
         click(locationOption);
     }
 
+    @Override
     public void entersLocationName(String locationName) {
         searchCityInput.sendKeys(locationName);
         ConfigReader.setConfigValue("search.location", locationName);
     }
 
+    @Override
     public void clicksOnEnteredLocation() {
         WebElement cityEle = driver.findElement(By.xpath(String.format(citySelectPath, ConfigReader.getConfigValue("search.location"))));
-        cityEle.click();
+        click(cityEle);
     }
 
+    @Override
     public boolean isSelectedLocationDisplayed() {
         return citySelected.getText().equals(ConfigReader.getConfigValue("search.location"));
     }
 
+    @Override
     public boolean isSelectedLocationNotDisplayed() {
-        WebElement cityEle = driver.findElement(By.xpath(String.format(citySelectPath, ConfigReader.getConfigValue("search.location"))));
-        return isDisplayed(cityEle);
+        return isDisplayed(citySelectPath, ConfigReader.getConfigValue("search.location"));
     }
 
+    @Override
     public void clicksClearOnLocationSearch() {
-        clearBtn.click();
+        click(clearBtn);
     }
 
+    @Override
     public boolean isInputFieldNull() {
         return searchCityInput.getAttribute("value").isEmpty();
     }
 
+    @Override
     public void entersDetailsForRide(String pickupDate, String pickupTime, String dropOffDate, String dropOffTime) {
-
-
-        actions.moveToElement(searchBtn).build().perform();
+        moveToElement(searchBtn);
         click(pickupDateInput);
 
-        pause(1);
         WebElement pickupDateEle = driver.findElement(By.xpath(String.format(pickupDateXpath, pickupDate)));
+        waitTillClickable(pickupDateEle);
         click(pickupDateEle);
 
-        pause(1);
         WebElement pickupTimeEle = driver.findElement(By.xpath(String.format(pickupTimeXpath, pickupTime)));
+        waitTillClickable(pickupTimeEle);
         click(pickupTimeEle);
 
-        pause(1);
         WebElement dropOffDateEle = driver.findElement(By.xpath(String.format(dropOffDateXpath, dropOffDate)));
+        waitTillClickable(dropOffDateEle);
         click(dropOffDateEle);
 
-        pause(1);
         WebElement dropOffTimeEle = driver.findElement(By.xpath(String.format(dropOffTimeXpath, dropOffTime)));
+        waitTillClickable(dropOffTimeEle);
         click(dropOffTimeEle);
 
     }
 
+    @Override
     public void clicksOnSearchBtn() {
         click(searchBtn);
     }
 
+    @Override
     public void clickOnHamburgerMenu() {
         hamburgerMenu.click();
     }
 
+    @Override
     public void selectMenuOption(String menuOption) {
         WebElement option = driver.findElement(By.xpath(String.format(menuOptionPath, menuOption)));
-        option.click();
+        click(option);
     }
 
+    @Override
     public void clickOnProfile() {
-        actions.moveToElement(userMenu).build().perform();
+        pause(2);
+        moveToElement(userMenu);
+        pause(2);
     }
 
 
+    @Override
     public void clickOnLogoutOption() {
         logoutButton.click();
     }
 
+    @Override
     public boolean isLogOutSuccessFull() {
         return loginButton.isDisplayed();
+    }
+
+    @Override
+    public boolean isCitySelectionDisplayed() {
+        waitTillVisible(citySelectionTab);
+        return citySelectionTab.isDisplayed();
     }
 }

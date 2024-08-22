@@ -1,10 +1,11 @@
 package com.automation.pages.web;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class WebStorePage extends BasePage {
+public class WebStorePage extends WebBasePage {
 
     @FindBy(css = ".list-menu.list-menu--inline")
     WebElement menuList;

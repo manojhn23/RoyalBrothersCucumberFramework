@@ -54,49 +54,85 @@
             <properties>
                 <env>Web</env>
             </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>net.masterthought</groupId>
+                        <artifactId>maven-cucumber-reporting</artifactId>
+                        <version>3.4.0</version>
+                        <executions>
+                            <execution>
+                                <id>execution</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                                <configuration>
+                                    <projectName>Module</projectName>
+                                    <outputDirectory>Reports/WebCucumberReport</outputDirectory>
+                                    <cucumberOutput>target/web</cucumberOutput>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.3.1</version>
+                        <configuration>
+                            <includes>
+                                <!--suppress UnresolvedMavenProperty -->
+                                <include>**/TestRunnerWeb.java</include>
+                            </includes>
+                            <testFailureIgnore>true</testFailureIgnore>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
         <profile>
             <id>android</id>
             <properties>
                 <env>Android</env>
             </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>net.masterthought</groupId>
+                        <artifactId>maven-cucumber-reporting</artifactId>
+                        <version>3.4.0</version>
+                        <executions>
+                            <execution>
+                                <id>execution</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                                <configuration>
+                                    <projectName>Module</projectName>
+                                    <outputDirectory>Reports/AndroidCucumberReport</outputDirectory>
+                                    <cucumberOutput>target/android</cucumberOutput>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.3.1</version>
+                        <configuration>
+                            <includes>
+                                <!--suppress UnresolvedMavenProperty -->
+                                <include>**/TestRunnerAndroid.java</include>
+                            </includes>
+                            <testFailureIgnore>true</testFailureIgnore>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>net.masterthought</groupId>
-                <artifactId>maven-cucumber-reporting</artifactId>
-                <version>3.4.0</version>
-                <executions>
-                    <execution>
-                        <id>execution</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <projectName>Module</projectName>
-                            <outputDirectory>${env}CucumberReport</outputDirectory>
-                            <cucumberOutput>target/${env}</cucumberOutput>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.3.1</version>
-                <configuration>
-                    <includes>
-                        <!--suppress UnresolvedMavenProperty -->
-                        <include>**/TestRunner${env}.java</include>
-                    </includes>
-                    <testFailureIgnore>true</testFailureIgnore>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
