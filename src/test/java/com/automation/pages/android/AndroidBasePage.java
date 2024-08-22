@@ -4,7 +4,7 @@ import com.automation.utils.AndroidDriverManager;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class AndroidBasePage {
+public abstract class AndroidBasePage {
 
     AppiumDriver driver;
 

@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>Module</td>
               <td>1</td>
-            <td>22 Aug 2024, 12:02</td>
+            <td>22 Aug 2024, 12:14</td>
     </tr>
   </tbody>
 </table>
@@ -129,9 +129,9 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">navigate to home page</td>
-                    <td >0</td>
+                    <td      class="passed"    >2</td>
           <td      class="failed"    >1</td>
-          <td     class="skipped"   >2</td>
+          <td >0</td>
           <td >0</td>
           <td >0</td>
           <td class="total">3</td>
@@ -140,7 +140,7 @@ $(document).ready(function() {
           <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="27932347500">27s 932ms</td>
+          <td class="duration" data-value="45812702300">45s 812ms</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -225,7 +225,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
                           <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
                         
-  <span class="lead-duration duration">1m 1s 570ms</span>
+  <span class="lead-duration duration">37s 414ms</span>
 
           </div>
 
@@ -256,11 +256,53 @@ $(document).ready(function() {
   <div id="steps-3" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
-<div class="brief failed">
+<div class="brief passed">
   <span class="keyword indention">Given</span>
   <span class="name">user opens application</span>
   
-  <span class="lead-duration duration">27s 932ms</span>
+  <span class="lead-duration duration">20s 022ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user select his desired city &quot;app.city.name&quot;</span>
+  
+  <span class="lead-duration duration">4s 471ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief failed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is on the home page</span>
+  
+  <span class="lead-duration duration">21s 318ms</span>
 
   </div>
 
@@ -277,9 +319,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [13a12de6-01ee-43ce-85d0-9b96fda7ff5d, findElement {using=xpath, value=//android.widget.TextView[@text='SKIP']}]
-Capabilities {appium:app: C:\Capstone-Project\Capston..., appium:appActivity: com.royalbrothers.MainActivity, appium:appPackage: com.royalbrothers, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: C:\Capstone-Project\Capston..., appActivity: com.royalbrothers.MainActivity, appPackage: com.royalbrothers, automationName: UiAutomator2, deviceName: emulator-5554, platformName: ANDROID}, appium:deviceApiLevel: 35, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1344x2992, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3, appium:platformVersion: 15, appium:statBarHeight: 151, appium:takesScreenshot: true, appium:viewportRect: {height: 2841, left: 0, top: 151, width: 1344}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 13a12de6-01ee-43ce-85d0-9b96fda7ff5d
+Command: [43982dbb-0a2f-4228-af0f-aba6c4389ddb, findElement {using=xpath, value=//android.widget.TextView[@text='SEARCH']}]
+Capabilities {appium:app: C:\Capstone-Project\Capston..., appium:appActivity: com.royalbrothers.MainActivity, appium:appPackage: com.royalbrothers, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: C:\Capstone-Project\Capston..., appActivity: com.royalbrothers.MainActivity, appPackage: com.royalbrothers, automationName: UiAutomator2, deviceName: emulator-5554, platformName: ANDROID}, appium:deviceApiLevel: 35, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1344x2992, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3, appium:platformVersion: 15, appium:statBarHeight: 72, appium:takesScreenshot: true, appium:viewportRect: {height: 2920, left: 0, top: 72, width: 1344}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 43982dbb-0a2f-4228-af0f-aba6c4389ddb
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -297,10 +339,10 @@ Session ID: 13a12de6-01ee-43ce-85d0-9b96fda7ff5d
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy23.click(Unknown Source)
-	at com.automation.pages.android.AndroidHomePageAndroid.openApplication(AndroidHomePageAndroid.java:32)
-	at com.automation.steps.HomeSteps.userOpensApplication(HomeSteps.java:172)
-	at &#10045;.user opens application(file:///C:/Capstone-Project/CapstoneProject/src/test/resources/features/android/AndroidHomePage.feature:4)
+	at jdk.proxy2/jdk.proxy2.$Proxy23.isDisplayed(Unknown Source)
+	at com.automation.pages.android.AndroidHomePageAndroid.isUserOnHomePage(AndroidHomePageAndroid.java:46)
+	at com.automation.steps.HomeSteps.verify_user_is_on_the_home_page(HomeSteps.java:39)
+	at &#10045;.verify user is on the home page(file:///C:/Capstone-Project/CapstoneProject/src/test/resources/features/android/AndroidHomePage.feature:6)
 </pre>
       </div>
     </div>
@@ -313,48 +355,21 @@ Session ID: 13a12de6-01ee-43ce-85d0-9b96fda7ff5d
         
 
         
-  
-      </div>
-          <div class="step">
-        
-<div class="brief skipped">
-  <span class="keyword indention">When</span>
-  <span class="name">user select his desired city &quot;app.city.name&quot;</span>
-  
-  <span class="lead-duration duration">000ms</span>
-
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-5" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_2115203598.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-5" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_2115203598.png">
+      </span>
+    </div>
   </div>
-
-        
-
-
-        
-        
-
-        
-
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief skipped">
-  <span class="keyword indention">Then</span>
-  <span class="name">verify user is on the home page</span>
-  
-  <span class="lead-duration duration">000ms</span>
-
-  </div>
-
-        
-
-
-        
-        
-
-        
-
-        
+        </div>
   
       </div>
       </div>
@@ -363,7 +378,7 @@ Session ID: 13a12de6-01ee-43ce-85d0-9b96fda7ff5d
 
     
   <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-6">
       
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -375,13 +390,13 @@ Session ID: 13a12de6-01ee-43ce-85d0-9b96fda7ff5d
 
     </div>
 
-    <div id="after-5" class="inner-level collapse collapsable-details ">
+    <div id="after-6" class="inner-level collapse collapsable-details ">
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
                           <span class="location name">com.automation.steps.Hooks.cleanUp()</span>
                         
-  <span class="lead-duration duration">2s 897ms</span>
+  <span class="lead-duration duration">1s 037ms</span>
 
           </div>
 
