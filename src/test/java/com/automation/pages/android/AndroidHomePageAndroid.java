@@ -1,11 +1,12 @@
 package com.automation.pages.android;
 
+import com.automation.pages.ui.HomePage;
 import com.automation.utils.ConfigReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AndroidHomePage extends BasePage {
+public class AndroidHomePageAndroid extends AndroidBasePage implements HomePage {
 
     @FindBy(xpath = "//android.widget.Button[@resource-id='android:id/button2']")
     WebElement mayBeLaterOption;
@@ -34,6 +35,11 @@ public class AndroidHomePage extends BasePage {
     public void selectCity(String cityName) {
         cityInputField.sendKeys(cityName);
         ConfigReader.setConfigValue("search.location", cityName);
+    }
+
+    public void entersLocationName(String locationName) {
+        cityInputField.sendKeys(locationName);
+        ConfigReader.setConfigValue("search.location", locationName);
     }
 
     public boolean isUserOnHomePage() {

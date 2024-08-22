@@ -43,27 +43,36 @@ public interface HomePage {
         return false;
     }
 
-    default void entersDetailsForRide(String s1, String s2, String s3, String s4) {}
+    default void entersDetailsForRide(String s1, String s2, String s3, String s4) {
+    }
 
-    default void clicksOnSearchBtn(){}
+    default void clicksOnSearchBtn() {
+    }
 
-    default void clickOnHamburgerMenu(){}
+    default void clickOnHamburgerMenu() {
+    }
 
-    default void selectMenuOption(String menuOption){}
+    default void selectMenuOption(String menuOption) {
+    }
 
-    default void clickOnProfile(){}
+    default void clickOnProfile() {
+    }
 
-    default void clickOnLogoutOption(){}
+    default void clickOnLogoutOption() {
+    }
 
-    default boolean isLogOutSuccessFull(){
+    default boolean isLogOutSuccessFull() {
         return false;
     }
 
-    default boolean isCitySelectionDisplayed(){
+    default boolean isCitySelectionDisplayed() {
         return false;
     }
 
-    default boolean isLoginSuccessFul(){
+    default boolean isLoginSuccessFul() {
         return false;
+    }
+
+    default void openApplication() {
     }
 }
