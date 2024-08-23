@@ -36,11 +36,11 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     @FindBy(xpath = "//android.widget.TextView[@text='Pickup']/../..//android.widget.TextView[@text=' Date ']")
     WebElement pickUpDate;
 
-    String pickUpDatePath = "//android.widget.TextView[contains(@text,'%s')]/../../..//android.widget.TextView[@text='%s']";
+    String monthOptionPath = "//android.widget.TextView[@text='%s ']";
 
-    String monthOptionPath = "//android.widget.TextView[contains(@text)]";
+    String optionPath = "//android.widget.TextView[@text='%s']";
 
-    @FindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup")
+    @FindBy(xpath = "//android.widget.FrameLayout[@resource-id='android:id/content']/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup")
     WebElement nextMonthArrow;
 
     @FindBy(xpath = "//android.widget.ScrollView")
@@ -109,25 +109,35 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     @Override
     public void entersDetailsForRide(String pickDate, String pickTime, String dropDate, String dropTime) {
         pickUpDate.click();
-        String month = pickDate.split(" ")[1];
-        String date = pickDate.split(" ")[0];
-        System.out.println(month + " " + date);
-        String monthSelect = driver.findElement(By.xpath(monthOptionPath)).getText();
-        System.out.println(monthSelect);
-        while (!monthSelect.contains(month)) {
-            System.out.println(monthSelect);
+
+        while (!isDisplayed(monthOptionPath, pickDate.split(" ")[1]) && isDisplayed(optionPath, pickDate.split(" ")[2])) {
             nextMonthArrow.click();
-            monthSelect = driver.findElement(By.xpath(monthOptionPath)).getText();
         }
-        WebElement selectDate = driver.findElement(By.xpath(String.format(pickUpDatePath, month, date)));
+        WebElement selectDate = driver.findElement(By.xpath(String.format(optionPath, pickDate.split(" ")[0])));
         selectDate.click();
 
+        while (!isDisplayed(optionPath, pickTime)) {
+            scroll(timeSelectContainer);
+        }
+        WebElement timeSet = driver.findElement(By.xpath(String.format(optionPath, pickTime)));
+        timeSet.click();
 
-        int x = timeSelectContainer.getLocation().getX();
-        int y = timeSelectContainer.getLocation().getY();
+        while (!isDisplayed(monthOptionPath, dropDate.split(" ")[1])) {
+            nextMonthArrow.click();
+        }
+        WebElement selectDropDate = driver.findElement(By.xpath(String.format(optionPath, dropDate.split(" ")[0])));
+        selectDropDate.click();
 
-        int width = timeSelectContainer.getSize().getWidth();
-        int height = timeSelectContainer.getSize().getHeight();
-        scrollOrSwipe((x + width / 2), (y + height / 2), (x + width / 2), y);
+        while (!isDisplayed(optionPath, dropTime)) {
+            scroll(timeSelectContainer);
+        }
+        WebElement dropTimeSet = driver.findElement(By.xpath(String.format(optionPath, dropTime)));
+        dropTimeSet.click();
+
+    }
+
+    @Override
+    public void clicksOnSearchBtn() {
+        searchButton.click();
     }
 }
