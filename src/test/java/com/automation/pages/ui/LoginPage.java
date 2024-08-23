@@ -2,9 +2,7 @@ package com.automation.pages.ui;
 
 public interface LoginPage {
 
-    default boolean isUserOnLoginPage() {
-        return false;
-    }
+    abstract boolean isUserOnLoginPage();
 
     default void enterPhoneAndPasswordDetails(String s1, String s2) {
     }

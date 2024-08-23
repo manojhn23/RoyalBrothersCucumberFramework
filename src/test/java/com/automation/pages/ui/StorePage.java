@@ -2,11 +2,8 @@ package com.automation.pages.ui;
 
 public interface StorePage {
 
-    default boolean isUserOnStorePage() {
-        return false;
-    }
+    abstract boolean isUserOnStorePage();
 
-    default void selectProductCategory(String s) {
-    }
+    abstract void selectProductCategory(String s);
 
 }

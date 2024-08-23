@@ -1,5 +1,6 @@
 package com.automation.steps;
 
+import com.automation.pages.android.AndroidStoreProductPage;
 import com.automation.pages.ui.StoreProductPage;
 import com.automation.pages.web.WebStoreProductPage;
 import com.automation.utils.ConfigReader;
@@ -16,6 +17,8 @@ public class StoreProductSteps {
     public StoreProductSteps() {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             storeProductPage = new WebStoreProductPage();
+        } else {
+            storeProductPage = new AndroidStoreProductPage();
         }
     }
 

@@ -43,13 +43,12 @@ public interface HomePage {
 
     abstract void entersDetailsForRide(String s1, String s2, String s3, String s4);
 
-    abstract void clicksOnSearchBtn() ;
+    abstract void clicksOnSearchBtn();
 
     default void clickOnHamburgerMenu() {
     }
 
-    default void selectMenuOption(String menuOption) {
-    }
+    abstract void selectMenuOption(String menuOption);
 
     default void clickOnProfile() {
     }

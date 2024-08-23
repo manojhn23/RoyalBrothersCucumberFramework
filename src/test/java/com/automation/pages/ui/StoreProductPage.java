@@ -2,8 +2,7 @@ package com.automation.pages.ui;
 
 public interface StoreProductPage {
 
-    default void addProductsToTheCart(String s1, String s2) {
-    }
+    abstract void addProductsToTheCart(String s1, String s2);
 
     default void sortProductBy(String s) {
     }

@@ -1,5 +1,6 @@
 package com.automation.steps;
 
+import com.automation.pages.android.AndroidOrderSummaryPage;
 import com.automation.pages.ui.OrderSummaryPage;
 import com.automation.pages.web.WebOrderSummaryPage;
 import com.automation.utils.ConfigReader;
@@ -15,6 +16,8 @@ public class OrderSummarySteps {
     public OrderSummarySteps() {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             orderSummaryPage = new WebOrderSummaryPage();
+        } else {
+            orderSummaryPage = new AndroidOrderSummaryPage();
         }
     }
 
@@ -28,10 +31,10 @@ public class OrderSummarySteps {
     public void verifyOrderSummaryPageShouldDisplayTheCorrectTotalPaymentAmount() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(orderSummaryPage.validateTotalAmount());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 }
