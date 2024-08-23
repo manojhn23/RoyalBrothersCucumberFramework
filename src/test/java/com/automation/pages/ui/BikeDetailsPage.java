@@ -2,14 +2,11 @@ package com.automation.pages.ui;
 
 public interface BikeDetailsPage {
 
-    abstract boolean isBikeDetailsPageDisplayed();
+    boolean isBikeDetailsPageDisplayed();
 
-    default void clicksHighToLowOption() {
-    }
+    void clicksHighToLowOption();
 
-    default boolean isPricesInHighToLow() {
-        return false;
-    }
+    boolean isPricesInHighToLow();
 
     default void clicksLowToHighOption() {
     }

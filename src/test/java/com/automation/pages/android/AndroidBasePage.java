@@ -82,7 +82,7 @@ public abstract class AndroidBasePage {
 
     public boolean isDisplayed(String xpath, String value) {
         try {
-            setImplicitWait(0);
+            setImplicitWait(3);
             WebElement ele = driver.findElement(By.xpath(String.format(xpath, value)));
             return ele.isDisplayed();
         } catch (Exception e) {

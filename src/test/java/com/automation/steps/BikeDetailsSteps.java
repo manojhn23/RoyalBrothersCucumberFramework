@@ -36,11 +36,11 @@ public class BikeDetailsSteps {
     public void verify_user_can_get_prices_in_high_to_low() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(bikeDetailsPage.isPricesInHighToLow());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @When("user clicks on price low to high")

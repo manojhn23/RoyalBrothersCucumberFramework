@@ -2,9 +2,10 @@ Feature: Validate on sort by functionality on bike credentials
 
   Background:
     Given user opens application
-    When user select his desired city "city.name"
+    When user select his desired city "app.city.name"
+    And clicks on the entered location
     Then verify user is on the home page
-    When user enters the details for ride "pickup.date", "pickup.time", "drop.off.date" and "drop.off.time"
+    When user enters the details for ride "app.pickup.date", "app.pickup.time", "app.drop.off.date" and "app.drop.off.time"
     And clicks on search button
     Then verify user is on bike details page
 
