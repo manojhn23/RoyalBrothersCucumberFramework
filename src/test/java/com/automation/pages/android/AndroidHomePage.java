@@ -110,7 +110,7 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     public void entersDetailsForRide(String pickDate, String pickTime, String dropDate, String dropTime) {
         pickUpDate.click();
 
-        while (!isDisplayed(monthOptionPath, pickDate.split(" ")[1]) && isDisplayed(optionPath, pickDate.split(" ")[2])) {
+        while (!(isDisplayed(monthOptionPath, pickDate.split(" ")[1]) && isDisplayed(optionPath, pickDate.split(" ")[2]))) {
             nextMonthArrow.click();
         }
         WebElement selectDate = driver.findElement(By.xpath(String.format(optionPath, pickDate.split(" ")[0])));
@@ -140,4 +140,5 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     public void clicksOnSearchBtn() {
         searchButton.click();
     }
+
 }
