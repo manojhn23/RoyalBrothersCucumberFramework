@@ -2,9 +2,7 @@ package com.automation.pages.ui;
 
 public interface BikeDetailsPage {
 
-    default boolean isBikeDetailsPageDisplayed() {
-        return false;
-    }
+    abstract boolean isBikeDetailsPageDisplayed();
 
     default void clicksHighToLowOption() {
     }
@@ -41,6 +39,5 @@ public interface BikeDetailsPage {
         return false;
     }
 
-    default void clicksBookBtnOfFirstBike() {
-    }
+    abstract void clicksBookBtnOfFirstBike() ;
 }

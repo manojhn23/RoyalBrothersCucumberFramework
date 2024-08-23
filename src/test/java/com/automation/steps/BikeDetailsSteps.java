@@ -1,5 +1,6 @@
 package com.automation.steps;
 
+import com.automation.pages.android.AndroidBikeDetailsPage;
 import com.automation.pages.ui.BikeDetailsPage;
 import com.automation.pages.web.WebBikeDetailsPage;
 import com.automation.utils.ConfigReader;
@@ -15,6 +16,8 @@ public class BikeDetailsSteps {
     public BikeDetailsSteps() {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             bikeDetailsPage = new WebBikeDetailsPage();
+        } else {
+            bikeDetailsPage = new AndroidBikeDetailsPage();
         }
     }
 
@@ -108,5 +111,6 @@ public class BikeDetailsSteps {
     public void userClicksOnBookOfFirstBike() {
         bikeDetailsPage.clicksBookBtnOfFirstBike();
     }
+
 
 }

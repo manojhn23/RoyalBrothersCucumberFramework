@@ -27,7 +27,7 @@ public class Hooks {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             WebDriverManager.getDriver().quit();
         } else {
-            AndroidDriverManager.getDriver().quit();
+//            AndroidDriverManager.getDriver().quit();
         }
     }
 }
