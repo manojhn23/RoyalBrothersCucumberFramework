@@ -1,5 +1,6 @@
 package com.automation.steps;
 
+import com.automation.pages.android.AndroidLoginPage;
 import com.automation.pages.ui.LoginPage;
 import com.automation.pages.web.WebLoginPage;
 import com.automation.utils.ConfigReader;
@@ -14,7 +15,9 @@ public class LoginSteps {
 
     public LoginSteps() {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
-           loginPage = new WebLoginPage();
+            loginPage = new WebLoginPage();
+        } else {
+            loginPage = new AndroidLoginPage();
         }
     }
 

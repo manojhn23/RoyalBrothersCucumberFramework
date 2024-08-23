@@ -1,5 +1,6 @@
 package com.automation.steps;
 
+import com.automation.pages.android.AndroidStoreCartPage;
 import com.automation.pages.ui.StoreCartPage;
 import com.automation.pages.web.WebStoreCartPage;
 import com.automation.utils.ConfigReader;
@@ -15,6 +16,8 @@ public class StoreCartSteps {
     public StoreCartSteps() {
         if (ConfigReader.getConfigValue("application.type").equals("web")) {
             cartPage = new WebStoreCartPage();
+        } else {
+            cartPage = new AndroidStoreCartPage();
         }
     }
 
@@ -22,11 +25,11 @@ public class StoreCartSteps {
     public void verifyThatTheProductIsSuccessfullyAddedToTheCart() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(cartPage.isProductAddedSuccessFully());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @When("user removes product from the cart {string}")
@@ -38,11 +41,11 @@ public class StoreCartSteps {
     public void verifyProductIsRemovedFromTheCartSuccessfully() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(cartPage.isProductRemovedSuccessFully());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @When("user click on check out button")

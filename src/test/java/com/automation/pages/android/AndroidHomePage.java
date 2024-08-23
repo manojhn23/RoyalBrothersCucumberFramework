@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class AndroidHomePage extends AndroidBasePage implements HomePage {
 
     @FindBy(xpath = "//android.widget.Button[@resource-id='android:id/button2']")
@@ -45,6 +47,9 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
 
     @FindBy(xpath = "//android.widget.ScrollView")
     WebElement timeSelectContainer;
+
+    @FindBy(xpath = "//android.widget.HorizontalScrollView//android.widget.ImageView")
+    List<WebElement> listOfMenuOptions;
 
     @Override
     public void openApplication() {
@@ -139,6 +144,13 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     @Override
     public void clicksOnSearchBtn() {
         searchButton.click();
+    }
+
+    @Override
+    public void selectMenuOption(String menuOption) {
+        if (menuOption.equals("Store by RB")) {
+            listOfMenuOptions.get(1).click();
+        }
     }
 
 }
