@@ -8,33 +8,21 @@ public interface BikeDetailsPage {
 
     boolean isPricesInHighToLow();
 
-    default void clicksLowToHighOption() {
-    }
+    void clicksLowToHighOption();
 
-    default boolean isPricesInLowToHigh() {
-        return false;
-    }
+    boolean isPricesInLowToHigh();
 
-    default void selectTheBikeModelFilter(String s) {
-    }
+    void selectTheBikeModelFilter(String s);
 
-    default boolean isSelectedBikeModelsShown() {
-        return false;
-    }
+    boolean isSelectedBikeModelsShown();
 
-    default void selectTheBikeLocationFilter(String s) {
-    }
+    void selectTheBikeLocationFilter(String s);
 
-    default boolean isSelectedBikeLocationShown() {
-        return false;
-    }
+    boolean isSelectedBikeLocationShown();
 
-    default void selectBikeModelAndLocationFilter(String s1, String s2) {
-    }
+    void selectBikeModelAndLocationFilter(String s1, String s2);
 
-    default boolean isSelectedFilterApplied() {
-        return false;
-    }
+    boolean isSelectedFilterApplied();
 
-    abstract void clicksBookBtnOfFirstBike() ;
+    void clicksBookBtnOfFirstBike() ;
 }

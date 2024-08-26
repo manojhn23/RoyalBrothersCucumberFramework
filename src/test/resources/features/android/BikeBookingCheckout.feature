@@ -1,6 +1,5 @@
 Feature: Validate on bike booking functionality
 
-  @android
   Scenario: Verify user can book a bike
     Given user opens application
     When user select his desired city "app.city.name"
