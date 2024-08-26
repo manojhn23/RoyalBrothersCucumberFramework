@@ -1,6 +1,6 @@
 package com.automation.pages.android;
 
-import com.automation.utils.AndroidDriverManager;
+import com.automation.utils.DriverManager;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -19,7 +19,7 @@ public abstract class AndroidBasePage {
     AppiumDriver driver;
 
     public AndroidBasePage() {
-        driver = AndroidDriverManager.getDriver();
+        driver = (AppiumDriver) DriverManager.getDriver();
         PageFactory.initElements(driver, this);
     }
 
@@ -35,7 +35,7 @@ public abstract class AndroidBasePage {
     }
 
     public void setImplicitWait(long sec) {
-        AndroidDriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(sec));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(sec));
     }
 
     public void pause(long sec) {

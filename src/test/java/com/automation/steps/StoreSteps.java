@@ -24,8 +24,8 @@ public class StoreSteps {
 
     @Then("verify user is on store page")
     public void verify_user_is_on_store_page() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(storePage.isUserOnStorePage());
+        ReportManager.attachScreenshot();
     }
 
     @When("user selects the product {string}")
