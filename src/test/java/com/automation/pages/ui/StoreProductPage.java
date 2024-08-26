@@ -2,14 +2,11 @@ package com.automation.pages.ui;
 
 public interface StoreProductPage {
 
-    abstract void addProductsToTheCart(String s1, String s2);
+    void addProductsToTheCart(String s1, String s2);
 
-    default void sortProductBy(String s) {
-    }
+    void sortProductBy(String sortOption);
 
-    default boolean isProductSortedFromPriceLowToHigh() {
-        return false;
-    }
+    boolean isProductSortedFromPriceLowToHigh();
 
     default boolean isProductSortedFromPriceHighToLow() {
         return false;

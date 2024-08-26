@@ -36,11 +36,11 @@ public class StoreProductSteps {
     public void verifyThatThePricesOfAllListedProductsAreDisplayedInAscendingOrder() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(storeProductPage.isProductSortedFromPriceLowToHigh());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @Then("verify that the prices of all listed products are displayed in descending order")

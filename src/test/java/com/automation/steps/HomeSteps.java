@@ -35,14 +35,14 @@ public class HomeSteps {
 
     @Then("verify user is on the home page")
     public void verify_user_is_on_the_home_page() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isUserOnHomePage());
+        ReportManager.attachScreenshot();
     }
 
     @Then("user can view city-specific services")
     public void user_can_view_city_specific_services() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.verifyCitySelected());
+        ReportManager.attachScreenshot();
     }
 
     @When("user click on login button")
@@ -52,8 +52,8 @@ public class HomeSteps {
 
     @Then("verify login is successful")
     public void verify_login_is_successful() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isLoginSuccessFul());
+        ReportManager.attachScreenshot();
     }
 
     @When("user enters the details for ride {string}, {string}, {string} and {string}")
@@ -84,8 +84,8 @@ public class HomeSteps {
 
     @Then("verify the location of user chosen")
     public void verify_the_location_of_user_chosen() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isSelectedLocationDisplayed());
+        ReportManager.attachScreenshot();
 //        try {
 //            Thread.sleep(100000);
 //        } catch (InterruptedException e) {

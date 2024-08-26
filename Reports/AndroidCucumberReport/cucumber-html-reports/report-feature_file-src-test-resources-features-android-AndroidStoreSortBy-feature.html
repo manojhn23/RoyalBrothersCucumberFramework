@@ -41,7 +41,7 @@ $(document).ready(function() {
 
 
   
-<title>Cucumber Reports (no 1) - Feature: Validate on bike booking functionality</title>
+<title>Cucumber Reports (no 1) - Feature: Validate Sort By functionality on store</title>
 
 </head>
 <body>
@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>Module</td>
               <td>1</td>
-            <td>24 Aug 2024, 07:37</td>
+            <td>24 Aug 2024, 07:32</td>
     </tr>
   </tbody>
 </table>
@@ -128,20 +128,20 @@ $(document).ready(function() {
 
         <tbody>
         <tr>
-          <td class="tagname">Validate on bike booking functionality</td>
-                    <td      class="passed"    >9</td>
-          <td >0</td>
+          <td class="tagname">Validate Sort By functionality on store</td>
+                    <td      class="passed"    >8</td>
+          <td      class="failed"    >1</td>
           <td >0</td>
           <td >0</td>
           <td >0</td>
           <td class="total">9</td>
 
-          <td  class="passed"    >1</td>
           <td >0</td>
+          <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="55452825100">55s 452ms</td>
-          <td class="passed">Passed</td>
+          <td class="duration" data-value="51195381300">51s 195ms</td>
+          <td class="failed">Failed</td>
         </tr>
         </tbody>
 
@@ -173,9 +173,9 @@ $(document).ready(function() {
   </div>
 
         
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Feature</span>
-  <span class="name">Validate on bike booking functionality</span>
+  <span class="name">Validate Sort By functionality on store</span>
   
 
   </div>
@@ -188,16 +188,14 @@ $(document).ready(function() {
   
   
 <div class="tags indention">
-      <b>Tags:</b>
-           <a href="report-tag_android.html">@android</a>
-      </div>
+  </div>
 
 
     <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
     
 <div class="brief passed">
-  <span class="keyword indention">Scenario</span>
-  <span class="name">Verify user can book a bike</span>
+  <span class="keyword indention">Background</span>
+  <span class="name"></span>
   
 
        <i class="chevron fa fa-fw"></i>
@@ -208,42 +206,11 @@ $(document).ready(function() {
 
   <div id="element-1" class="collapse collapsable-details ">
     
-  <div class="inner-level hooks-before">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-2">
-      
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-  
-
-       <i class="chevron fa fa-fw"></i>
-  </div>
-
-    </div>
-
-    <div id="before-2" class="inner-level collapse collapsable-details ">
-              <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">Before</span>
-                          <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
-                        
-  <span class="lead-duration duration">8s 340ms</span>
-
-          </div>
-
-                      
-
-          
-          
-  
-        </div>
-          </div>
-  </div>
 
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-2">
     
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -255,14 +222,14 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-3" class="inner-level collapse collapsable-details ">
+  <div id="steps-2" class="inner-level collapse collapsable-details ">
           <div class="step">
         
 <div class="brief passed">
   <span class="keyword indention">Given</span>
   <span class="name">user opens application</span>
   
-  <span class="lead-duration duration">7s 110ms</span>
+  <span class="lead-duration duration">6s 602ms</span>
 
   </div>
 
@@ -283,7 +250,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">user select his desired city &quot;app.city.name&quot;</span>
   
-  <span class="lead-duration duration">1s 843ms</span>
+  <span class="lead-duration duration">2s 060ms</span>
 
   </div>
 
@@ -304,7 +271,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">clicks on the entered location</span>
   
-  <span class="lead-duration duration">740ms</span>
+  <span class="lead-duration duration">844ms</span>
 
   </div>
 
@@ -325,7 +292,64 @@ $(document).ready(function() {
   <span class="keyword indention">Then</span>
   <span class="name">verify user is on the home page</span>
   
-  <span class="lead-duration duration">2s 346ms</span>
+  <span class="lead-duration duration">3s 133ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-3" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_328923581.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-3" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_328923581.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">selects &quot;Store by RB&quot; from the menu</span>
+  
+  <span class="lead-duration duration">606ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is on store page</span>
+  
+  <span class="lead-duration duration">4s 129ms</span>
 
   </div>
 
@@ -342,26 +366,108 @@ $(document).ready(function() {
                 <div class="embedding indention">
         <div data-toggle="collapse" data-target="#embedding-4" class="collapsable-control">
       <a>Attachment 1 (png)</a>
-      <a href="embeddings/embedding_1903841893.png" target="_blank">
+      <a href="embeddings/embedding_-699084978.png" target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-4" class="collapse collapsable-details">
       <span class="embedding-content">
-        <img src="embeddings/embedding_1903841893.png">
+        <img src="embeddings/embedding_-699084978.png">
       </span>
     </div>
   </div>
         </div>
   
       </div>
+      </div>
+</div>
+
+
+    
+
+  </div>
+</div>
+
+                      
+<div class="element">
+  
+  
+<div class="tags indention">
+      <b>Tags:</b>
+           <a href="report-tag_android.html">@android</a>
+      </div>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-5">
+    
+<div class="brief failed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">Verify user can get prices sorted from low to high</span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-5" class="collapse collapsable-details  in ">
+    
+  <div class="inner-level hooks-before">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-6">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="before-6" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">9s 171ms</span>
+
+          </div>
+
+                      
+
+          
+          
+  
+        </div>
+          </div>
+  </div>
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-7">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-7" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief passed">
   <span class="keyword indention">When</span>
-  <span class="name">user enters the details for ride &quot;app.pickup.date&quot;, &quot;app.pickup.time&quot;, &quot;app.drop.off.date&quot; and &quot;app.drop.off.time&quot;</span>
+  <span class="name">user selects the product &quot;product.category&quot;</span>
   
-  <span class="lead-duration duration">23s 129ms</span>
+  <span class="lead-duration duration">2s 604ms</span>
 
   </div>
 
@@ -380,9 +486,9 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">And</span>
-  <span class="name">clicks on search button</span>
+  <span class="name">the user selects the Sort by option and chooses &quot;Price, low to high&quot;</span>
   
-  <span class="lead-duration duration">1s 236ms</span>
+  <span class="lead-duration duration">6s 053ms</span>
 
   </div>
 
@@ -399,15 +505,49 @@ $(document).ready(function() {
       </div>
           <div class="step">
         
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Then</span>
-  <span class="name">verify user is on bike details page</span>
+  <span class="name">verify that the prices of all listed products are displayed in ascending order</span>
   
-  <span class="lead-duration duration">3s 457ms</span>
+  <span class="lead-duration duration">25s 160ms</span>
 
   </div>
 
         
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-8">
+          <a>Error message</a>
+      </div>
+      <div id="msg-8" class="collapse collapsable-details">
+        <pre>org.openqa.selenium.InvalidElementStateException: Unable to perform W3C actions. Check the logcat output for possible error reports and make sure your input actions chain is valid.
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [6d9ebedd-99e8-4bcd-ab33-3049e44ca6c0, actions {actions=[org.openqa.selenium.interactions.Sequence@45e22def]}]
+Capabilities {appium:app: C:\UST_Java\Capstone-Projec..., appium:appActivity: com.royalbrothers.MainActivity, appium:appPackage: com.royalbrothers, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: C:\UST_Java\Capstone-Projec..., appActivity: com.royalbrothers.MainActivity, appPackage: com.royalbrothers, automationName: UiAutomator2, deviceName: eff8e9e, platformName: ANDROID}, appium:deviceApiLevel: 34, appium:deviceManufacturer: realme, appium:deviceModel: RMX3312, appium:deviceName: eff8e9e, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: eff8e9e, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3, appium:platformVersion: 14, appium:statBarHeight: 109, appium:takesScreenshot: true, appium:viewportRect: {height: 2291, left: 0, top: 109, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 6d9ebedd-99e8-4bcd-ab33-3049e44ca6c0
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:688)
+	at com.automation.pages.android.AndroidBasePage.scrollPage(AndroidBasePage.java:70)
+	at com.automation.pages.android.AndroidStoreProductPage.isProductSortedFromPriceLowToHigh(AndroidStoreProductPage.java:86)
+	at com.automation.steps.StoreProductSteps.verifyThatThePricesOfAllListedProductsAreDisplayedInAscendingOrder(StoreProductSteps.java:38)
+	at &#10045;.verify that the prices of all listed products are displayed in ascending order(file:///C:/UST_Java/Capstone-Project/src/test/resources/features/android/AndroidStoreSortBy.feature:15)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
         
@@ -418,72 +558,15 @@ $(document).ready(function() {
         
     <div class="embeddings inner-level">
                 <div class="embedding indention">
-        <div data-toggle="collapse" data-target="#embedding-5" class="collapsable-control">
+        <div data-toggle="collapse" data-target="#embedding-9" class="collapsable-control">
       <a>Attachment 1 (png)</a>
-      <a href="embeddings/embedding_1751541394.png" target="_blank">
+      <a href="embeddings/embedding_1294732792.png" target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
-    <div id="embedding-5" class="collapse collapsable-details">
+    <div id="embedding-9" class="collapse collapsable-details">
       <span class="embedding-content">
-        <img src="embeddings/embedding_1751541394.png">
-      </span>
-    </div>
-  </div>
-        </div>
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">When</span>
-  <span class="name">user clicks on book of first bike</span>
-  
-  <span class="lead-duration duration">12s 452ms</span>
-
-  </div>
-
-        
-
-
-        
-        
-
-        
-
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">verify user is on the login page</span>
-  
-  <span class="lead-duration duration">3s 135ms</span>
-
-  </div>
-
-        
-
-
-        
-        
-
-        
-
-        
-    <div class="embeddings inner-level">
-                <div class="embedding indention">
-        <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
-      <a>Attachment 1 (png)</a>
-      <a href="embeddings/embedding_679929102.png" target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-6" class="collapse collapsable-details">
-      <span class="embedding-content">
-        <img src="embeddings/embedding_679929102.png">
+        <img src="embeddings/embedding_1294732792.png">
       </span>
     </div>
   </div>
@@ -496,7 +579,7 @@ $(document).ready(function() {
 
     
   <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-7">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-10">
       
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -508,13 +591,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-7" class="inner-level collapse collapsable-details ">
+    <div id="after-10" class="inner-level collapse collapsable-details ">
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
                           <span class="location name">com.automation.steps.Hooks.cleanUp()</span>
                         
-  <span class="lead-duration duration">854ms</span>
+  <span class="lead-duration duration">665ms</span>
 
           </div>
 

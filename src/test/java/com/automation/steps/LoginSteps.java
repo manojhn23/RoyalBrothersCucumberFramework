@@ -23,8 +23,8 @@ public class LoginSteps {
 
     @Then("verify user is on the login page")
     public void verify_user_is_on_the_login_page() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(loginPage.isUserOnLoginPage());
+        ReportManager.attachScreenshot();
     }
 
     @When("user enter valid phone number {string} and password {string}")

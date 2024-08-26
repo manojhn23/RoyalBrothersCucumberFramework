@@ -17,12 +17,7 @@ public class ReportManager {
     }
 
     private static byte[] takeScreenshot() {
-        TakesScreenshot ts;
-        if (ConfigReader.getConfigValue("application.type").equals("web")) {
-            ts = (TakesScreenshot) WebDriverManager.getDriver();
-        } else {
-            ts = AndroidDriverManager.getDriver();
-        }
+        TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
         return ts.getScreenshotAs(OutputType.BYTES);
     }
 }
