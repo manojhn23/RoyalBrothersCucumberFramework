@@ -6,15 +6,21 @@
       <option name="ignoredModules">
         <list>
           <option value="CapstoneProject" />
+          <option value="CapstoneProject" />
+          <option value="CapstoneProject" />
         </list>
       </option>
       <option name="ignoredPackages">
         <list>
           <option value="io.netty:netty-codec-http:4.1.96.Final" />
+          <option value="com.fasterxml.jackson.core:jackson-databind:2.13.2.2" />
+          <option value="com.fasterxml.jackson.core:jackson-databind:2.8.5" />
         </list>
       </option>
       <option name="ignoredReasons">
         <list>
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
           <option value="Not exploitable" />
         </list>
       </option>

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
-<script type="text/javascript" src="js/Chart.min.js"></script>
-<script type="text/javascript" src="js/moment.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
 <link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
 <link rel="stylesheet" href="css/font-awesome.min.css"/>
 <link rel="shortcut icon" href="images/favicon.png"/>
 
-<script type="text/javascript">
+<script>
 $(document).ready(function() {
     // this will tell tablesorter to try looking for the data-value attribute
     // if present, it'll sort by that instead
@@ -40,7 +40,7 @@ $(document).ready(function() {
 
 
 
-  
+
 <title>Cucumber Reports (no 1) - Steps Overview</title>
 
 </head>
@@ -51,10 +51,12 @@ $(document).ready(function() {
     <div class="collapse navbar-collapse">
       <p class="navbar-text navbar-left">Cucumber Report</p>
       <ul class="nav navbar-nav navbar-right">
-                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+          <li role="presentation"><a href="../">Jenkins</a></li>
+          <li role="presentation"><a href="../../lastCompletedBuild/cucumber-html-reports/overview-steps.html">Latest results</a></li>
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
         <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
         <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
-                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
       </ul>
     </div>
   </div>
@@ -63,37 +65,37 @@ $(document).ready(function() {
 
 <div class="container-fluid">
   <div class="col-md-5 col-md-offset-1">
-    
+
 <table class="table table-bordered" id="build-info">
   <thead>
     <tr>
       <th>Project</th>
-              <th>Number</th>
-            <th>Date</th>
+        <th>Number</th>
+      <th>Date</th>
     </tr>
   </thead>
   <tbody>
     <tr class="info">
-      <td>CapstoneProject</td>
-              <td>1</td>
-            <td>26 Aug 2024, 17:01</td>
+      <td>MyProject</td>
+        <td>1</td>
+      <td>26 Aug 2024, 17:06</td>
     </tr>
   </tbody>
 </table>
 
   </div>
   <div class="col-md-3 col-md-offset-2">
-      </div>
+  </div>
 </div>
 
 
 <div id="report-lead" class="container-fluid">
   <div class="col-md-10 col-md-offset-1">
     <h2>Steps Statistics</h2>
-          <p>The following graph shows step statistics for this build. Below list is based on results.
+      <p>The following graph shows step statistics for this build. Below list is based on results.
  step does not provide information about result then is not listed below.
  Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
-      </div>
+  </div>
 </div>
 
 <div class="container-fluid" id="report">
@@ -105,98 +107,111 @@ $(document).ready(function() {
           <tr class="header">
             <th>Implementation</th>
             <th>Occurrences</th>
-            <th>Duration</th>
-            <th>Average</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
             <th>Ratio</th>
           </tr>
         </thead>
 
         <tbody>
-                      <tr>
+            <tr>
               <td class="location">com.automation.steps.BikeDetailsSteps.user_selects_the_bike_model_and_location(java.lang.String,java.lang.String)</td>
               <td>1</td>
-              <td class="duration" data-value="7644520700">7s 644ms</td>
-              <td class="duration" data-value="7644520700">7s 644ms</td>
+              <td class="duration" data-value="7644520700">7.644</td>
+              <td class="duration" data-value="7644520700">7.644</td>
+              <td class="duration" data-value="7644520700">7.644</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
+            <tr>
               <td class="location">com.automation.steps.BikeDetailsSteps.verify_user_can_get_all_bikes_as_selected_model_and_location()</td>
               <td>1</td>
-              <td class="duration" data-value="44261149300">44s 261ms</td>
-              <td class="duration" data-value="44261149300">44s 261ms</td>
+              <td class="duration" data-value="44261149300">44.261</td>
+              <td class="duration" data-value="44261149300">44.261</td>
+              <td class="duration" data-value="44261149300">44.261</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
+            <tr>
               <td class="location">com.automation.steps.BikeDetailsSteps.verify_user_is_on_bike_details_page()</td>
               <td>1</td>
-              <td class="duration" data-value="3421298000">3s 421ms</td>
-              <td class="duration" data-value="3421298000">3s 421ms</td>
+              <td class="duration" data-value="3421298000">3.421</td>
+              <td class="duration" data-value="3421298000">3.421</td>
+              <td class="duration" data-value="3421298000">3.421</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
+            <tr>
               <td class="location">com.automation.steps.HomeSteps.clicks_on_search_button()</td>
               <td>1</td>
-              <td class="duration" data-value="1431868600">1s 431ms</td>
-              <td class="duration" data-value="1431868600">1s 431ms</td>
+              <td class="duration" data-value="1431868600">1.431</td>
+              <td class="duration" data-value="1431868600">1.431</td>
+              <td class="duration" data-value="1431868600">1.431</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
+            <tr>
               <td class="location">com.automation.steps.HomeSteps.clicks_on_the_entered_location()</td>
               <td>1</td>
-              <td class="duration" data-value="1680849200">1s 680ms</td>
-              <td class="duration" data-value="1680849200">1s 680ms</td>
+              <td class="duration" data-value="1680849200">1.680</td>
+              <td class="duration" data-value="1680849200">1.680</td>
+              <td class="duration" data-value="1680849200">1.680</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
+            <tr>
               <td class="location">com.automation.steps.HomeSteps.userOpensApplication()</td>
               <td>1</td>
-              <td class="duration" data-value="8781472000">8s 781ms</td>
-              <td class="duration" data-value="8781472000">8s 781ms</td>
+              <td class="duration" data-value="8781472000">8.781</td>
+              <td class="duration" data-value="8781472000">8.781</td>
+              <td class="duration" data-value="8781472000">8.781</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
+            <tr>
               <td class="location">com.automation.steps.HomeSteps.userSelectHisDesiredCity(java.lang.String)</td>
               <td>1</td>
-              <td class="duration" data-value="1977895100">1s 977ms</td>
-              <td class="duration" data-value="1977895100">1s 977ms</td>
+              <td class="duration" data-value="1977895100">1.977</td>
+              <td class="duration" data-value="1977895100">1.977</td>
+              <td class="duration" data-value="1977895100">1.977</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
+            <tr>
               <td class="location">com.automation.steps.HomeSteps.user_enters_the_details_for_ride_and(java.lang.String,java.lang.String,java.lang.String,java.lang.String)</td>
               <td>1</td>
-              <td class="duration" data-value="17413814800">17s 413ms</td>
-              <td class="duration" data-value="17413814800">17s 413ms</td>
+              <td class="duration" data-value="17413814800">17.413</td>
+              <td class="duration" data-value="17413814800">17.413</td>
+              <td class="duration" data-value="17413814800">17.413</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
+            <tr>
               <td class="location">com.automation.steps.HomeSteps.verify_user_is_on_the_home_page()</td>
               <td>1</td>
-              <td class="duration" data-value="3560502800">3s 560ms</td>
-              <td class="duration" data-value="3560502800">3s 560ms</td>
+              <td class="duration" data-value="3560502800">3.560</td>
+              <td class="duration" data-value="3560502800">3.560</td>
+              <td class="duration" data-value="3560502800">3.560</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
+            <tr>
               <td class="location">com.automation.steps.Hooks.cleanUp()</td>
               <td>1</td>
-              <td class="duration" data-value="715517900">715ms</td>
-              <td class="duration" data-value="715517900">715ms</td>
+              <td class="duration" data-value="715517900">0.715</td>
+              <td class="duration" data-value="715517900">0.715</td>
+              <td class="duration" data-value="715517900">0.715</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
+            <tr>
               <td class="location">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</td>
               <td>1</td>
-              <td class="duration" data-value="16212440300">16s 212ms</td>
-              <td class="duration" data-value="16212440300">16s 212ms</td>
+              <td class="duration" data-value="16212440300">16.212</td>
+              <td class="duration" data-value="16212440300">16.212</td>
+              <td class="duration" data-value="16212440300">16.212</td>
               <td class="passed">100.00%</td>
             </tr>
-                  </tbody>
+        </tbody>
 
         <tfoot class="total">
           <tr>
             <td>11</td>
             <td>11</td>
-            <td class="duration">1m 47s 101ms</td>
-            <td class="duration">9s 736ms</td>
+            <td class="duration">9.736</td>
+            <td class="duration">44.261</td>
+            <td class="duration">1:47.101</td>
             <td>Totals</td>
           </tr>
         </tfoot>

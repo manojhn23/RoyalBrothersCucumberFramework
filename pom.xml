@@ -46,6 +46,13 @@
             <version>8.6.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>5.7.5</version>
+        </dependency>
+
     </dependencies>
 
     <profiles>
@@ -68,7 +75,7 @@
                                     <goal>generate</goal>
                                 </goals>
                                 <configuration>
-                                    <projectName>Module</projectName>
+                                    <projectName>CapstoneProject</projectName>
                                     <outputDirectory>Reports/WebCucumberReport</outputDirectory>
                                     <cucumberOutput>target/web</cucumberOutput>
                                 </configuration>
@@ -82,7 +89,6 @@
                         <version>3.3.1</version>
                         <configuration>
                             <includes>
-                                <!--suppress UnresolvedMavenProperty -->
                                 <include>**/TestRunnerWeb.java</include>
                             </includes>
                             <testFailureIgnore>true</testFailureIgnore>
@@ -110,7 +116,7 @@
                                     <goal>generate</goal>
                                 </goals>
                                 <configuration>
-                                    <projectName>Module</projectName>
+                                    <projectName>CapstoneProject</projectName>
                                     <outputDirectory>Reports/AndroidCucumberReport</outputDirectory>
                                     <cucumberOutput>target/android</cucumberOutput>
                                 </configuration>
@@ -124,7 +130,6 @@
                         <version>3.3.1</version>
                         <configuration>
                             <includes>
-                                <!--suppress UnresolvedMavenProperty -->
                                 <include>**/TestRunnerAndroid.java</include>
                             </includes>
                             <testFailureIgnore>true</testFailureIgnore>

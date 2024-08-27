@@ -84,11 +84,11 @@ public class BikeDetailsSteps {
     public void verify_user_can_get_all_bikes_as_selected_location() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(bikeDetailsPage.isSelectedBikeLocationShown());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @When("user selects the bike model {string} and location {string}")
@@ -100,11 +100,11 @@ public class BikeDetailsSteps {
     public void verify_user_can_get_all_bikes_as_selected_model_and_location() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(bikeDetailsPage.isSelectedFilterApplied());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @When("user clicks on book of first bike")

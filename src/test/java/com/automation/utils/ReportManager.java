@@ -20,4 +20,5 @@ public class ReportManager {
         TakesScreenshot ts = (TakesScreenshot) DriverManager.getDriver();
         return ts.getScreenshotAs(OutputType.BYTES);
     }
+
 }
