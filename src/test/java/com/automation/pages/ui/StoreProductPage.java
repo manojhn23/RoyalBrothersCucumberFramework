@@ -8,16 +8,10 @@ public interface StoreProductPage {
 
     boolean isProductSortedFromPriceLowToHigh();
 
-    default boolean isProductSortedFromPriceHighToLow() {
-        return false;
-    }
+     boolean isProductSortedFromPriceHighToLow();
 
-    default boolean isProductSortedFromAtoZ() {
-        return false;
-    }
+     boolean isProductSortedFromAtoZ();
 
-    default boolean isProductSortedFromZtoA() {
-        return false;
-    }
+     boolean isProductSortedFromZtoA() ;
 
 }

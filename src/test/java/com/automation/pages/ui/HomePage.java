@@ -8,9 +8,7 @@ public interface HomePage {
     default void selectCity(String cityName) {
     }
 
-    default boolean isUserOnHomePage() {
-        return false;
-    }
+    boolean isUserOnHomePage();
 
     default boolean verifyCitySelected() {
         return false;
@@ -41,14 +39,14 @@ public interface HomePage {
 
     boolean isInputFieldNull();
 
-    abstract void entersDetailsForRide(String s1, String s2, String s3, String s4);
+    void entersDetailsForRide(String s1, String s2, String s3, String s4);
 
-    abstract void clicksOnSearchBtn();
+    void clicksOnSearchBtn();
 
     default void clickOnHamburgerMenu() {
     }
 
-    abstract void selectMenuOption(String menuOption);
+    void selectMenuOption(String menuOption);
 
     default void clickOnProfile() {
     }

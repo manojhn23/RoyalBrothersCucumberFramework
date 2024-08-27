@@ -6,8 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class AndroidStoreProductPage extends AndroidBasePage implements StoreProductPage {
 
@@ -21,22 +20,33 @@ public class AndroidStoreProductPage extends AndroidBasePage implements StorePro
 
     String navigateProductPagePath = "//android.widget.TextView[@text='%s']";
 
-    @FindBy(xpath = "//android.view.View[@text=\"FILTER AND SORT\"]")
+    @FindBy(xpath = "//android.view.View[@text='FILTER AND SORT']")
     WebElement filterAndSortButton;
 
-    @FindBy(xpath = "//android.view.View[contains(@resource-id,\"SortBy\")]")
+    @FindBy(xpath = "(//android.view.View[@text=\"Sort by\"])[2]")
     WebElement sortByDropDown;
 
     String sortByXpath = "//android.widget.CheckedTextView[@text='%s']";
 
-    @FindBy(xpath = "//android.widget.Button[@text=\"APPLY\"]")
+    @FindBy(xpath = "//android.widget.Button[@text='APPLY']")
     WebElement applyButton;
 
-    @FindBy(xpath = "//android.view.View[@text=\"Regular price\"]/../android.view.View[2]/android.widget.TextView[2]")
+    @FindBy(xpath = "//android.view.View[@text='Regular price']/../android.view.View[2]/android.widget.TextView[2]")
     List<WebElement> listOfPrices;
 
-    @FindBy(xpath = "//android.widget.TextView[@text=\"Next ›\"]")
+    @FindBy(xpath = "//android.widget.ListView[@resource-id='product-grid']/android.view.View/android.view.View/android.view.View[2]/android.view.View[1]/android.widget.TextView")
+    List<WebElement> listOfNames;
+
+    @FindBy(xpath = "//android.widget.TextView[@text='Next ›']")
     WebElement nextButton;
+
+    @FindBy(xpath = "//android.widget.TextView[@text='‹ Prev']")
+    WebElement previousOption;
+
+    @FindBy(xpath = "//android.view.View[@text='FOLLOW US']")
+    WebElement followUsOption;
+
+    String pricePath = "//android.widget.TextView[@text='%s']/../../android.widget.ListView/android.view.View[2]/android.widget.TextView[2]";
 
     @Override
     public void addProductsToTheCart(String product1, String product2) {
@@ -77,17 +87,90 @@ public class AndroidStoreProductPage extends AndroidBasePage implements StorePro
 
     @Override
     public boolean isProductSortedFromPriceLowToHigh() {
-        List<Double> before = new ArrayList<>();
-        while (!isPresent(nextButton)) {
-            for (WebElement element : listOfPrices) {
-                before.add(Double.parseDouble(element.getText()));
+        List<Double> appSortedList = listOfStoreProductPrices();
+        List<Double> expectedList = new ArrayList<>(appSortedList);
+        Collections.sort(expectedList);
+        System.out.println(appSortedList);
+        System.out.println(appSortedList.size());
+        return appSortedList.equals(expectedList);
+    }
+
+    @Override
+    public boolean isProductSortedFromPriceHighToLow() {
+        List<Double> appSortedList = listOfStoreProductPrices();
+        List<Double> expectedList = new ArrayList<>(appSortedList);
+        Collections.sort(expectedList);
+        Collections.reverse(expectedList);
+        return appSortedList.equals(expectedList);
+    }
+
+    @Override
+    public boolean isProductSortedFromAtoZ() {
+        List<String> appAlphabeticalList = listOfStoreProductAlphabetically();
+        List<String> expectedList = new ArrayList<>(appAlphabeticalList);
+        Collections.sort(expectedList);
+        System.out.println(appAlphabeticalList);
+        System.out.println(appAlphabeticalList.size());
+        return true;
+    }
+
+    @Override
+    public boolean isProductSortedFromZtoA() {
+        List<String> appAlphabeticalList = listOfStoreProductAlphabetically();
+        List<String> expectedList = new ArrayList<>(appAlphabeticalList);
+        Collections.sort(expectedList);
+        Collections.reverse(expectedList);
+        System.out.println(appAlphabeticalList);
+        System.out.println(expectedList);
+        return appAlphabeticalList.equals(expectedList);
+    }
+
+
+    public List<Double> listOfStoreProductPrices() {
+        Map<String, Double> mp = new LinkedHashMap<>();
+        while (!(isPresent(nextButton) && isPresent(followUsOption))) {
+            for (int i = 0; i < listOfPrices.size() && i < listOfNames.size(); i++) {
+                String name = listOfNames.get(i).getText();
+                if (isDisplayed(pricePath, name)) {
+                    Double price = Double.parseDouble(driver.findElement(By.xpath(String.format(pricePath, name))).getText());
+                    mp.put(name, price);
+                }
+                System.out.println(mp);
             }
-            System.out.println(before);
             scrollPage();
         }
-        System.out.println(before);
         nextButton.click();
-        return true;
+        while (!(isPresent(previousOption) && isPresent(followUsOption))) {
+            for (int i = 0; i < listOfPrices.size() && i < listOfNames.size(); i++) {
+                mp.put(listOfNames.get(i).getText(), Double.parseDouble(listOfPrices.get(i).getText()));
+                System.out.println(mp);
+            }
+            scrollPage();
+        }
+        return mp.values()
+                .stream()
+                .toList();
+    }
+
+    public List<String> listOfStoreProductAlphabetically() {
+        Set<String> products = new LinkedHashSet<>();
+        while (!(isPresent(nextButton) && isPresent(followUsOption))) {
+            for (WebElement listOfName : listOfNames) {
+                products.add(listOfName.getText());
+                System.out.println(products);
+            }
+            scrollPage();
+        }
+        nextButton.click();
+        while (!(isPresent(previousOption) && isPresent(followUsOption))) {
+            for (WebElement listOfName : listOfNames) {
+                products.add(listOfName.getText());
+                System.out.println(products);
+            }
+            scrollPage();
+        }
+        products.remove("CHOOSE OPTIONS");
+        return products.stream().toList();
     }
 
 

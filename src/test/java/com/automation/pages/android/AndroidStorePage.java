@@ -13,7 +13,7 @@ public class AndroidStorePage extends AndroidBasePage implements StorePage {
     @FindBy(xpath = "//android.view.View[@text=\"Menu\"]")
     WebElement hamburgerMenu;
 
-    String productCategoryPath="//android.view.View[@text='%s']";
+    String productCategoryPath = "//android.view.View[@text='%s']";
 
     @Override
     public boolean isUserOnStorePage() {
@@ -23,8 +23,9 @@ public class AndroidStorePage extends AndroidBasePage implements StorePage {
     @Override
     public void selectProductCategory(String product) {
         hamburgerMenu.click();
-        WebElement category=driver.findElement(By.xpath(String.format(productCategoryPath,product)));
+        WebElement category = driver.findElement(By.xpath(String.format(productCategoryPath, product)));
         category.click();
+        pause(2);
         category.click();
     }
 }

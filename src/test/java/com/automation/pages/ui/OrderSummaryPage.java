@@ -2,7 +2,7 @@ package com.automation.pages.ui;
 
 public interface OrderSummaryPage {
 
-    abstract boolean isUserOnOrderSummaryPage() ;
+    boolean isUserOnOrderSummaryPage();
 
-    abstract boolean validateTotalAmount();
+    boolean validateTotalAmount();
 }

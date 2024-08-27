@@ -45,34 +45,34 @@ public class StoreProductSteps {
 
     @Then("verify that the prices of all listed products are displayed in descending order")
     public void verifyThatThePricesOfAllListedProductsAreDisplayedInDescendingOrder() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(storeProductPage.isProductSortedFromPriceHighToLow());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        ReportManager.attachScreenshot();
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @Then("verify user should see product names sorted alphabetically from A to Z")
     public void verifyUserShouldSeeProductNamesSortedAlphabeticallyFromAToZ() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(storeProductPage.isProductSortedFromAtoZ());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        ReportManager.attachScreenshot();
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @Then("verify user should see product names sorted alphabetically from Z to A")
     public void verifyUserShouldSeeProductNamesSortedAlphabeticallyFromZToA() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(storeProductPage.isProductSortedFromZtoA());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 }
