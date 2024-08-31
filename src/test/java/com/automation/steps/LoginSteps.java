@@ -5,6 +5,7 @@ import com.automation.pages.ui.LoginPage;
 import com.automation.pages.web.WebLoginPage;
 import com.automation.utils.ConfigReader;
 import com.automation.utils.ReportManager;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -49,12 +50,44 @@ public class LoginSteps {
 
     @Then("verify error message is displayed {string}")
     public void verifyErrorMessageIsDisplayed(String errorMessage) {
-        ReportManager.attachScreenshot();
         Assert.assertEquals(loginPage.errorMessage(), ConfigReader.getConfigValue(errorMessage));
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        ReportManager.attachScreenshot();
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
+
+    @When("user selects the country {string} with code {string}")
+    public void userSelectsTheCountryWithCode(String countryName, String code) {
+        loginPage.enterCountryCode(countryName, code);
+    }
+
+    @And("user enter valid phone number {string}")
+    public void userEnterValidPhoneNumber(String phoneNumber) {
+        loginPage.enterPhoneNumber(ConfigReader.getConfigValue(phoneNumber));
+    }
+
+    @And("click on get otp option")
+    public void clickOnGetOtpOption() {
+        loginPage.clickOnGetOtp();
+    }
+
+    @And("user enter invalid phone number {string}")
+    public void userEnterInvalidPhoneNumber(String invalidPhoneNumber) {
+        loginPage.enterPhoneNumber(invalidPhoneNumber);
+    }
+
+    @Then("the user should be redirected to the OTP details page")
+    public void theUserShouldBeRedirectedToTheOTPDetailsPage() {
+        Assert.assertTrue(loginPage.isUserOnOtpDetailsPage());
+    }
+
+    @When("user enter otp and click on submit button")
+    public void userEnterOtpAndClickOnSubmitButton() {
+        loginPage.enterOtpAndClickOnSubmit();
+    }
+
+
 }

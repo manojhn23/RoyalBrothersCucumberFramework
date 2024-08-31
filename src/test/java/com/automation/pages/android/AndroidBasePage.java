@@ -34,6 +34,7 @@ public abstract class AndroidBasePage {
         }
     }
 
+
     public void setImplicitWait(long sec) {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(sec));
     }
@@ -112,6 +113,18 @@ public abstract class AndroidBasePage {
             setImplicitWait(20);
         }
     }
+
+    public boolean isEnabled(WebElement element) {
+        try {
+            setImplicitWait(0);
+            return element.isEnabled();
+        } catch (Exception e) {
+            return false;
+        } finally {
+            setImplicitWait(20);
+        }
+    }
+
 
     public boolean isDisplayed(String xpath) {
         try {

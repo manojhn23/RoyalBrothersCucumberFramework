@@ -67,6 +67,11 @@ public class WebHomePage extends WebBasePage implements HomePage {
     WebElement citySelectionTab;
 
     @Override
+    public void openApplication() {
+        driver.navigate().to(ConfigReader.getConfigValue("base.url"));
+    }
+
+    @Override
     public void openWebsite() {
         driver.navigate().to(ConfigReader.getConfigValue("base.url"));
     }
