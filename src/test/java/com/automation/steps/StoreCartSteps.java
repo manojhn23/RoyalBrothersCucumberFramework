@@ -25,11 +25,6 @@ public class StoreCartSteps {
     public void verifyThatTheProductIsSuccessfullyAddedToTheCart() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(cartPage.isProductAddedSuccessFully());
-//        try {
-//            Thread.sleep(100000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
     }
 
     @When("user removes product from the cart {string}")
@@ -41,11 +36,6 @@ public class StoreCartSteps {
     public void verifyProductIsRemovedFromTheCartSuccessfully() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(cartPage.isProductRemovedSuccessFully());
-//        try {
-//            Thread.sleep(100000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
     }
 
     @When("user click on check out button")

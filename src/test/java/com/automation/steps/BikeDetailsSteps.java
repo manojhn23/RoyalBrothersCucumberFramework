@@ -36,11 +36,6 @@ public class BikeDetailsSteps {
     public void verify_user_can_get_prices_in_high_to_low() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(bikeDetailsPage.isPricesInHighToLow());
-//        try {
-//            Thread.sleep(100000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
     }
 
     @When("user clicks on price low to high")
@@ -52,11 +47,6 @@ public class BikeDetailsSteps {
     public void verify_user_can_get_prices_in_low_to_high() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(bikeDetailsPage.isPricesInLowToHigh());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @When("user selects the bike model {string}")
@@ -68,11 +58,6 @@ public class BikeDetailsSteps {
     public void verify_user_can_get_all_bikes_as_selected_model() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(bikeDetailsPage.isSelectedBikeModelsShown());
-//        try {
-//            Thread.sleep(100000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
     }
 
     @When("user selects the bike location {string}")
@@ -84,11 +69,6 @@ public class BikeDetailsSteps {
     public void verify_user_can_get_all_bikes_as_selected_location() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(bikeDetailsPage.isSelectedBikeLocationShown());
-//        try {
-//            Thread.sleep(100000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
     }
 
     @When("user selects the bike model {string} and location {string}")
@@ -100,11 +80,6 @@ public class BikeDetailsSteps {
     public void verify_user_can_get_all_bikes_as_selected_model_and_location() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(bikeDetailsPage.isSelectedFilterApplied());
-//        try {
-//            Thread.sleep(100000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
     }
 
     @When("user clicks on book of first bike")

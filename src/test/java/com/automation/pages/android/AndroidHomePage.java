@@ -38,7 +38,7 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     @FindBy(xpath = "//android.widget.TextView[@text='Pickup']/../..//android.widget.TextView[@text=' Date ']")
     WebElement pickUpDate;
 
-    String monthOptionPath = "//android.widget.TextView[@text='%s ']";
+    String monthOptionPath = "//android.widget.TextView[contains(@text,'%s')]";
 
     String optionPath = "//android.widget.TextView[@text='%s']";
 
@@ -115,29 +115,13 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     public void entersDetailsForRide(String pickDate, String pickTime, String dropDate, String dropTime) {
         pickUpDate.click();
 
-        while (!(isDisplayed(monthOptionPath, pickDate.split(" ")[1]) && isDisplayed(optionPath, pickDate.split(" ")[2]))) {
-            nextMonthArrow.click();
-        }
-        WebElement selectDate = driver.findElement(By.xpath(String.format(optionPath, pickDate.split(" ")[0])));
-        selectDate.click();
+        pickDate = ConfigReader.getConfigValue(pickDate).replace(",", "");
+        pickTime = ConfigReader.getConfigValue(pickTime);
+        dropDate = ConfigReader.getConfigValue(dropDate).replace(",", "");
+        dropTime = ConfigReader.getConfigValue(dropTime);
 
-        while (!isDisplayed(optionPath, pickTime)) {
-            scroll(timeSelectContainer);
-        }
-        WebElement timeSet = driver.findElement(By.xpath(String.format(optionPath, pickTime)));
-        timeSet.click();
-
-        while (!isDisplayed(monthOptionPath, dropDate.split(" ")[1])) {
-            nextMonthArrow.click();
-        }
-        WebElement selectDropDate = driver.findElement(By.xpath(String.format(optionPath, dropDate.split(" ")[0])));
-        selectDropDate.click();
-
-        while (!isDisplayed(optionPath, dropTime)) {
-            scroll(timeSelectContainer);
-        }
-        WebElement dropTimeSet = driver.findElement(By.xpath(String.format(optionPath, dropTime)));
-        dropTimeSet.click();
+        selectDateAndTime(pickDate, pickTime);
+        selectDateAndTime(dropDate, dropTime);
 
     }
 
@@ -151,6 +135,20 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
         if (menuOption.equals("Store by RB")) {
             listOfMenuOptions.get(1).click();
         }
+    }
+
+    private void selectDateAndTime(String date, String time) {
+        while (!(isDisplayed(monthOptionPath, date.split(" ")[1]) && isDisplayed(optionPath, date.split(" ")[2]))) {
+            nextMonthArrow.click();
+        }
+        WebElement selectDate = driver.findElement(By.xpath(String.format(optionPath, date.split(" ")[0])));
+        selectDate.click();
+
+        while (!isDisplayed(optionPath, time)) {
+            scroll(timeSelectContainer);
+        }
+        WebElement timeSet = driver.findElement(By.xpath(String.format(optionPath, time)));
+        timeSet.click();
     }
 
 }

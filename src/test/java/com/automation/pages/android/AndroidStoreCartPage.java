@@ -47,7 +47,7 @@ public class AndroidStoreCartPage extends AndroidBasePage implements StoreCartPa
 
     @Override
     public void clickOnCheckOutButton() {
-        cartCheckOutPrice = Double.parseDouble(checkOutButton.getText().split("RS. ")[1].replace(",",""));
+        cartCheckOutPrice = Double.parseDouble(checkOutButton.getText().split("RS. ")[1].replace(",", ""));
         System.out.println(cartCheckOutPrice);
         checkOutButton.click();
     }

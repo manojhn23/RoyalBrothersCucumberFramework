@@ -66,6 +66,9 @@ public interface HomePage {
         return false;
     }
 
-    default void openApplication() {
+    void openApplication();
+
+    default String getLocationInputText() {
+        return null;
     }
 }

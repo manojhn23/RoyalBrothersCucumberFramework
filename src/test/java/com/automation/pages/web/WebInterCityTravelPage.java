@@ -53,7 +53,7 @@ public class WebInterCityTravelPage extends WebBasePage implements InterCityTrav
     public void entersDetailsForRide(List<String> rideDetails) {
 
         click(pickupDateInput);
-        selectDate(pickupNextMonthBtn, pickupDateXpath, rideDetails.get(0));
+        selectDate(pickupNextMonthBtn, pickupDateXpath, ConfigReader.getConfigValue(rideDetails.get(0)));
 
         click(pickupTimeInput);
         WebElement pickupTime = driver.findElement(By.xpath(String.format(pickupTimeXpath, ConfigReader.getConfigValue(rideDetails.get(1)))));
@@ -64,7 +64,7 @@ public class WebInterCityTravelPage extends WebBasePage implements InterCityTrav
         click(dropOffCity);
 
         click(dropOffDateInput);
-        selectDate(dropOffNextMonthBtn, dropOffDateXpath, rideDetails.get(3));
+        selectDate(dropOffNextMonthBtn, dropOffDateXpath, ConfigReader.getConfigValue(rideDetails.get(3)));
 
         click(dropOffTimeInput);
         WebElement dropOffTime = driver.findElement(By.xpath(String.format(dropOffTimeXpath, ConfigReader.getConfigValue(rideDetails.get(4)))));
@@ -76,17 +76,4 @@ public class WebInterCityTravelPage extends WebBasePage implements InterCityTrav
         click(searchBtn);
     }
 
-    private void selectDate(WebElement nextBtn, String xpath, String value) {
-        WebElement element;
-        try {
-            setImplicitWait(2);
-            element = driver.findElement(By.xpath(String.format(xpath, ConfigReader.getConfigValue(value))));
-            click(element);
-        } catch (Exception e) {
-            click(nextBtn);
-            selectDate(nextBtn, xpath, value);
-        } finally {
-            setImplicitWait(60);
-        }
-    }
 }

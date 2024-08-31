@@ -20,11 +20,6 @@ public class BikeCheckoutSteps {
     public void verifyUserCanGetMakePaymentOption() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(bikeCheckoutPage.isMakePaymentOptionDisplayed());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Then("verify user is on bike checkout page")

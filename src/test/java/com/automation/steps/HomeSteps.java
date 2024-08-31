@@ -35,14 +35,14 @@ public class HomeSteps {
 
     @Then("verify user is on the home page")
     public void verify_user_is_on_the_home_page() {
-        Assert.assertTrue(homePage.isUserOnHomePage());
         ReportManager.attachScreenshot();
+        Assert.assertTrue(homePage.isUserOnHomePage());
     }
 
     @Then("user can view city-specific services")
     public void user_can_view_city_specific_services() {
-        Assert.assertTrue(homePage.verifyCitySelected());
         ReportManager.attachScreenshot();
+        Assert.assertTrue(homePage.verifyCitySelected());
     }
 
     @When("user click on login button")
@@ -52,14 +52,13 @@ public class HomeSteps {
 
     @Then("verify login is successful")
     public void verify_login_is_successful() {
-        Assert.assertTrue(homePage.isLoginSuccessFul());
         ReportManager.attachScreenshot();
+        Assert.assertTrue(homePage.isLoginSuccessFul());
     }
 
     @When("user enters the details for ride {string}, {string}, {string} and {string}")
     public void user_enters_the_details_for_ride_and(String pickupDate, String pickupTime, String dropOffDate, String dropOffTime) {
-        homePage.entersDetailsForRide(ConfigReader.getConfigValue(pickupDate), ConfigReader.getConfigValue(pickupTime),
-                ConfigReader.getConfigValue(dropOffDate), ConfigReader.getConfigValue(dropOffTime));
+        homePage.entersDetailsForRide(pickupDate, pickupTime, dropOffDate, dropOffTime);
     }
 
     @When("clicks on search button")
@@ -84,24 +83,14 @@ public class HomeSteps {
 
     @Then("verify the location of user chosen")
     public void verify_the_location_of_user_chosen() {
-        Assert.assertTrue(homePage.isSelectedLocationDisplayed());
         ReportManager.attachScreenshot();
-//        try {
-//            Thread.sleep(100000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
+        Assert.assertTrue(homePage.isSelectedLocationDisplayed());
     }
 
     @Then("verify the location of user chosen not getting")
     public void verifyTheLocationOfUserChosenNotGetting() {
-//        ReportManager.attachScreenshot();
+        ReportManager.attachScreenshot();
         Assert.assertFalse(homePage.isSelectedLocationNotDisplayed());
-//        try {
-//            Thread.sleep(100000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
     }
 
     @And("clicks on clear button")
@@ -112,12 +101,8 @@ public class HomeSteps {
     @Then("verify user can get empty on search input field")
     public void verifyUserCanGetEmptyOnSearchInputField() {
         ReportManager.attachScreenshot();
+        Assert.assertNull(homePage.getLocationInputText());
         Assert.assertTrue(homePage.isInputFieldNull());
-//        try {
-//            Thread.sleep(100000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
     }
 
     @When("enters the desired location as {string}")
@@ -130,7 +115,7 @@ public class HomeSteps {
         homePage.clickOnHamburgerMenu();
     }
 
-    @And("selects {string} from the menu")
+    @When("user selects {string} from the menu")
     public void selectsFromTheMenu(String menuOption) {
         homePage.selectMenuOption(menuOption);
     }
@@ -149,22 +134,12 @@ public class HomeSteps {
     public void verifySuccessfulUserLogout() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isLogOutSuccessFull());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Then("verify user can get a city selection option")
     public void verifyUserCanGetACitySelectionOption() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isCitySelectionDisplayed());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Given("user opens application")

@@ -12,13 +12,16 @@ public class Hooks {
     @Before
     public void setUp(Scenario scenario) {
         ConfigReader.initReader();
+        ConfigReader.setConfigValue("application.type", System.getProperty("env"));
         ReportManager.initReporter(scenario);
         DriverManager.createDriver();
-
     }
 
     @After
-    public void cleanUp() {
+    public void cleanUp(Scenario scenario) {
+        if (scenario.isFailed()){
+            ReportManager.attachScreenshot();
+        }
         DriverManager.getDriver().quit();
     }
 

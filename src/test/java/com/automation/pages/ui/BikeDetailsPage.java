@@ -24,5 +24,5 @@ public interface BikeDetailsPage {
 
     boolean isSelectedFilterApplied();
 
-    void clicksBookBtnOfFirstBike() ;
+    void clicksBookBtnOfFirstBike();
 }

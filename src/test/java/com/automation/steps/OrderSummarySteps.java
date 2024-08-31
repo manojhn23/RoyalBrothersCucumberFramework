@@ -31,10 +31,5 @@ public class OrderSummarySteps {
     public void verifyOrderSummaryPageShouldDisplayTheCorrectTotalPaymentAmount() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(orderSummaryPage.validateTotalAmount());
-//        try {
-//            Thread.sleep(100000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
     }
 }

@@ -28,7 +28,7 @@ public abstract class WebBasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void click(WebElement element) {
+    protected void click(WebElement element) {
         try {
             element.click();
         } catch (Exception e) {
@@ -36,11 +36,11 @@ public abstract class WebBasePage {
         }
     }
 
-    public void pause(int seconds) {
+    protected void pause(int seconds) {
         actions.pause(Duration.ofSeconds(seconds)).build().perform();
     }
 
-    public boolean isDisplayed(WebElement ele) {
+    protected boolean isDisplayed(WebElement ele) {
         try {
             setImplicitWait(0);
             return ele.isDisplayed();
@@ -51,11 +51,11 @@ public abstract class WebBasePage {
         }
     }
 
-    public void setImplicitWait(long seconds) {
+    protected void setImplicitWait(long seconds) {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
     }
 
-    public boolean isDisplayed(String xpath, String value) {
+    protected boolean isDisplayed(String xpath, String value) {
         try {
             setImplicitWait(0);
             WebElement ele = driver.findElement(By.xpath(String.format(xpath, value)));
@@ -67,17 +67,30 @@ public abstract class WebBasePage {
         }
     }
 
-    public void moveToElement(WebElement ele) {
+    protected void moveToElement(WebElement ele) {
         actions.moveToElement(ele).build().perform();
     }
 
-    public void waitTillClickable(WebElement ele) {
+    protected void waitTillClickable(WebElement ele) {
         wait.until(ExpectedConditions.elementToBeClickable(ele));
     }
 
-    public void waitTillVisible(WebElement ele) {
+    protected void waitTillVisible(WebElement ele) {
         wait.until(ExpectedConditions.visibilityOf(ele));
     }
 
+    protected void selectDate(WebElement nextBtn, String xpath, String value) {
+        WebElement element;
+        try {
+            setImplicitWait(2);
+            element = driver.findElement(By.xpath(String.format(xpath, value)));
+            click(element);
+        } catch (Exception e) {
+            click(nextBtn);
+            selectDate(nextBtn, xpath, value);
+        } finally {
+            setImplicitWait(60);
+        }
+    }
 
 }

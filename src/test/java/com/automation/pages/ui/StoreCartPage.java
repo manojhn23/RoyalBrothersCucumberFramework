@@ -2,17 +2,17 @@ package com.automation.pages.ui;
 
 public interface StoreCartPage {
 
-     boolean isProductAddedSuccessFully() ;
+    boolean isProductAddedSuccessFully();
 
-     void removeProductFromCart(String productName) ;
+    void removeProductFromCart(String productName);
 
-     boolean isProductRemovedSuccessFully();
+    boolean isProductRemovedSuccessFully();
 
     default double calculateTotalAmount() {
         return 0;
     }
 
-     void clickOnCheckOutButton();
+    void clickOnCheckOutButton();
 
 
 }

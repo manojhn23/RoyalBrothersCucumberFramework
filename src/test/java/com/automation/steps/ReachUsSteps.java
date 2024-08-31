@@ -40,11 +40,6 @@ public class ReachUsSteps {
         ReportManager.attachScreenshot();
         Assert.assertTrue(reachUsPage.isErrorMsgDisplayed());
         Assert.assertEquals(reachUsPage.getErrorMsg(), ConfigReader.getConfigValue(errorMsg));
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @When("user enters the details as {string},{string} and {string}")

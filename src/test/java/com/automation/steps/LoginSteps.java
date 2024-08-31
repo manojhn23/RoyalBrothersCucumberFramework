@@ -23,8 +23,8 @@ public class LoginSteps {
 
     @Then("verify user is on the login page")
     public void verify_user_is_on_the_login_page() {
-        Assert.assertTrue(loginPage.isUserOnLoginPage());
         ReportManager.attachScreenshot();
+        Assert.assertTrue(loginPage.isUserOnLoginPage());
     }
 
     @When("user enter valid phone number {string} and password {string}")
@@ -51,10 +51,5 @@ public class LoginSteps {
     public void verifyErrorMessageIsDisplayed(String errorMessage) {
         ReportManager.attachScreenshot();
         Assert.assertEquals(loginPage.errorMessage(), ConfigReader.getConfigValue(errorMessage));
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 }

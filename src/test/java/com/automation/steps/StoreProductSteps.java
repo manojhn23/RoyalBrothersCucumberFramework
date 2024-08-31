@@ -36,43 +36,23 @@ public class StoreProductSteps {
     public void verifyThatThePricesOfAllListedProductsAreDisplayedInAscendingOrder() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(storeProductPage.isProductSortedFromPriceLowToHigh());
-//        try {
-//            Thread.sleep(100000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
     }
 
     @Then("verify that the prices of all listed products are displayed in descending order")
     public void verifyThatThePricesOfAllListedProductsAreDisplayedInDescendingOrder() {
-        Assert.assertTrue(storeProductPage.isProductSortedFromPriceHighToLow());
         ReportManager.attachScreenshot();
-//        try {
-//            Thread.sleep(100000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
+        Assert.assertTrue(storeProductPage.isProductSortedFromPriceHighToLow());
     }
 
     @Then("verify user should see product names sorted alphabetically from A to Z")
     public void verifyUserShouldSeeProductNamesSortedAlphabeticallyFromAToZ() {
-        Assert.assertTrue(storeProductPage.isProductSortedFromAtoZ());
         ReportManager.attachScreenshot();
-//        try {
-//            Thread.sleep(100000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
+        Assert.assertTrue(storeProductPage.isProductSortedFromAtoZ());
     }
 
     @Then("verify user should see product names sorted alphabetically from Z to A")
     public void verifyUserShouldSeeProductNamesSortedAlphabeticallyFromZToA() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(storeProductPage.isProductSortedFromZtoA());
-//        try {
-//            Thread.sleep(100000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
     }
 }

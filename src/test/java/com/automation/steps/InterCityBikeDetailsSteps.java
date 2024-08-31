@@ -33,11 +33,6 @@ public class InterCityBikeDetailsSteps {
     public void verifyUserCanAccessConfirmRequestButton() {
         ReportManager.attachScreenshot();
         Assert.assertTrue(interCityBikeDetailsPage.isConfirmRequestBtnDisplayed());
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 
 }

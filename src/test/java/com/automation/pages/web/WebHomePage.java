@@ -43,11 +43,11 @@ public class WebHomePage extends WebBasePage implements HomePage {
     @FindBy(id = "dropoff-time-desk")
     WebElement dropOffTimeInput;
 
-    String pickupDateXpath = "//table[@id='pickup-date-desk_table']//div[@aria-label='%s']";
-    String pickupTimeXpath = "//div[@id='pickup-time-desk_root']//li[@aria-label='%s']";
+    String pickupDateXpath = "//table[@id='pickup-date-desk_table']//div[contains(@aria-label,'%s')]";
+    String pickupTimeXpath = "//div[@id='pickup-time-desk_root']//li[contains(@aria-label,'%s')]";
 
-    String dropOffDateXpath = "//table[@id='dropoff-date-desk_table']//div[@aria-label='%s']";
-    String dropOffTimeXpath = "//div[@id='dropoff-time-desk_root']//li[@aria-label='%s']";
+    String dropOffDateXpath = "//table[@id='dropoff-date-desk_table']//div[contains(@aria-label,'%s')]";
+    String dropOffTimeXpath = "//div[@id='dropoff-time-desk_root']//li[contains(@aria-label,'%s')]";
 
     @FindBy(xpath = "(//button[@type='submit'])[3]")
     WebElement searchBtn;
@@ -66,20 +66,22 @@ public class WebHomePage extends WebBasePage implements HomePage {
     @FindBy(xpath = "//div[@class='modal-content']")
     WebElement citySelectionTab;
 
+    @FindBy(xpath = "//table[@id='pickup-date-desk_table']/preceding-sibling::div//div[@title='Next month']")
+    WebElement pickupNextMonthBtn;
+
+    @FindBy(xpath = "//table[@id='dropoff-date-desk_table']/preceding-sibling::div//div[@title='Next month']")
+    WebElement dropOffNextMonthBtn;
+
     @Override
-    public void openWebsite() {
-        driver.navigate().to(ConfigReader.getConfigValue("base.url"));
+    public void openApplication() {
+        driver.get(ConfigReader.getConfigValue("base.url"));
     }
 
     @Override
     public void selectCity(String cityName) {
         pause(3);
         searchCityInput.sendKeys(cityName);
-        WebElement selectCity = driver.findElement(By.xpath(String.format(citySelectPath, cityName)));
-        click(selectCity);
-        if (isDisplayed(notificationNotNow)) {
-            click(notificationNotNow);
-        }
+        ConfigReader.setConfigValue("search.location", cityName);
     }
 
     @Override
@@ -117,6 +119,9 @@ public class WebHomePage extends WebBasePage implements HomePage {
     public void clicksOnEnteredLocation() {
         WebElement cityEle = driver.findElement(By.xpath(String.format(citySelectPath, ConfigReader.getConfigValue("search.location"))));
         click(cityEle);
+        if (isDisplayed(notificationNotNow)) {
+            click(notificationNotNow);
+        }
     }
 
     @Override
@@ -142,24 +147,30 @@ public class WebHomePage extends WebBasePage implements HomePage {
     @Override
     public void entersDetailsForRide(String pickupDate, String pickupTime, String dropOffDate, String dropOffTime) {
         moveToElement(searchBtn);
-        click(pickupDateInput);
+        pickupDate = ConfigReader.getConfigValue(pickupDate);
+        pickupTime = ConfigReader.getConfigValue(pickupTime);
+        dropOffDate = ConfigReader.getConfigValue(dropOffDate);
+        dropOffTime = ConfigReader.getConfigValue(dropOffTime);
 
-        WebElement pickupDateEle = driver.findElement(By.xpath(String.format(pickupDateXpath, pickupDate)));
-        waitTillClickable(pickupDateEle);
-        click(pickupDateEle);
+        if (pickupTime.indexOf("0") == 0) {
+            pickupTime = pickupTime.substring(1);
+        }
+        if (dropOffTime.indexOf("0") == 0) {
+            dropOffTime = dropOffTime.substring(1);
+        }
+
+        click(pickupDateInput);
+        selectDate(pickupNextMonthBtn, pickupDateXpath, pickupDate);
 
         WebElement pickupTimeEle = driver.findElement(By.xpath(String.format(pickupTimeXpath, pickupTime)));
         waitTillClickable(pickupTimeEle);
         click(pickupTimeEle);
 
-        WebElement dropOffDateEle = driver.findElement(By.xpath(String.format(dropOffDateXpath, dropOffDate)));
-        waitTillClickable(dropOffDateEle);
-        click(dropOffDateEle);
+        selectDate(dropOffNextMonthBtn, dropOffDateXpath, dropOffDate);
 
         WebElement dropOffTimeEle = driver.findElement(By.xpath(String.format(dropOffTimeXpath, dropOffTime)));
         waitTillClickable(dropOffTimeEle);
         click(dropOffTimeEle);
-
     }
 
     @Override
@@ -169,11 +180,12 @@ public class WebHomePage extends WebBasePage implements HomePage {
 
     @Override
     public void clickOnHamburgerMenu() {
-        hamburgerMenu.click();
+//
     }
 
     @Override
     public void selectMenuOption(String menuOption) {
+        hamburgerMenu.click();
         WebElement option = driver.findElement(By.xpath(String.format(menuOptionPath, menuOption)));
         click(option);
     }
@@ -201,4 +213,10 @@ public class WebHomePage extends WebBasePage implements HomePage {
         waitTillVisible(citySelectionTab);
         return citySelectionTab.isDisplayed();
     }
+
+    @Override
+    public String getLocationInputText() {
+        return searchCityInput.getAttribute("value");
+    }
+
 }
