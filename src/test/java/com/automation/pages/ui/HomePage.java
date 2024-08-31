@@ -70,7 +70,7 @@ public interface HomePage {
 
     default String getLocationInputText() {
         return null;
-        }
+    }
     default void selectLoginOption() {
 
     }
