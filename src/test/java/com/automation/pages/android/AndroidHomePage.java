@@ -51,6 +51,18 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     @FindBy(xpath = "//android.widget.HorizontalScrollView//android.widget.ImageView")
     List<WebElement> listOfMenuOptions;
 
+    @FindBy(xpath = "//android.widget.TextView[@text=\"MENU\"]")
+    WebElement menuOption;
+
+    @FindBy(xpath = "//android.widget.TextView[@text=\"Log in or Sign up\"]")
+    WebElement loginOrSignUp;
+
+    @FindBy(xpath = "//android.widget.TextView[@text=\"Logout\"]")
+    WebElement logOutOption;
+
+    @FindBy(xpath = "//android.widget.TextView[@text=\" LOGOUT \"]")
+    WebElement confirmLogout;
+
     @Override
     public void openApplication() {
         mayBeLaterOption.click();
@@ -135,6 +147,36 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
         if (menuOption.equals("Store by RB")) {
             listOfMenuOptions.get(1).click();
         }
+    }
+
+
+    @Override
+    public boolean isLoginSuccessFul() {
+        return menuOption.isDisplayed() && searchButton.isDisplayed();
+    }
+
+    @Override
+    public void clickOnMenuOption() {
+        menuOption.click();
+    }
+
+    @Override
+    public void selectLoginOption() {
+        loginOrSignUp.click();
+    }
+
+    @Override
+    public void clickOnLogoutOption() {
+        while (!isPresent(logOutOption)) {
+            scrollPage();
+        }
+        logOutOption.click();
+        confirmLogout.click();
+    }
+
+    @Override
+    public boolean isLogOutSuccessFull() {
+        return loginOrSignUp.isDisplayed();
     }
 
     private void selectDateAndTime(String date, String time) {

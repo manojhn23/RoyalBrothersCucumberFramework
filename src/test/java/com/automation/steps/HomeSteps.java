@@ -147,4 +147,29 @@ public class HomeSteps {
         homePage.openApplication();
     }
 
+
+    @Given("the user opens the website or application")
+    public void theUserOpensTheWebsiteOrApplication() {
+        homePage.openApplication();
+    }
+
+    @When("user clicks on the menu option")
+    public void userClicksOnTheMenuOption() {
+        homePage.clickOnMenuOption();
+    }
+
+    @And("selects the login option from the menu")
+    public void selectsTheLoginOptionFromTheMenu() {
+        homePage.selectLoginOption();
+    }
+
+    @And("selects the logout option from the menu")
+    public void selectsTheLogoutOptionFromTheMenu() {
+        homePage.clickOnLogoutOption();
+    }
+
+    @Then("verify the user is logged out successfully")
+    public void verifyTheUserIsLoggedOutSuccessfully() {
+        Assert.assertTrue(homePage.isLogOutSuccessFull());
+    }
 }

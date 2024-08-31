@@ -13,7 +13,24 @@ public interface LoginPage {
     default void clickOnLoginWithPassword() {
     }
 
-    default String errorMessage() {
-        return null;
+    String errorMessage();
+
+    default void enterCountryCode(String countryName, String code) {
+
+    }
+
+    default void enterPhoneNumber(String configValue) {
+
+    }
+
+    default void clickOnGetOtp() {
+
+    }
+
+    default boolean isUserOnOtpDetailsPage() {
+        return false;
+    }
+
+    default void enterOtpAndClickOnSubmit(){
     }
 }

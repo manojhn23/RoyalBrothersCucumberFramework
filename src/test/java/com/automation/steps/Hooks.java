@@ -15,6 +15,7 @@ public class Hooks {
         ConfigReader.setConfigValue("application.type", System.getProperty("env"));
         ReportManager.initReporter(scenario);
         DriverManager.createDriver();
+
     }
 
     @After

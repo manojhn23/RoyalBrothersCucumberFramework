@@ -1,7 +1,7 @@
 Feature: Validate user can get cart functionalities successfully
 
   Background:
-    Given user opens application
+    Given the user opens the website or application
     When user select his desired city "app.city.name"
     And clicks on the entered location
     Then verify user is on the home page

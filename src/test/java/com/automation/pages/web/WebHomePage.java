@@ -66,12 +66,6 @@ public class WebHomePage extends WebBasePage implements HomePage {
     @FindBy(xpath = "//div[@class='modal-content']")
     WebElement citySelectionTab;
 
-    @FindBy(xpath = "//table[@id='pickup-date-desk_table']/preceding-sibling::div//div[@title='Next month']")
-    WebElement pickupNextMonthBtn;
-
-    @FindBy(xpath = "//table[@id='dropoff-date-desk_table']/preceding-sibling::div//div[@title='Next month']")
-    WebElement dropOffNextMonthBtn;
-
     @Override
     public void openApplication() {
         driver.get(ConfigReader.getConfigValue("base.url"));
@@ -171,6 +165,7 @@ public class WebHomePage extends WebBasePage implements HomePage {
         WebElement dropOffTimeEle = driver.findElement(By.xpath(String.format(dropOffTimeXpath, dropOffTime)));
         waitTillClickable(dropOffTimeEle);
         click(dropOffTimeEle);
+
     }
 
     @Override

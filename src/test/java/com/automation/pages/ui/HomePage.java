@@ -5,8 +5,7 @@ public interface HomePage {
     default void openWebsite() {
     }
 
-    default void selectCity(String cityName) {
-    }
+    void selectCity(String cityName);
 
     boolean isUserOnHomePage();
 
@@ -51,24 +50,28 @@ public interface HomePage {
     default void clickOnProfile() {
     }
 
-    default void clickOnLogoutOption() {
-    }
+    void clickOnLogoutOption();
 
-    default boolean isLogOutSuccessFull() {
-        return false;
-    }
+    boolean isLogOutSuccessFull();
 
     default boolean isCitySelectionDisplayed() {
         return false;
     }
 
-    default boolean isLoginSuccessFul() {
-        return false;
+    boolean isLoginSuccessFul();
+
+    void openApplication();
+
+    default void clickOnMenuOption() {
+
     }
 
     void openApplication();
 
     default String getLocationInputText() {
         return null;
+        }
+    default void selectLoginOption() {
+
     }
 }
