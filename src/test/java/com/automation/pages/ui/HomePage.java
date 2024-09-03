@@ -66,11 +66,10 @@ public interface HomePage {
 
     }
 
-    void openApplication();
-
     default String getLocationInputText() {
         return null;
     }
+
     default void selectLoginOption() {
 
     }
