@@ -19,8 +19,13 @@ public class Hooks {
 
     @After
     public void cleanUp(Scenario scenario) {
-        if (scenario.isFailed()){
+        if (scenario.isFailed()) {
             ReportManager.attachScreenshot();
+        }
+        try {
+            Thread.sleep(70000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
         DriverManager.getDriver().quit();
     }

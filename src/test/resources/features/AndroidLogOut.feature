@@ -1,3 +1,4 @@
+@android
 Feature: Validate user can logout successfully
 
   Background:

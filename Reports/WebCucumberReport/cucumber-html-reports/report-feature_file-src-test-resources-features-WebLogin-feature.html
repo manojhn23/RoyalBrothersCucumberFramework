@@ -1,0 +1,2640 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber Reports (no 1) - Feature: Validate on login functionality with valid and invalid credentials</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation" ><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+    
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+              <th>Number</th>
+            <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>CapstoneProject</td>
+              <td>1</td>
+            <td>03 Sep 2024, 11:24</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+      </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Feature Report</h2>
+      </div>
+</div>
+
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table class="stats-table">
+
+        
+<thead>
+  <tr class="header dont-sort">
+        <th></th>
+    <th colspan="6">Steps</th>
+    <th colspan="3">Scenarios</th>
+    <th colspan="2">Features</th>
+  </tr>
+  <tr>
+    <th>Feature</th>
+        <th class="passed">Passed</th>
+    <th class="failed">Failed</th>
+    <th class="skipped">Skipped</th>
+    <th class="pending">Pending</th>
+    <th class="undefined">Undefined</th>
+    <th class="total">Total</th>
+
+    <th class="passed">Passed</th>
+    <th class="failed">Failed</th>
+    <th class="total">Total</th>
+
+    <th>Duration</th>
+    <th>Status</th>
+  </tr>
+</thead>
+
+
+        <tbody>
+        <tr>
+          <td class="tagname">Validate on login functionality with valid and invalid credentials</td>
+                    <td      class="passed"    >45</td>
+          <td      class="failed"    >5</td>
+          <td     class="skipped"   >7</td>
+          <td >0</td>
+          <td >0</td>
+          <td class="total">57</td>
+
+          <td >0</td>
+          <td  class="failed"    >5</td>
+          <td class="total">5</td>
+
+          <td class="duration" data-value="231796069800">3m 51s 796ms</td>
+          <td class="failed">Failed</td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-10">
+      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="feature">
+        
+<div class="tags indention">
+      <b>Tags:</b>
+           <a href="report-tag_web.html">@web</a>
+      </div>
+
+        
+<div class="brief failed">
+  <span class="keyword indention">Feature</span>
+  <span class="name">Validate on login functionality with valid and invalid credentials</span>
+  
+
+  </div>
+
+        <div class="description indention"></div>
+
+        <div class="elements inner-level">
+                      
+<div class="element">
+  
+  
+<div class="tags indention">
+  </div>
+
+
+    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+    
+<div class="brief passed">
+  <span class="keyword indention">Background</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-1" class="collapse collapsable-details ">
+    
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-2">
+    
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-2" class="inner-level collapse collapsable-details ">
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">user opens application</span>
+  
+  <span class="lead-duration duration">5s 866ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user select his desired city &quot;city.name&quot;</span>
+  
+  <span class="lead-duration duration">3s 152ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">clicks on the entered location</span>
+  
+  <span class="lead-duration duration">1s 502ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is on the home page</span>
+  
+  <span class="lead-duration duration">348ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-3" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_-751817298.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-3" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_-751817298.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">user can view city-specific services</span>
+  
+  <span class="lead-duration duration">344ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-4" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_609193017.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-4" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_609193017.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user click on login button</span>
+  
+  <span class="lead-duration duration">3s 841ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is on the login page</span>
+  
+  <span class="lead-duration duration">166ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-5" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_-1674762000.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-5" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_-1674762000.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+      </div>
+</div>
+
+
+    
+
+  </div>
+</div>
+
+                      
+<div class="element">
+  
+  
+<div class="tags indention">
+      <b>Tags:</b>
+           <a href="report-tag_web.html">@web</a>
+      </div>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-6">
+    
+<div class="brief failed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">Successful login with valid credentials</span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-6" class="collapse collapsable-details  in ">
+    
+  <div class="inner-level hooks-before">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-7">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="before-7" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">1s 832ms</span>
+
+          </div>
+
+                      
+
+          
+          
+  
+        </div>
+          </div>
+  </div>
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-8">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-8" class="inner-level collapse collapsable-details  in ">
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user enter valid phone number &quot;login.phone&quot; and password &quot;login.password&quot;</span>
+  
+  <span class="lead-duration duration">131ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">click on I'm not a robot checkbox</span>
+  
+  <span class="lead-duration duration">143ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief failed">
+  <span class="keyword indention">And</span>
+  <span class="name">click on login with Password button</span>
+  
+  <span class="lead-duration duration">30s 145ms</span>
+
+  </div>
+
+        
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-9">
+          <a>Error message</a>
+      </div>
+      <div id="msg-9" class="collapse collapsable-details">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Attribute or property 'aria-checked' to be 'true'. Current value: 'false' (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.54, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:56692}, msedge: {msedgedriverVersion: 128.0.2739.54 (baeaa1ac164a..., userDataDir: C:\Users\280705\AppData\Loc...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56692/devtoo..., se:cdpVersion: 128.0.2739.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7d352adf2113e9e8fa4ac6974c4d39f0
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.automation.pages.web.WebLoginPage.clickOnLoginWithPassword(WebLoginPage.java:48)
+	at com.automation.steps.LoginSteps.click_on_login_with_password_button(LoginSteps.java:43)
+	at &#10045;.click on login with Password button(file:///C:/Capstone-Project/CapstoneProject/src/test/resources/features/WebLogin.feature:16)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">user select his desired city &quot;city.name&quot;</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">clicks on the entered location</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify login is successful</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+      </div>
+</div>
+
+
+    
+  <div class="inner-level hooks-after">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-10">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="after-10" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+                          <span class="location name">com.automation.steps.Hooks.cleanUp(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">1m 10s 697ms</span>
+
+          </div>
+
+                      
+
+          
+          
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-11" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_1545454929.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-11" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_1545454929.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+        </div>
+          </div>
+  </div>
+
+  </div>
+</div>
+
+                      
+<div class="element">
+  
+  
+<div class="tags indention">
+  </div>
+
+
+    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-12">
+    
+<div class="brief passed">
+  <span class="keyword indention">Background</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-12" class="collapse collapsable-details ">
+    
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-13">
+    
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-13" class="inner-level collapse collapsable-details ">
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">user opens application</span>
+  
+  <span class="lead-duration duration">4s 044ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user select his desired city &quot;city.name&quot;</span>
+  
+  <span class="lead-duration duration">3s 134ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">clicks on the entered location</span>
+  
+  <span class="lead-duration duration">2s 413ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is on the home page</span>
+  
+  <span class="lead-duration duration">416ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-14" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_1233848178.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-14" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_1233848178.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">user can view city-specific services</span>
+  
+  <span class="lead-duration duration">788ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-15" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_609193017.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-15" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_609193017.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user click on login button</span>
+  
+  <span class="lead-duration duration">8s 502ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is on the login page</span>
+  
+  <span class="lead-duration duration">179ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-16" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_-1674762000.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-16" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_-1674762000.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+      </div>
+</div>
+
+
+    
+
+  </div>
+</div>
+
+                      
+<div class="element">
+  
+  
+<div class="tags indention">
+      <b>Tags:</b>
+           <a href="report-tag_web.html">@web</a>
+      </div>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-17">
+    
+<div class="brief failed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Unsuccessful login with invalid credentials</span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-17" class="collapse collapsable-details  in ">
+    
+  <div class="inner-level hooks-before">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-18">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="before-18" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">1s 819ms</span>
+
+          </div>
+
+                      
+
+          
+          
+  
+        </div>
+          </div>
+  </div>
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-19">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-19" class="inner-level collapse collapsable-details  in ">
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user enter invalid phone number &quot;1234567890&quot; and password &quot;test123&quot;</span>
+  
+  <span class="lead-duration duration">135ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">click on I'm not a robot checkbox</span>
+  
+  <span class="lead-duration duration">147ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief failed">
+  <span class="keyword indention">And</span>
+  <span class="name">click on login with Password button</span>
+  
+  <span class="lead-duration duration">30s 146ms</span>
+
+  </div>
+
+        
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-20">
+          <a>Error message</a>
+      </div>
+      <div id="msg-20" class="collapse collapsable-details">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Attribute or property 'aria-checked' to be 'true'. Current value: 'false' (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.54, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:57235}, msedge: {msedgedriverVersion: 128.0.2739.54 (baeaa1ac164a..., userDataDir: C:\Users\280705\AppData\Loc...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57235/devtoo..., se:cdpVersion: 128.0.2739.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f389435d9b97b90d57ebc11cc97408fa
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.automation.pages.web.WebLoginPage.clickOnLoginWithPassword(WebLoginPage.java:48)
+	at com.automation.steps.LoginSteps.click_on_login_with_password_button(LoginSteps.java:43)
+	at &#10045;.click on login with Password button(file:///C:/Capstone-Project/CapstoneProject/src/test/resources/features/WebLogin.feature:24)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify error message is displayed &quot;error.message&quot;</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+      </div>
+</div>
+
+
+    
+  <div class="inner-level hooks-after">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-21">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="after-21" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+                          <span class="location name">com.automation.steps.Hooks.cleanUp(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">1m 10s 693ms</span>
+
+          </div>
+
+                      
+
+          
+          
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-22" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_1636057945.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-22" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_1636057945.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+        </div>
+          </div>
+  </div>
+
+  </div>
+</div>
+
+                      
+<div class="element">
+  
+  
+<div class="tags indention">
+  </div>
+
+
+    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-23">
+    
+<div class="brief passed">
+  <span class="keyword indention">Background</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-23" class="collapse collapsable-details ">
+    
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-24">
+    
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-24" class="inner-level collapse collapsable-details ">
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">user opens application</span>
+  
+  <span class="lead-duration duration">3s 946ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user select his desired city &quot;city.name&quot;</span>
+  
+  <span class="lead-duration duration">3s 213ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">clicks on the entered location</span>
+  
+  <span class="lead-duration duration">1s 848ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is on the home page</span>
+  
+  <span class="lead-duration duration">365ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-25" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_-1519241338.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-25" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_-1519241338.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">user can view city-specific services</span>
+  
+  <span class="lead-duration duration">369ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-26" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_609193017.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-26" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_609193017.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user click on login button</span>
+  
+  <span class="lead-duration duration">3s 682ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is on the login page</span>
+  
+  <span class="lead-duration duration">165ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-27" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_-1674762000.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-27" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_-1674762000.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+      </div>
+</div>
+
+
+    
+
+  </div>
+</div>
+
+                      
+<div class="element">
+  
+  
+<div class="tags indention">
+      <b>Tags:</b>
+           <a href="report-tag_web.html">@web</a>
+      </div>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-28">
+    
+<div class="brief failed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Unsuccessful login with invalid credentials</span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-28" class="collapse collapsable-details  in ">
+    
+  <div class="inner-level hooks-before">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-29">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="before-29" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">1s 554ms</span>
+
+          </div>
+
+                      
+
+          
+          
+  
+        </div>
+          </div>
+  </div>
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-30">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-30" class="inner-level collapse collapsable-details  in ">
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user enter invalid phone number &quot;0987654321&quot; and password &quot;Login345&quot;</span>
+  
+  <span class="lead-duration duration">133ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">click on I'm not a robot checkbox</span>
+  
+  <span class="lead-duration duration">143ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief failed">
+  <span class="keyword indention">And</span>
+  <span class="name">click on login with Password button</span>
+  
+  <span class="lead-duration duration">30s 181ms</span>
+
+  </div>
+
+        
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-31">
+          <a>Error message</a>
+      </div>
+      <div id="msg-31" class="collapse collapsable-details">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Attribute or property 'aria-checked' to be 'true'. Current value: 'false' (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.54, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:57820}, msedge: {msedgedriverVersion: 128.0.2739.54 (baeaa1ac164a..., userDataDir: C:\Users\280705\AppData\Loc...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57820/devtoo..., se:cdpVersion: 128.0.2739.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3c1e35edd2601d54150e049815beb3de
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.automation.pages.web.WebLoginPage.clickOnLoginWithPassword(WebLoginPage.java:48)
+	at com.automation.steps.LoginSteps.click_on_login_with_password_button(LoginSteps.java:43)
+	at &#10045;.click on login with Password button(file:///C:/Capstone-Project/CapstoneProject/src/test/resources/features/WebLogin.feature:24)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify error message is displayed &quot;error.message&quot;</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+      </div>
+</div>
+
+
+    
+  <div class="inner-level hooks-after">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-32">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="after-32" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+                          <span class="location name">com.automation.steps.Hooks.cleanUp(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">1m 10s 575ms</span>
+
+          </div>
+
+                      
+
+          
+          
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-33" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_-1084775148.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-33" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_-1084775148.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+        </div>
+          </div>
+  </div>
+
+  </div>
+</div>
+
+                      
+<div class="element">
+  
+  
+<div class="tags indention">
+  </div>
+
+
+    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-34">
+    
+<div class="brief passed">
+  <span class="keyword indention">Background</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-34" class="collapse collapsable-details ">
+    
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-35">
+    
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-35" class="inner-level collapse collapsable-details ">
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">user opens application</span>
+  
+  <span class="lead-duration duration">6s 210ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user select his desired city &quot;city.name&quot;</span>
+  
+  <span class="lead-duration duration">3s 131ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">clicks on the entered location</span>
+  
+  <span class="lead-duration duration">2s 532ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is on the home page</span>
+  
+  <span class="lead-duration duration">364ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-36" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_261911036.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-36" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_261911036.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">user can view city-specific services</span>
+  
+  <span class="lead-duration duration">347ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-37" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_609193017.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-37" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_609193017.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user click on login button</span>
+  
+  <span class="lead-duration duration">4s 939ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is on the login page</span>
+  
+  <span class="lead-duration duration">167ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-38" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_-1674762000.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-38" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_-1674762000.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+      </div>
+</div>
+
+
+    
+
+  </div>
+</div>
+
+                      
+<div class="element">
+  
+  
+<div class="tags indention">
+      <b>Tags:</b>
+           <a href="report-tag_web.html">@web</a>
+      </div>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-39">
+    
+<div class="brief failed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Unsuccessful login with invalid credentials</span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-39" class="collapse collapsable-details  in ">
+    
+  <div class="inner-level hooks-before">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-40">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="before-40" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">1s 938ms</span>
+
+          </div>
+
+                      
+
+          
+          
+  
+        </div>
+          </div>
+  </div>
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-41">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-41" class="inner-level collapse collapsable-details  in ">
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user enter invalid phone number &quot;8976345678&quot; and password &quot;test@123&quot;</span>
+  
+  <span class="lead-duration duration">125ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">click on I'm not a robot checkbox</span>
+  
+  <span class="lead-duration duration">138ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief failed">
+  <span class="keyword indention">And</span>
+  <span class="name">click on login with Password button</span>
+  
+  <span class="lead-duration duration">30s 209ms</span>
+
+  </div>
+
+        
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-42">
+          <a>Error message</a>
+      </div>
+      <div id="msg-42" class="collapse collapsable-details">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Attribute or property 'aria-checked' to be 'true'. Current value: 'false' (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.54, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:59143}, msedge: {msedgedriverVersion: 128.0.2739.54 (baeaa1ac164a..., userDataDir: C:\Users\280705\AppData\Loc...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59143/devtoo..., se:cdpVersion: 128.0.2739.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cb779bc381b72f41a810128c6b5696a1
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.automation.pages.web.WebLoginPage.clickOnLoginWithPassword(WebLoginPage.java:48)
+	at com.automation.steps.LoginSteps.click_on_login_with_password_button(LoginSteps.java:43)
+	at &#10045;.click on login with Password button(file:///C:/Capstone-Project/CapstoneProject/src/test/resources/features/WebLogin.feature:24)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify error message is displayed &quot;error.message&quot;</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+      </div>
+</div>
+
+
+    
+  <div class="inner-level hooks-after">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-43">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="after-43" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+                          <span class="location name">com.automation.steps.Hooks.cleanUp(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">1m 10s 692ms</span>
+
+          </div>
+
+                      
+
+          
+          
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-44" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_-1150245409.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-44" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_-1150245409.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+        </div>
+          </div>
+  </div>
+
+  </div>
+</div>
+
+                      
+<div class="element">
+  
+  
+<div class="tags indention">
+  </div>
+
+
+    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-45">
+    
+<div class="brief passed">
+  <span class="keyword indention">Background</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-45" class="collapse collapsable-details ">
+    
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-46">
+    
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-46" class="inner-level collapse collapsable-details ">
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">user opens application</span>
+  
+  <span class="lead-duration duration">3s 339ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user select his desired city &quot;city.name&quot;</span>
+  
+  <span class="lead-duration duration">3s 210ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">clicks on the entered location</span>
+  
+  <span class="lead-duration duration">1s 849ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is on the home page</span>
+  
+  <span class="lead-duration duration">360ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-47" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_16494928.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-47" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_16494928.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">user can view city-specific services</span>
+  
+  <span class="lead-duration duration">365ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-48" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_1264029157.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-48" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_1264029157.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user click on login button</span>
+  
+  <span class="lead-duration duration">4s 317ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify user is on the login page</span>
+  
+  <span class="lead-duration duration">163ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-49" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_-1674762000.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-49" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_-1674762000.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+      </div>
+      </div>
+</div>
+
+
+    
+
+  </div>
+</div>
+
+                      
+<div class="element">
+  
+  
+<div class="tags indention">
+      <b>Tags:</b>
+           <a href="report-tag_web.html">@web</a>
+      </div>
+
+
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-50">
+    
+<div class="brief failed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Unsuccessful login with invalid credentials</span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-50" class="collapse collapsable-details  in ">
+    
+  <div class="inner-level hooks-before">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-51">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="before-51" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+                          <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">1s 784ms</span>
+
+          </div>
+
+                      
+
+          
+          
+  
+        </div>
+          </div>
+  </div>
+
+
+    
+<div class="steps inner-level">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-52">
+    
+<div class="brief failed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+  </div>
+
+  <div id="steps-52" class="inner-level collapse collapsable-details  in ">
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">When</span>
+  <span class="name">user enter invalid phone number &quot;9876456738&quot; and password &quot;login@896&quot;</span>
+  
+  <span class="lead-duration duration">127ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief passed">
+  <span class="keyword indention">And</span>
+  <span class="name">click on I'm not a robot checkbox</span>
+  
+  <span class="lead-duration duration">143ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief failed">
+  <span class="keyword indention">And</span>
+  <span class="name">click on login with Password button</span>
+  
+  <span class="lead-duration duration">30s 152ms</span>
+
+  </div>
+
+        
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-53">
+          <a>Error message</a>
+      </div>
+      <div id="msg-53" class="collapse collapsable-details">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for Attribute or property 'aria-checked' to be 'true'. Current value: 'false' (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 128.0.2739.54, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:59680}, msedge: {msedgedriverVersion: 128.0.2739.54 (baeaa1ac164a..., userDataDir: C:\Users\280705\AppData\Loc...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59680/devtoo..., se:cdpVersion: 128.0.2739.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7f6fd84367c4046cb2749f7c73856481
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.automation.pages.web.WebLoginPage.clickOnLoginWithPassword(WebLoginPage.java:48)
+	at com.automation.steps.LoginSteps.click_on_login_with_password_button(LoginSteps.java:43)
+	at &#10045;.click on login with Password button(file:///C:/Capstone-Project/CapstoneProject/src/test/resources/features/WebLogin.feature:24)
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+          <div class="step">
+        
+<div class="brief skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">verify error message is displayed &quot;error.message&quot;</span>
+  
+  <span class="lead-duration duration">000ms</span>
+
+  </div>
+
+        
+
+
+        
+        
+
+        
+
+        
+  
+      </div>
+      </div>
+</div>
+
+
+    
+  <div class="inner-level hooks-after">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-54">
+      
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+  
+
+       <i class="chevron fa fa-fw"></i>
+  </div>
+
+    </div>
+
+    <div id="after-54" class="inner-level collapse collapsable-details ">
+              <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+                          <span class="location name">com.automation.steps.Hooks.cleanUp(io.cucumber.java.Scenario)</span>
+                        
+  <span class="lead-duration duration">1m 10s 534ms</span>
+
+          </div>
+
+                      
+
+          
+          
+    <div class="embeddings inner-level">
+                <div class="embedding indention">
+        <div data-toggle="collapse" data-target="#embedding-55" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_1147092495.png" target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-55" class="collapse collapsable-details">
+      <span class="embedding-content">
+        <img src="embeddings/embedding_1147092495.png">
+      </span>
+    </div>
+  </div>
+        </div>
+  
+        </div>
+          </div>
+  </div>
+
+  </div>
+</div>
+
+                  </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-10">
+      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

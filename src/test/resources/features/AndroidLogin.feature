@@ -1,3 +1,4 @@
+@android
 Feature: Validate login functionality
 
   Background:

@@ -31,6 +31,6 @@ public interface LoginPage {
         return false;
     }
 
-    default void enterOtpAndClickOnSubmit(){
+    default void enterOtpAndClickOnSubmit() {
     }
 }

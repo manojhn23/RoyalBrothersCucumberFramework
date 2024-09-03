@@ -23,7 +23,6 @@ Feature: Validate on login functionality with valid and invalid credentials
     And click on I'm not a robot checkbox
     And click on login with Password button
     Then verify error message is displayed "error.message"
-
     Examples:
       | invalid.phone | invalid.password |
       | 1234567890    | test123          |

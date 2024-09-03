@@ -34,26 +34,26 @@ public class StoreProductSteps {
 
     @Then("verify that the prices of all listed products are displayed in ascending order")
     public void verifyThatThePricesOfAllListedProductsAreDisplayedInAscendingOrder() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(storeProductPage.isProductSortedFromPriceLowToHigh());
+        ReportManager.attachScreenshot();
     }
 
     @Then("verify that the prices of all listed products are displayed in descending order")
     public void verifyThatThePricesOfAllListedProductsAreDisplayedInDescendingOrder() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(storeProductPage.isProductSortedFromPriceHighToLow());
+        ReportManager.attachScreenshot();
     }
 
     @Then("verify user should see product names sorted alphabetically from A to Z")
     public void verifyUserShouldSeeProductNamesSortedAlphabeticallyFromAToZ() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(storeProductPage.isProductSortedFromAtoZ());
+        ReportManager.attachScreenshot();
     }
 
     @Then("verify user should see product names sorted alphabetically from Z to A")
     public void verifyUserShouldSeeProductNamesSortedAlphabeticallyFromZToA() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(storeProductPage.isProductSortedFromZtoA());
+        ReportManager.attachScreenshot();
     }
 
 }

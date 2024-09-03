@@ -20,8 +20,8 @@ public class InterCityBikeDetailsSteps {
 
     @Then("verify user is on intercity bike details page")
     public void verifyUserIsOnIntercityBikeDetailsPage() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(interCityBikeDetailsPage.isBikeDetailsPageDisplayed());
+        ReportManager.attachScreenshot();
     }
 
     @When("user clicks on request booking for first bike")
@@ -31,8 +31,8 @@ public class InterCityBikeDetailsSteps {
 
     @Then("verify user can access confirm request button")
     public void verifyUserCanAccessConfirmRequestButton() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(interCityBikeDetailsPage.isConfirmRequestBtnDisplayed());
+        ReportManager.attachScreenshot();
     }
 
 }

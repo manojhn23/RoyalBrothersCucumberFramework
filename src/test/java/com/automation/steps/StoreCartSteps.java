@@ -23,8 +23,8 @@ public class StoreCartSteps {
 
     @Then("verify that the product is successfully added to the cart")
     public void verifyThatTheProductIsSuccessfullyAddedToTheCart() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(cartPage.isProductAddedSuccessFully());
+        ReportManager.attachScreenshot();
     }
 
     @When("user removes product from the cart {string}")
@@ -34,8 +34,8 @@ public class StoreCartSteps {
 
     @Then("verify product is removed from the cart successfully")
     public void verifyProductIsRemovedFromTheCartSuccessfully() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(cartPage.isProductRemovedSuccessFully());
+        ReportManager.attachScreenshot();
     }
 
     @When("user click on check out button")

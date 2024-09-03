@@ -31,5 +31,4 @@ public class StoreSteps {
     public void user_selects_the_product(String productCategory) {
         storePage.selectProductCategory(ConfigReader.getConfigValue(productCategory));
     }
-
 }

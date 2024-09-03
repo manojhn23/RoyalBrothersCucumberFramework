@@ -23,8 +23,8 @@ public class BikeDetailsSteps {
 
     @Then("verify user is on bike details page")
     public void verify_user_is_on_bike_details_page() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(bikeDetailsPage.isBikeDetailsPageDisplayed());
+        ReportManager.attachScreenshot();
     }
 
     @When("user clicks on price high to low")
@@ -34,8 +34,8 @@ public class BikeDetailsSteps {
 
     @Then("verify user can get prices in high to low")
     public void verify_user_can_get_prices_in_high_to_low() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(bikeDetailsPage.isPricesInHighToLow());
+        ReportManager.attachScreenshot();
     }
 
     @When("user clicks on price low to high")
@@ -45,8 +45,8 @@ public class BikeDetailsSteps {
 
     @Then("verify user can get prices in low to high")
     public void verify_user_can_get_prices_in_low_to_high() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(bikeDetailsPage.isPricesInLowToHigh());
+        ReportManager.attachScreenshot();
     }
 
     @When("user selects the bike model {string}")
@@ -56,8 +56,8 @@ public class BikeDetailsSteps {
 
     @Then("verify user can get all bikes as selected model")
     public void verify_user_can_get_all_bikes_as_selected_model() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(bikeDetailsPage.isSelectedBikeModelsShown());
+        ReportManager.attachScreenshot();
     }
 
     @When("user selects the bike location {string}")
@@ -67,8 +67,8 @@ public class BikeDetailsSteps {
 
     @Then("verify user can get all bikes as selected location")
     public void verify_user_can_get_all_bikes_as_selected_location() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(bikeDetailsPage.isSelectedBikeLocationShown());
+        ReportManager.attachScreenshot();
     }
 
     @When("user selects the bike model {string} and location {string}")
@@ -78,8 +78,8 @@ public class BikeDetailsSteps {
 
     @Then("verify user can get all bikes as selected model and location")
     public void verify_user_can_get_all_bikes_as_selected_model_and_location() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(bikeDetailsPage.isSelectedFilterApplied());
+        ReportManager.attachScreenshot();
     }
 
     @When("user clicks on book of first bike")

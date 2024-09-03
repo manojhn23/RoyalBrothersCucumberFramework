@@ -22,7 +22,7 @@ public abstract class WebBasePage {
 
     public WebBasePage() {
         driver = DriverManager.getDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(90));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         executor = (JavascriptExecutor) driver;
         actions = new Actions(driver);
         PageFactory.initElements(driver, this);

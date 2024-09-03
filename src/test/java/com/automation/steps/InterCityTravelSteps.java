@@ -23,8 +23,8 @@ public class InterCityTravelSteps {
 
     @Then("verify user is on Inter-city travel page")
     public void verifyUserIsOnInterCityTravelPage() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(interCityTravelPage.isInterCityTravelPageDisplayed());
+        ReportManager.attachScreenshot();
     }
 
     @When("user enters the details for ride")

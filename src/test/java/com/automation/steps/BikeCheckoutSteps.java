@@ -18,13 +18,13 @@ public class BikeCheckoutSteps {
 
     @Then("verify user can get make payment option")
     public void verifyUserCanGetMakePaymentOption() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(bikeCheckoutPage.isMakePaymentOptionDisplayed());
+        ReportManager.attachScreenshot();
     }
 
     @Then("verify user is on bike checkout page")
     public void verifyUserIsOnBikeCheckoutPage() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(bikeCheckoutPage.isBikeCheckoutPageDisplayed());
+        ReportManager.attachScreenshot();
     }
 }

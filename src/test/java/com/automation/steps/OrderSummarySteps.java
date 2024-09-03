@@ -23,13 +23,13 @@ public class OrderSummarySteps {
 
     @Then("verify user is on order summary page")
     public void verifyUserIsOnOrderSummaryPage() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(orderSummaryPage.isUserOnOrderSummaryPage());
+        ReportManager.attachScreenshot();
     }
 
     @And("verify order summary page should display the correct total payment amount")
     public void verifyOrderSummaryPageShouldDisplayTheCorrectTotalPaymentAmount() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(orderSummaryPage.validateTotalAmount());
+        ReportManager.attachScreenshot();
     }
 }

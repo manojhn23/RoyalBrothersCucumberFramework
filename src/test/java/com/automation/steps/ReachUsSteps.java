@@ -21,8 +21,8 @@ public class ReachUsSteps {
 
     @Then("verify user is on reach us page")
     public void verifyUserIsOnReachUsPage() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(reachUsPage.isReachUsPageDisplayed());
+        ReportManager.attachScreenshot();
     }
 
     @When("user enters the details as {string},{string},{string} and {string}")
@@ -37,9 +37,9 @@ public class ReachUsSteps {
 
     @Then("verify user can get a message {string}")
     public void verifyUserCanGetAMessage(String errorMsg) {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(reachUsPage.isErrorMsgDisplayed());
         Assert.assertEquals(reachUsPage.getErrorMsg(), ConfigReader.getConfigValue(errorMsg));
+        ReportManager.attachScreenshot();
     }
 
     @When("user enters the details as {string},{string} and {string}")

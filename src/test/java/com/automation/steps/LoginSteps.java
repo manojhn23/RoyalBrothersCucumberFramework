@@ -24,8 +24,8 @@ public class LoginSteps {
 
     @Then("verify user is on the login page")
     public void verify_user_is_on_the_login_page() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(loginPage.isUserOnLoginPage());
+        ReportManager.attachScreenshot();
     }
 
     @When("user enter valid phone number {string} and password {string}")
@@ -77,6 +77,7 @@ public class LoginSteps {
     @Then("the user should be redirected to the OTP details page")
     public void theUserShouldBeRedirectedToTheOTPDetailsPage() {
         Assert.assertTrue(loginPage.isUserOnOtpDetailsPage());
+        ReportManager.attachScreenshot();
     }
 
     @When("user enter otp and click on submit button")

@@ -35,14 +35,14 @@ public class HomeSteps {
 
     @Then("verify user is on the home page")
     public void verify_user_is_on_the_home_page() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isUserOnHomePage());
+        ReportManager.attachScreenshot();
     }
 
     @Then("user can view city-specific services")
     public void user_can_view_city_specific_services() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.verifyCitySelected());
+        ReportManager.attachScreenshot();
     }
 
     @When("user click on login button")
@@ -52,8 +52,8 @@ public class HomeSteps {
 
     @Then("verify login is successful")
     public void verify_login_is_successful() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isLoginSuccessFul());
+        ReportManager.attachScreenshot();
     }
 
     @When("user enters the details for ride {string}, {string}, {string} and {string}")
@@ -83,14 +83,14 @@ public class HomeSteps {
 
     @Then("verify the location of user chosen")
     public void verify_the_location_of_user_chosen() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isSelectedLocationDisplayed());
+        ReportManager.attachScreenshot();
     }
 
     @Then("verify the location of user chosen not getting")
     public void verifyTheLocationOfUserChosenNotGetting() {
-        ReportManager.attachScreenshot();
         Assert.assertFalse(homePage.isSelectedLocationNotDisplayed());
+        ReportManager.attachScreenshot();
     }
 
     @And("clicks on clear button")
@@ -100,9 +100,9 @@ public class HomeSteps {
 
     @Then("verify user can get empty on search input field")
     public void verifyUserCanGetEmptyOnSearchInputField() {
-        ReportManager.attachScreenshot();
         Assert.assertNull(homePage.getLocationInputText());
         Assert.assertTrue(homePage.isInputFieldNull());
+        ReportManager.attachScreenshot();
     }
 
     @When("enters the desired location as {string}")
@@ -132,14 +132,14 @@ public class HomeSteps {
 
     @Then("verify successful user logout")
     public void verifySuccessfulUserLogout() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isLogOutSuccessFull());
+        ReportManager.attachScreenshot();
     }
 
     @Then("verify user can get a city selection option")
     public void verifyUserCanGetACitySelectionOption() {
-        ReportManager.attachScreenshot();
         Assert.assertTrue(homePage.isCitySelectionDisplayed());
+        ReportManager.attachScreenshot();
     }
 
     @Given("user opens application")
