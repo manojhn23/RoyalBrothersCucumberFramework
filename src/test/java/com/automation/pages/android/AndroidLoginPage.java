@@ -31,6 +31,9 @@ public class AndroidLoginPage extends AndroidBasePage implements LoginPage {
     @FindBy(xpath = "//android.widget.TextView[@text=\"SUBMIT\"]")
     WebElement submitButton;
 
+    @FindBy(xpath = "//android.widget.TextView[@text=\"SUBMIT\"]/..")
+    WebElement submitButtonEnabled;
+
     @Override
     public boolean isUserOnLoginPage() {
         return enterPhoneNumberInput.isDisplayed() && getOtp.isDisplayed();
@@ -75,7 +78,10 @@ public class AndroidLoginPage extends AndroidBasePage implements LoginPage {
 
     @Override
     public void enterOtpAndClickOnSubmit() {
-        pause(20);
+        while (!isEnabled(submitButtonEnabled)) {
+            System.out.println("waiting for otp");
+        }
+        submitButton.click();
         submitButton.click();
     }
 }
