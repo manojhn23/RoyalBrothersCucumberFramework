@@ -25,16 +25,11 @@ public interface HomePage {
     default void clicksOnEnteredLocation() {
     }
 
-    default boolean isSelectedLocationDisplayed() {
-        return false;
-    }
+    boolean isSelectedLocationDisplayed();
 
-    default boolean isSelectedLocationNotDisplayed() {
-        return false;
-    }
+    boolean isSelectedLocationNotDisplayed();
 
-    default void clicksClearOnLocationSearch() {
-    }
+    void clicksClearOnLocationSearch();
 
     boolean isInputFieldNull();
 

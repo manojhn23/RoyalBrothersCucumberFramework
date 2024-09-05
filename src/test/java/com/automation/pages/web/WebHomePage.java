@@ -74,7 +74,7 @@ public class WebHomePage extends WebBasePage implements HomePage {
 
     @Override
     public void openApplication() {
-        driver.get(ConfigReader.getConfigValue("base.url"));
+        driver.get(ConfigReader.getConfigValue("application.url"));
     }
 
     @Override

@@ -1,200 +1,190 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
-<script type="text/javascript" src="js/Chart.min.js"></script>
-<script type="text/javascript" src="js/moment.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
-<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
-<link rel="stylesheet" href="css/font-awesome.min.css"/>
-<link rel="shortcut icon" href="images/favicon.png"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="js/Chart.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
-$(document).ready(function() {
-    // this will tell tablesorter to try looking for the data-value attribute
-    // if present, it'll sort by that instead
-    // otherwise, it'll sort by the text content of the table cell
-    $("#tablesorter").tablesorter({
-        textAttribute: 'data-value',
-        // ignores the first row of the header, the 'scenario', 'steps', since
-        // sorting those doesn't make sense
-        selectorHeaders: '> thead tr:not(.dont-sort) th',
-        // use a stable sort
-        sortStable: true
-    });
-});
-</script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="shortcut icon" href="images/favicon.png"/>
 
-
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // this will tell tablesorter to try looking for the data-value attribute
+            // if present, it'll sort by that instead
+            // otherwise, it'll sort by the text content of the table cell
+            $("#tablesorter").tablesorter({
+                textAttribute: 'data-value',
+                // ignores the first row of the header, the 'scenario', 'steps', since
+                // sorting those doesn't make sense
+                selectorHeaders: '> thead tr:not(.dont-sort) th',
+                // use a stable sort
+                sortStable: true
+            });
+        });
+    </script>
 
 
-
-
-
-
-
-
-  
-<title>Cucumber Reports (no 1) - Feature: Validate on filter functionality on bike details</title>
+    <title>Cucumber Reports (no 1) - Feature: Validate on filter functionality on bike details</title>
 
 </head>
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top" id="navigation">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse">
-      <p class="navbar-text navbar-left">Cucumber Report</p>
-      <ul class="nav navbar-nav navbar-right">
-                <li role="presentation" ><a href="overview-features.html">Features</a></li>
-        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
-        <li role="presentation" ><a href="overview-steps.html">Steps</a></li>
-                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
-      </ul>
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <p class="navbar-text navbar-left">Cucumber Report</p>
+            <ul class="nav navbar-nav navbar-right">
+                <li role="presentation"><a href="overview-features.html">Features</a></li>
+                <li role="presentation"><a href="overview-tags.html">Tags</a></li>
+                <li role="presentation"><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation"><a href="overview-failures.html">Failures</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
 
 <div class="container-fluid">
-  <div class="col-md-5 col-md-offset-1">
-    
-<table class="table table-bordered" id="build-info">
-  <thead>
-    <tr>
-      <th>Project</th>
-              <th>Number</th>
-            <th>Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="info">
-      <td>CapstoneProject</td>
-              <td>1</td>
-            <td>04 Sep 2024, 13:20</td>
-    </tr>
-  </tbody>
-</table>
+    <div class="col-md-5 col-md-offset-1">
 
-  </div>
-  <div class="col-md-3 col-md-offset-2">
-      </div>
+        <table class="table table-bordered" id="build-info">
+            <thead>
+            <tr>
+                <th>Project</th>
+                <th>Number</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="info">
+                <td>CapstoneProject</td>
+                <td>1</td>
+                <td>04 Sep 2024, 13:20</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="col-md-3 col-md-offset-2">
+    </div>
 </div>
 
 
 <div id="report-lead" class="container-fluid">
-  <div class="col-md-10 col-md-offset-1">
-    <h2>Feature Report</h2>
-      </div>
+    <div class="col-md-10 col-md-offset-1">
+        <h2>Feature Report</h2>
+    </div>
 </div>
 
 
 <div class="container-fluid" id="report">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <table class="stats-table">
-
-        
-<thead>
-  <tr class="header dont-sort">
-        <th></th>
-    <th colspan="6">Steps</th>
-    <th colspan="3">Scenarios</th>
-    <th colspan="2">Features</th>
-  </tr>
-  <tr>
-    <th>Feature</th>
-        <th class="passed">Passed</th>
-    <th class="failed">Failed</th>
-    <th class="skipped">Skipped</th>
-    <th class="pending">Pending</th>
-    <th class="undefined">Undefined</th>
-    <th class="total">Total</th>
-
-    <th class="passed">Passed</th>
-    <th class="failed">Failed</th>
-    <th class="total">Total</th>
-
-    <th>Duration</th>
-    <th>Status</th>
-  </tr>
-</thead>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <table class="stats-table">
 
 
-        <tbody>
-        <tr>
-          <td class="tagname">Validate on filter functionality on bike details</td>
-                    <td      class="passed"    >27</td>
-          <td >0</td>
-          <td >0</td>
-          <td >0</td>
-          <td >0</td>
-          <td class="total">27</td>
+                <thead>
+                <tr class="header dont-sort">
+                    <th></th>
+                    <th colspan="6">Steps</th>
+                    <th colspan="3">Scenarios</th>
+                    <th colspan="2">Features</th>
+                </tr>
+                <tr>
+                    <th>Feature</th>
+                    <th class="passed">Passed</th>
+                    <th class="failed">Failed</th>
+                    <th class="skipped">Skipped</th>
+                    <th class="pending">Pending</th>
+                    <th class="undefined">Undefined</th>
+                    <th class="total">Total</th>
 
-          <td  class="passed"    >3</td>
-          <td >0</td>
-          <td class="total">3</td>
+                    <th class="passed">Passed</th>
+                    <th class="failed">Failed</th>
+                    <th class="total">Total</th>
 
-          <td class="duration" data-value="67097114900">1m 7s 097ms</td>
-          <td class="passed">Passed</td>
-        </tr>
-        </tbody>
+                    <th>Duration</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
 
-      </table>
+
+                <tbody>
+                <tr>
+                    <td class="tagname">Validate on filter functionality on bike details</td>
+                    <td class="passed">27</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="total">27</td>
+
+                    <td class="passed">3</td>
+                    <td>0</td>
+                    <td class="total">3</td>
+
+                    <td class="duration" data-value="67097114900">1m 7s 097ms</td>
+                    <td class="passed">Passed</td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
     </div>
-  </div>
 </div>
-
 
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-10">
-      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
-        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
-      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
-        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-10">
+            <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+               onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+            <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+               onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+        </div>
     </div>
-  </div>
 </div>
 
 
 <div class="container-fluid" id="report">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="feature">
-        
-<div class="tags indention">
-      <b>Tags:</b>
-           <a href="report-tag_web.html">@web</a>
-           <a href="report-tag_android.html">@android</a>
-      </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="feature">
 
-        
-<div class="brief passed">
-  <span class="keyword indention">Feature</span>
-  <span class="name">Validate on filter functionality on bike details</span>
-  
-
-  </div>
-
-        <div class="description indention"></div>
-
-        <div class="elements inner-level">
-                      
-<div class="element">
-  
-  
-<div class="tags indention">
-  </div>
+                <div class="tags indention">
+                    <b>Tags:</b>
+                    <a href="report-tag_web.html">@web</a>
+                    <a href="report-tag_android.html">@android</a>
+                </div>
 
 
-    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+                <div class="brief passed">
+                    <span class="keyword indention">Feature</span>
+                    <span class="name">Validate on filter functionality on bike details</span>
+
+
+                </div>
+
+                <div class="description indention"></div>
+
+                <div class="elements inner-level">
+
+                    <div class="element">
+
+
+                        <div class="tags indention">
+                        </div>
+
+
+                        <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
     
 <div class="brief passed">
   <span class="keyword indention">Background</span>
@@ -205,225 +195,163 @@ $(document).ready(function() {
   </div>
 
   </span>
-  <div class="description indention"></div>
+                        <div class="description indention"></div>
 
-  <div id="element-1" class="collapse collapsable-details ">
-    
-
-
-    
-<div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-2">
-    
-<div class="brief passed">
-  <span class="keyword indention">Steps</span>
-  <span class="name"></span>
-  
-
-       <i class="chevron fa fa-fw"></i>
-  </div>
-
-  </div>
-
-  <div id="steps-2" class="inner-level collapse collapsable-details ">
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">Given</span>
-  <span class="name">user opens application</span>
-  
-  <span class="lead-duration duration">3s 958ms</span>
-
-  </div>
-
-        
+                        <div id="element-1" class="collapse collapsable-details ">
 
 
-        
-        
+                            <div class="steps inner-level">
+                                <div data-toggle="collapse" class=" collapsed  collapsable-control"
+                                     data-target="#steps-2">
 
-        
-
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">When</span>
-  <span class="name">user select his desired city &quot;city.name&quot;</span>
-  
-  <span class="lead-duration duration">3s 158ms</span>
-
-  </div>
-
-        
+                                    <div class="brief passed">
+                                        <span class="keyword indention">Steps</span>
+                                        <span class="name"></span>
 
 
-        
-        
+                                        <i class="chevron fa fa-fw"></i>
+                                    </div>
 
-        
+                                </div>
 
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">And</span>
-  <span class="name">clicks on the entered location</span>
-  
-  <span class="lead-duration duration">1s 557ms</span>
+                                <div id="steps-2" class="inner-level collapse collapsable-details ">
+                                    <div class="step">
 
-  </div>
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Given</span>
+                                            <span class="name">user opens application</span>
 
-        
+                                            <span class="lead-duration duration">3s 958ms</span>
+
+                                        </div>
 
 
-        
-        
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">When</span>
+                                            <span class="name">user select his desired city &quot;city.name&quot;</span>
 
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">verify user is on the home page</span>
-  
-  <span class="lead-duration duration">387ms</span>
+                                            <span class="lead-duration duration">3s 158ms</span>
 
-  </div>
-
-        
+                                        </div>
 
 
-        
-        
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">And</span>
+                                            <span class="name">clicks on the entered location</span>
 
-        
-    <div class="embeddings inner-level">
-                <div class="embedding indention">
-        <div data-toggle="collapse" data-target="#embedding-3" class="collapsable-control">
-      <a>Attachment 1 (png)</a>
-      <a href="embeddings/embedding_309907022.png" target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-3" class="collapse collapsable-details">
+                                            <span class="lead-duration duration">1s 557ms</span>
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="step">
+
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Then</span>
+                                            <span class="name">verify user is on the home page</span>
+
+                                            <span class="lead-duration duration">387ms</span>
+
+                                        </div>
+
+
+                                        <div class="embeddings inner-level">
+                                            <div class="embedding indention">
+                                                <div data-toggle="collapse" data-target="#embedding-3"
+                                                     class="collapsable-control">
+                                                    <a>Attachment 1 (png)</a>
+                                                    <a href="embeddings/embedding_309907022.png" target="_blank">
+                                                        <span class="download-button glyphicon glyphicon-download-alt"></span>
+                                                    </a>
+                                                </div>
+                                                <div id="embedding-3" class="collapse collapsable-details">
       <span class="embedding-content">
         <img src="embeddings/embedding_309907022.png">
       </span>
-    </div>
-  </div>
-        </div>
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">When</span>
-  <span class="name">user enters the details for ride &quot;pickup.date&quot;, &quot;pickup.time&quot;, &quot;drop.off.date&quot; and &quot;drop.off.time&quot;</span>
-  
-  <span class="lead-duration duration">1s 700ms</span>
+                                                </div>
+                                            </div>
+                                        </div>
 
-  </div>
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">When</span>
+                                            <span class="name">user enters the details for ride &quot;pickup.date&quot;, &quot;pickup.time&quot;, &quot;drop.off.date&quot; and &quot;drop.off.time&quot;</span>
+
+                                            <span class="lead-duration duration">1s 700ms</span>
+
+                                        </div>
 
 
-        
-        
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">And</span>
+                                            <span class="name">clicks on search button</span>
 
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">And</span>
-  <span class="name">clicks on search button</span>
-  
-  <span class="lead-duration duration">5s 474ms</span>
+                                            <span class="lead-duration duration">5s 474ms</span>
 
-  </div>
-
-        
+                                        </div>
 
 
-        
-        
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Then</span>
+                                            <span class="name">verify user is on bike details page</span>
 
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">verify user is on bike details page</span>
-  
-  <span class="lead-duration duration">188ms</span>
+                                            <span class="lead-duration duration">188ms</span>
 
-  </div>
-
-        
+                                        </div>
 
 
-        
-        
-
-        
-
-        
-    <div class="embeddings inner-level">
-                <div class="embedding indention">
-        <div data-toggle="collapse" data-target="#embedding-4" class="collapsable-control">
-      <a>Attachment 1 (png)</a>
-      <a href="embeddings/embedding_-1897010516.png" target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-4" class="collapse collapsable-details">
+                                        <div class="embeddings inner-level">
+                                            <div class="embedding indention">
+                                                <div data-toggle="collapse" data-target="#embedding-4"
+                                                     class="collapsable-control">
+                                                    <a>Attachment 1 (png)</a>
+                                                    <a href="embeddings/embedding_-1897010516.png" target="_blank">
+                                                        <span class="download-button glyphicon glyphicon-download-alt"></span>
+                                                    </a>
+                                                </div>
+                                                <div id="embedding-4" class="collapse collapsable-details">
       <span class="embedding-content">
         <img src="embeddings/embedding_-1897010516.png">
       </span>
-    </div>
-  </div>
-        </div>
-  
-      </div>
-      </div>
-</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
 
 
-    
-
-  </div>
-</div>
-
-                      
-<div class="element">
-  
-  
-<div class="tags indention">
-      <b>Tags:</b>
-           <a href="report-tag_web.html">@web</a>
-           <a href="report-tag_android.html">@android</a>
-      </div>
+                        </div>
+                    </div>
 
 
-    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-5">
+                    <div class="element">
+
+
+                        <div class="tags indention">
+                            <b>Tags:</b>
+                            <a href="report-tag_web.html">@web</a>
+                            <a href="report-tag_android.html">@android</a>
+                        </div>
+
+
+                        <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-5">
     
 <div class="brief passed">
   <span class="keyword indention">Scenario</span>
@@ -434,164 +362,141 @@ $(document).ready(function() {
   </div>
 
   </span>
-  <div class="description indention"></div>
+                        <div class="description indention"></div>
 
-  <div id="element-5" class="collapse collapsable-details ">
-    
-  <div class="inner-level hooks-before">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-6">
-      
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-  
+                        <div id="element-5" class="collapse collapsable-details ">
 
-       <i class="chevron fa fa-fw"></i>
-  </div>
+                            <div class="inner-level hooks-before">
+                                <div data-toggle="collapse" class=" collapsed  collapsable-control"
+                                     data-target="#before-6">
 
-    </div>
-
-    <div id="before-6" class="inner-level collapse collapsable-details ">
-              <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">Before</span>
-                          <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
-                        
-  <span class="lead-duration duration">3s 335ms</span>
-
-          </div>
-
-                      
-
-          
-          
-  
-        </div>
-          </div>
-  </div>
+                                    <div class="brief passed">
+                                        <span class="keyword indention">Hooks</span>
+                                        <span class="name"></span>
 
 
-    
-<div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-7">
-    
-<div class="brief passed">
-  <span class="keyword indention">Steps</span>
-  <span class="name"></span>
-  
+                                        <i class="chevron fa fa-fw"></i>
+                                    </div>
 
-       <i class="chevron fa fa-fw"></i>
-  </div>
+                                </div>
 
-  </div>
+                                <div id="before-6" class="inner-level collapse collapsable-details ">
+                                    <div class="hook">
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Before</span>
+                                            <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
 
-  <div id="steps-7" class="inner-level collapse collapsable-details ">
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">When</span>
-  <span class="name">user selects the bike model &quot;bike.model&quot;</span>
-  
-  <span class="lead-duration duration">3s 670ms</span>
+                                            <span class="lead-duration duration">3s 335ms</span>
 
-  </div>
-
-        
+                                        </div>
 
 
-        
-        
-
-        
-
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">verify user can get all bikes as selected model</span>
-  
-  <span class="lead-duration duration">157ms</span>
-
-  </div>
-
-        
+                                    </div>
+                                </div>
+                            </div>
 
 
-        
-        
+                            <div class="steps inner-level">
+                                <div data-toggle="collapse" class=" collapsed  collapsable-control"
+                                     data-target="#steps-7">
 
-        
+                                    <div class="brief passed">
+                                        <span class="keyword indention">Steps</span>
+                                        <span class="name"></span>
 
-        
-    <div class="embeddings inner-level">
-                <div class="embedding indention">
-        <div data-toggle="collapse" data-target="#embedding-8" class="collapsable-control">
-      <a>Attachment 1 (png)</a>
-      <a href="embeddings/embedding_-1952578566.png" target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-8" class="collapse collapsable-details">
+
+                                        <i class="chevron fa fa-fw"></i>
+                                    </div>
+
+                                </div>
+
+                                <div id="steps-7" class="inner-level collapse collapsable-details ">
+                                    <div class="step">
+
+                                        <div class="brief passed">
+                                            <span class="keyword indention">When</span>
+                                            <span class="name">user selects the bike model &quot;bike.model&quot;</span>
+
+                                            <span class="lead-duration duration">3s 670ms</span>
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="step">
+
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Then</span>
+                                            <span class="name">verify user can get all bikes as selected model</span>
+
+                                            <span class="lead-duration duration">157ms</span>
+
+                                        </div>
+
+
+                                        <div class="embeddings inner-level">
+                                            <div class="embedding indention">
+                                                <div data-toggle="collapse" data-target="#embedding-8"
+                                                     class="collapsable-control">
+                                                    <a>Attachment 1 (png)</a>
+                                                    <a href="embeddings/embedding_-1952578566.png" target="_blank">
+                                                        <span class="download-button glyphicon glyphicon-download-alt"></span>
+                                                    </a>
+                                                </div>
+                                                <div id="embedding-8" class="collapse collapsable-details">
       <span class="embedding-content">
         <img src="embeddings/embedding_-1952578566.png">
       </span>
-    </div>
-  </div>
-        </div>
-  
-      </div>
-      </div>
-</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
 
 
-    
-  <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-9">
-      
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-  
+                            <div class="inner-level hooks-after">
+                                <div data-toggle="collapse" class=" collapsed  collapsable-control"
+                                     data-target="#after-9">
 
-       <i class="chevron fa fa-fw"></i>
-  </div>
-
-    </div>
-
-    <div id="after-9" class="inner-level collapse collapsable-details ">
-              <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">After</span>
-                          <span class="location name">com.automation.steps.Hooks.cleanUp(io.cucumber.java.Scenario)</span>
-                        
-  <span class="lead-duration duration">1m 10s 449ms</span>
-
-          </div>
-
-                      
-
-          
-          
-  
-        </div>
-          </div>
-  </div>
-
-  </div>
-</div>
-
-                      
-<div class="element">
-  
-  
-<div class="tags indention">
-  </div>
+                                    <div class="brief passed">
+                                        <span class="keyword indention">Hooks</span>
+                                        <span class="name"></span>
 
 
-    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-10">
+                                        <i class="chevron fa fa-fw"></i>
+                                    </div>
+
+                                </div>
+
+                                <div id="after-9" class="inner-level collapse collapsable-details ">
+                                    <div class="hook">
+                                        <div class="brief passed">
+                                            <span class="keyword indention">After</span>
+                                            <span class="location name">com.automation.steps.Hooks.cleanUp(io.cucumber.java.Scenario)</span>
+
+                                            <span class="lead-duration duration">1m 10s 449ms</span>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="element">
+
+
+                        <div class="tags indention">
+                        </div>
+
+
+                        <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-10">
     
 <div class="brief passed">
   <span class="keyword indention">Background</span>
@@ -602,225 +507,163 @@ $(document).ready(function() {
   </div>
 
   </span>
-  <div class="description indention"></div>
+                        <div class="description indention"></div>
 
-  <div id="element-10" class="collapse collapsable-details ">
-    
-
-
-    
-<div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-11">
-    
-<div class="brief passed">
-  <span class="keyword indention">Steps</span>
-  <span class="name"></span>
-  
-
-       <i class="chevron fa fa-fw"></i>
-  </div>
-
-  </div>
-
-  <div id="steps-11" class="inner-level collapse collapsable-details ">
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">Given</span>
-  <span class="name">user opens application</span>
-  
-  <span class="lead-duration duration">4s 616ms</span>
-
-  </div>
-
-        
+                        <div id="element-10" class="collapse collapsable-details ">
 
 
-        
-        
+                            <div class="steps inner-level">
+                                <div data-toggle="collapse" class=" collapsed  collapsable-control"
+                                     data-target="#steps-11">
 
-        
-
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">When</span>
-  <span class="name">user select his desired city &quot;city.name&quot;</span>
-  
-  <span class="lead-duration duration">3s 280ms</span>
-
-  </div>
-
-        
+                                    <div class="brief passed">
+                                        <span class="keyword indention">Steps</span>
+                                        <span class="name"></span>
 
 
-        
-        
+                                        <i class="chevron fa fa-fw"></i>
+                                    </div>
 
-        
+                                </div>
 
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">And</span>
-  <span class="name">clicks on the entered location</span>
-  
-  <span class="lead-duration duration">1s 447ms</span>
+                                <div id="steps-11" class="inner-level collapse collapsable-details ">
+                                    <div class="step">
 
-  </div>
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Given</span>
+                                            <span class="name">user opens application</span>
 
-        
+                                            <span class="lead-duration duration">4s 616ms</span>
+
+                                        </div>
 
 
-        
-        
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">When</span>
+                                            <span class="name">user select his desired city &quot;city.name&quot;</span>
 
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">verify user is on the home page</span>
-  
-  <span class="lead-duration duration">388ms</span>
+                                            <span class="lead-duration duration">3s 280ms</span>
 
-  </div>
-
-        
+                                        </div>
 
 
-        
-        
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">And</span>
+                                            <span class="name">clicks on the entered location</span>
 
-        
-    <div class="embeddings inner-level">
-                <div class="embedding indention">
-        <div data-toggle="collapse" data-target="#embedding-12" class="collapsable-control">
-      <a>Attachment 1 (png)</a>
-      <a href="embeddings/embedding_1185616593.png" target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-12" class="collapse collapsable-details">
+                                            <span class="lead-duration duration">1s 447ms</span>
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="step">
+
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Then</span>
+                                            <span class="name">verify user is on the home page</span>
+
+                                            <span class="lead-duration duration">388ms</span>
+
+                                        </div>
+
+
+                                        <div class="embeddings inner-level">
+                                            <div class="embedding indention">
+                                                <div data-toggle="collapse" data-target="#embedding-12"
+                                                     class="collapsable-control">
+                                                    <a>Attachment 1 (png)</a>
+                                                    <a href="embeddings/embedding_1185616593.png" target="_blank">
+                                                        <span class="download-button glyphicon glyphicon-download-alt"></span>
+                                                    </a>
+                                                </div>
+                                                <div id="embedding-12" class="collapse collapsable-details">
       <span class="embedding-content">
         <img src="embeddings/embedding_1185616593.png">
       </span>
-    </div>
-  </div>
-        </div>
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">When</span>
-  <span class="name">user enters the details for ride &quot;pickup.date&quot;, &quot;pickup.time&quot;, &quot;drop.off.date&quot; and &quot;drop.off.time&quot;</span>
-  
-  <span class="lead-duration duration">1s 751ms</span>
+                                                </div>
+                                            </div>
+                                        </div>
 
-  </div>
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">When</span>
+                                            <span class="name">user enters the details for ride &quot;pickup.date&quot;, &quot;pickup.time&quot;, &quot;drop.off.date&quot; and &quot;drop.off.time&quot;</span>
+
+                                            <span class="lead-duration duration">1s 751ms</span>
+
+                                        </div>
 
 
-        
-        
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">And</span>
+                                            <span class="name">clicks on search button</span>
 
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">And</span>
-  <span class="name">clicks on search button</span>
-  
-  <span class="lead-duration duration">3s 904ms</span>
+                                            <span class="lead-duration duration">3s 904ms</span>
 
-  </div>
-
-        
+                                        </div>
 
 
-        
-        
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Then</span>
+                                            <span class="name">verify user is on bike details page</span>
 
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">verify user is on bike details page</span>
-  
-  <span class="lead-duration duration">159ms</span>
+                                            <span class="lead-duration duration">159ms</span>
 
-  </div>
-
-        
+                                        </div>
 
 
-        
-        
-
-        
-
-        
-    <div class="embeddings inner-level">
-                <div class="embedding indention">
-        <div data-toggle="collapse" data-target="#embedding-13" class="collapsable-control">
-      <a>Attachment 1 (png)</a>
-      <a href="embeddings/embedding_-1897010516.png" target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-13" class="collapse collapsable-details">
+                                        <div class="embeddings inner-level">
+                                            <div class="embedding indention">
+                                                <div data-toggle="collapse" data-target="#embedding-13"
+                                                     class="collapsable-control">
+                                                    <a>Attachment 1 (png)</a>
+                                                    <a href="embeddings/embedding_-1897010516.png" target="_blank">
+                                                        <span class="download-button glyphicon glyphicon-download-alt"></span>
+                                                    </a>
+                                                </div>
+                                                <div id="embedding-13" class="collapse collapsable-details">
       <span class="embedding-content">
         <img src="embeddings/embedding_-1897010516.png">
       </span>
-    </div>
-  </div>
-        </div>
-  
-      </div>
-      </div>
-</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
 
 
-    
-
-  </div>
-</div>
-
-                      
-<div class="element">
-  
-  
-<div class="tags indention">
-      <b>Tags:</b>
-           <a href="report-tag_web.html">@web</a>
-           <a href="report-tag_android.html">@android</a>
-      </div>
+                        </div>
+                    </div>
 
 
-    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-14">
+                    <div class="element">
+
+
+                        <div class="tags indention">
+                            <b>Tags:</b>
+                            <a href="report-tag_web.html">@web</a>
+                            <a href="report-tag_android.html">@android</a>
+                        </div>
+
+
+                        <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-14">
     
 <div class="brief passed">
   <span class="keyword indention">Scenario</span>
@@ -831,164 +674,141 @@ $(document).ready(function() {
   </div>
 
   </span>
-  <div class="description indention"></div>
+                        <div class="description indention"></div>
 
-  <div id="element-14" class="collapse collapsable-details ">
-    
-  <div class="inner-level hooks-before">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-15">
-      
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-  
+                        <div id="element-14" class="collapse collapsable-details ">
 
-       <i class="chevron fa fa-fw"></i>
-  </div>
+                            <div class="inner-level hooks-before">
+                                <div data-toggle="collapse" class=" collapsed  collapsable-control"
+                                     data-target="#before-15">
 
-    </div>
-
-    <div id="before-15" class="inner-level collapse collapsable-details ">
-              <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">Before</span>
-                          <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
-                        
-  <span class="lead-duration duration">3s 276ms</span>
-
-          </div>
-
-                      
-
-          
-          
-  
-        </div>
-          </div>
-  </div>
+                                    <div class="brief passed">
+                                        <span class="keyword indention">Hooks</span>
+                                        <span class="name"></span>
 
 
-    
-<div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-16">
-    
-<div class="brief passed">
-  <span class="keyword indention">Steps</span>
-  <span class="name"></span>
-  
+                                        <i class="chevron fa fa-fw"></i>
+                                    </div>
 
-       <i class="chevron fa fa-fw"></i>
-  </div>
+                                </div>
 
-  </div>
+                                <div id="before-15" class="inner-level collapse collapsable-details ">
+                                    <div class="hook">
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Before</span>
+                                            <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
 
-  <div id="steps-16" class="inner-level collapse collapsable-details ">
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">When</span>
-  <span class="name">user selects the bike location &quot;bike.location&quot;</span>
-  
-  <span class="lead-duration duration">4s 236ms</span>
+                                            <span class="lead-duration duration">3s 276ms</span>
 
-  </div>
-
-        
+                                        </div>
 
 
-        
-        
-
-        
-
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">verify user can get all bikes as selected location</span>
-  
-  <span class="lead-duration duration">2s 414ms</span>
-
-  </div>
-
-        
+                                    </div>
+                                </div>
+                            </div>
 
 
-        
-        
+                            <div class="steps inner-level">
+                                <div data-toggle="collapse" class=" collapsed  collapsable-control"
+                                     data-target="#steps-16">
 
-        
+                                    <div class="brief passed">
+                                        <span class="keyword indention">Steps</span>
+                                        <span class="name"></span>
 
-        
-    <div class="embeddings inner-level">
-                <div class="embedding indention">
-        <div data-toggle="collapse" data-target="#embedding-17" class="collapsable-control">
-      <a>Attachment 1 (png)</a>
-      <a href="embeddings/embedding_156268958.png" target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-17" class="collapse collapsable-details">
+
+                                        <i class="chevron fa fa-fw"></i>
+                                    </div>
+
+                                </div>
+
+                                <div id="steps-16" class="inner-level collapse collapsable-details ">
+                                    <div class="step">
+
+                                        <div class="brief passed">
+                                            <span class="keyword indention">When</span>
+                                            <span class="name">user selects the bike location &quot;bike.location&quot;</span>
+
+                                            <span class="lead-duration duration">4s 236ms</span>
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="step">
+
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Then</span>
+                                            <span class="name">verify user can get all bikes as selected location</span>
+
+                                            <span class="lead-duration duration">2s 414ms</span>
+
+                                        </div>
+
+
+                                        <div class="embeddings inner-level">
+                                            <div class="embedding indention">
+                                                <div data-toggle="collapse" data-target="#embedding-17"
+                                                     class="collapsable-control">
+                                                    <a>Attachment 1 (png)</a>
+                                                    <a href="embeddings/embedding_156268958.png" target="_blank">
+                                                        <span class="download-button glyphicon glyphicon-download-alt"></span>
+                                                    </a>
+                                                </div>
+                                                <div id="embedding-17" class="collapse collapsable-details">
       <span class="embedding-content">
         <img src="embeddings/embedding_156268958.png">
       </span>
-    </div>
-  </div>
-        </div>
-  
-      </div>
-      </div>
-</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
 
 
-    
-  <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-18">
-      
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-  
+                            <div class="inner-level hooks-after">
+                                <div data-toggle="collapse" class=" collapsed  collapsable-control"
+                                     data-target="#after-18">
 
-       <i class="chevron fa fa-fw"></i>
-  </div>
-
-    </div>
-
-    <div id="after-18" class="inner-level collapse collapsable-details ">
-              <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">After</span>
-                          <span class="location name">com.automation.steps.Hooks.cleanUp(io.cucumber.java.Scenario)</span>
-                        
-  <span class="lead-duration duration">1m 10s 466ms</span>
-
-          </div>
-
-                      
-
-          
-          
-  
-        </div>
-          </div>
-  </div>
-
-  </div>
-</div>
-
-                      
-<div class="element">
-  
-  
-<div class="tags indention">
-  </div>
+                                    <div class="brief passed">
+                                        <span class="keyword indention">Hooks</span>
+                                        <span class="name"></span>
 
 
-    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-19">
+                                        <i class="chevron fa fa-fw"></i>
+                                    </div>
+
+                                </div>
+
+                                <div id="after-18" class="inner-level collapse collapsable-details ">
+                                    <div class="hook">
+                                        <div class="brief passed">
+                                            <span class="keyword indention">After</span>
+                                            <span class="location name">com.automation.steps.Hooks.cleanUp(io.cucumber.java.Scenario)</span>
+
+                                            <span class="lead-duration duration">1m 10s 466ms</span>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="element">
+
+
+                        <div class="tags indention">
+                        </div>
+
+
+                        <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-19">
     
 <div class="brief passed">
   <span class="keyword indention">Background</span>
@@ -999,225 +819,163 @@ $(document).ready(function() {
   </div>
 
   </span>
-  <div class="description indention"></div>
+                        <div class="description indention"></div>
 
-  <div id="element-19" class="collapse collapsable-details ">
-    
-
-
-    
-<div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-20">
-    
-<div class="brief passed">
-  <span class="keyword indention">Steps</span>
-  <span class="name"></span>
-  
-
-       <i class="chevron fa fa-fw"></i>
-  </div>
-
-  </div>
-
-  <div id="steps-20" class="inner-level collapse collapsable-details ">
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">Given</span>
-  <span class="name">user opens application</span>
-  
-  <span class="lead-duration duration">4s 479ms</span>
-
-  </div>
-
-        
+                        <div id="element-19" class="collapse collapsable-details ">
 
 
-        
-        
+                            <div class="steps inner-level">
+                                <div data-toggle="collapse" class=" collapsed  collapsable-control"
+                                     data-target="#steps-20">
 
-        
-
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">When</span>
-  <span class="name">user select his desired city &quot;city.name&quot;</span>
-  
-  <span class="lead-duration duration">3s 140ms</span>
-
-  </div>
-
-        
+                                    <div class="brief passed">
+                                        <span class="keyword indention">Steps</span>
+                                        <span class="name"></span>
 
 
-        
-        
+                                        <i class="chevron fa fa-fw"></i>
+                                    </div>
 
-        
+                                </div>
 
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">And</span>
-  <span class="name">clicks on the entered location</span>
-  
-  <span class="lead-duration duration">3s 639ms</span>
+                                <div id="steps-20" class="inner-level collapse collapsable-details ">
+                                    <div class="step">
 
-  </div>
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Given</span>
+                                            <span class="name">user opens application</span>
 
-        
+                                            <span class="lead-duration duration">4s 479ms</span>
+
+                                        </div>
 
 
-        
-        
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">When</span>
+                                            <span class="name">user select his desired city &quot;city.name&quot;</span>
 
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">verify user is on the home page</span>
-  
-  <span class="lead-duration duration">456ms</span>
+                                            <span class="lead-duration duration">3s 140ms</span>
 
-  </div>
-
-        
+                                        </div>
 
 
-        
-        
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">And</span>
+                                            <span class="name">clicks on the entered location</span>
 
-        
-    <div class="embeddings inner-level">
-                <div class="embedding indention">
-        <div data-toggle="collapse" data-target="#embedding-21" class="collapsable-control">
-      <a>Attachment 1 (png)</a>
-      <a href="embeddings/embedding_609193017.png" target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-21" class="collapse collapsable-details">
+                                            <span class="lead-duration duration">3s 639ms</span>
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="step">
+
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Then</span>
+                                            <span class="name">verify user is on the home page</span>
+
+                                            <span class="lead-duration duration">456ms</span>
+
+                                        </div>
+
+
+                                        <div class="embeddings inner-level">
+                                            <div class="embedding indention">
+                                                <div data-toggle="collapse" data-target="#embedding-21"
+                                                     class="collapsable-control">
+                                                    <a>Attachment 1 (png)</a>
+                                                    <a href="embeddings/embedding_609193017.png" target="_blank">
+                                                        <span class="download-button glyphicon glyphicon-download-alt"></span>
+                                                    </a>
+                                                </div>
+                                                <div id="embedding-21" class="collapse collapsable-details">
       <span class="embedding-content">
         <img src="embeddings/embedding_609193017.png">
       </span>
-    </div>
-  </div>
-        </div>
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">When</span>
-  <span class="name">user enters the details for ride &quot;pickup.date&quot;, &quot;pickup.time&quot;, &quot;drop.off.date&quot; and &quot;drop.off.time&quot;</span>
-  
-  <span class="lead-duration duration">2s 331ms</span>
+                                                </div>
+                                            </div>
+                                        </div>
 
-  </div>
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">When</span>
+                                            <span class="name">user enters the details for ride &quot;pickup.date&quot;, &quot;pickup.time&quot;, &quot;drop.off.date&quot; and &quot;drop.off.time&quot;</span>
+
+                                            <span class="lead-duration duration">2s 331ms</span>
+
+                                        </div>
 
 
-        
-        
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">And</span>
+                                            <span class="name">clicks on search button</span>
 
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">And</span>
-  <span class="name">clicks on search button</span>
-  
-  <span class="lead-duration duration">3s 531ms</span>
+                                            <span class="lead-duration duration">3s 531ms</span>
 
-  </div>
-
-        
+                                        </div>
 
 
-        
-        
+                                    </div>
+                                    <div class="step">
 
-        
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Then</span>
+                                            <span class="name">verify user is on bike details page</span>
 
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">verify user is on bike details page</span>
-  
-  <span class="lead-duration duration">196ms</span>
+                                            <span class="lead-duration duration">196ms</span>
 
-  </div>
-
-        
+                                        </div>
 
 
-        
-        
-
-        
-
-        
-    <div class="embeddings inner-level">
-                <div class="embedding indention">
-        <div data-toggle="collapse" data-target="#embedding-22" class="collapsable-control">
-      <a>Attachment 1 (png)</a>
-      <a href="embeddings/embedding_-1897010516.png" target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-22" class="collapse collapsable-details">
+                                        <div class="embeddings inner-level">
+                                            <div class="embedding indention">
+                                                <div data-toggle="collapse" data-target="#embedding-22"
+                                                     class="collapsable-control">
+                                                    <a>Attachment 1 (png)</a>
+                                                    <a href="embeddings/embedding_-1897010516.png" target="_blank">
+                                                        <span class="download-button glyphicon glyphicon-download-alt"></span>
+                                                    </a>
+                                                </div>
+                                                <div id="embedding-22" class="collapse collapsable-details">
       <span class="embedding-content">
         <img src="embeddings/embedding_-1897010516.png">
       </span>
-    </div>
-  </div>
-        </div>
-  
-      </div>
-      </div>
-</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
 
 
-    
-
-  </div>
-</div>
-
-                      
-<div class="element">
-  
-  
-<div class="tags indention">
-      <b>Tags:</b>
-           <a href="report-tag_web.html">@web</a>
-           <a href="report-tag_android.html">@android</a>
-      </div>
+                        </div>
+                    </div>
 
 
-    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-23">
+                    <div class="element">
+
+
+                        <div class="tags indention">
+                            <b>Tags:</b>
+                            <a href="report-tag_web.html">@web</a>
+                            <a href="report-tag_android.html">@android</a>
+                        </div>
+
+
+                        <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-23">
     
 <div class="brief passed">
   <span class="keyword indention">Scenario</span>
@@ -1228,187 +986,164 @@ $(document).ready(function() {
   </div>
 
   </span>
-  <div class="description indention"></div>
+                        <div class="description indention"></div>
 
-  <div id="element-23" class="collapse collapsable-details ">
-    
-  <div class="inner-level hooks-before">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-24">
-      
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-  
+                        <div id="element-23" class="collapse collapsable-details ">
 
-       <i class="chevron fa fa-fw"></i>
-  </div>
+                            <div class="inner-level hooks-before">
+                                <div data-toggle="collapse" class=" collapsed  collapsable-control"
+                                     data-target="#before-24">
 
-    </div>
-
-    <div id="before-24" class="inner-level collapse collapsable-details ">
-              <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">Before</span>
-                          <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
-                        
-  <span class="lead-duration duration">3s 242ms</span>
-
-          </div>
-
-                      
-
-          
-          
-  
-        </div>
-          </div>
-  </div>
+                                    <div class="brief passed">
+                                        <span class="keyword indention">Hooks</span>
+                                        <span class="name"></span>
 
 
-    
-<div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-25">
-    
-<div class="brief passed">
-  <span class="keyword indention">Steps</span>
-  <span class="name"></span>
-  
+                                        <i class="chevron fa fa-fw"></i>
+                                    </div>
 
-       <i class="chevron fa fa-fw"></i>
-  </div>
+                                </div>
 
-  </div>
+                                <div id="before-24" class="inner-level collapse collapsable-details ">
+                                    <div class="hook">
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Before</span>
+                                            <span class="location name">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</span>
 
-  <div id="steps-25" class="inner-level collapse collapsable-details ">
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">When</span>
-  <span class="name">user selects the bike model &quot;bike.model&quot; and location &quot;bike.location&quot;</span>
-  
-  <span class="lead-duration duration">4s 668ms</span>
+                                            <span class="lead-duration duration">3s 242ms</span>
 
-  </div>
-
-        
+                                        </div>
 
 
-        
-        
-
-        
-
-        
-  
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">verify user can get all bikes as selected model and location</span>
-  
-  <span class="lead-duration duration">2s 199ms</span>
-
-  </div>
-
-        
+                                    </div>
+                                </div>
+                            </div>
 
 
-        
-        
+                            <div class="steps inner-level">
+                                <div data-toggle="collapse" class=" collapsed  collapsable-control"
+                                     data-target="#steps-25">
 
-        
+                                    <div class="brief passed">
+                                        <span class="keyword indention">Steps</span>
+                                        <span class="name"></span>
 
-        
-    <div class="embeddings inner-level">
-                <div class="embedding indention">
-        <div data-toggle="collapse" data-target="#embedding-26" class="collapsable-control">
-      <a>Attachment 1 (png)</a>
-      <a href="embeddings/embedding_-2145102057.png" target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-26" class="collapse collapsable-details">
+
+                                        <i class="chevron fa fa-fw"></i>
+                                    </div>
+
+                                </div>
+
+                                <div id="steps-25" class="inner-level collapse collapsable-details ">
+                                    <div class="step">
+
+                                        <div class="brief passed">
+                                            <span class="keyword indention">When</span>
+                                            <span class="name">user selects the bike model &quot;bike.model&quot; and location &quot;bike.location&quot;</span>
+
+                                            <span class="lead-duration duration">4s 668ms</span>
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="step">
+
+                                        <div class="brief passed">
+                                            <span class="keyword indention">Then</span>
+                                            <span class="name">verify user can get all bikes as selected model and location</span>
+
+                                            <span class="lead-duration duration">2s 199ms</span>
+
+                                        </div>
+
+
+                                        <div class="embeddings inner-level">
+                                            <div class="embedding indention">
+                                                <div data-toggle="collapse" data-target="#embedding-26"
+                                                     class="collapsable-control">
+                                                    <a>Attachment 1 (png)</a>
+                                                    <a href="embeddings/embedding_-2145102057.png" target="_blank">
+                                                        <span class="download-button glyphicon glyphicon-download-alt"></span>
+                                                    </a>
+                                                </div>
+                                                <div id="embedding-26" class="collapse collapsable-details">
       <span class="embedding-content">
         <img src="embeddings/embedding_-2145102057.png">
       </span>
-    </div>
-  </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="inner-level hooks-after">
+                                <div data-toggle="collapse" class=" collapsed  collapsable-control"
+                                     data-target="#after-27">
+
+                                    <div class="brief passed">
+                                        <span class="keyword indention">Hooks</span>
+                                        <span class="name"></span>
+
+
+                                        <i class="chevron fa fa-fw"></i>
+                                    </div>
+
+                                </div>
+
+                                <div id="after-27" class="inner-level collapse collapsable-details ">
+                                    <div class="hook">
+                                        <div class="brief passed">
+                                            <span class="keyword indention">After</span>
+                                            <span class="location name">com.automation.steps.Hooks.cleanUp(io.cucumber.java.Scenario)</span>
+
+                                            <span class="lead-duration duration">1m 10s 374ms</span>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
-  
-      </div>
-      </div>
-</div>
-
-
-    
-  <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-27">
-      
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-  
-
-       <i class="chevron fa fa-fw"></i>
-  </div>
-
     </div>
-
-    <div id="after-27" class="inner-level collapse collapsable-details ">
-              <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">After</span>
-                          <span class="location name">com.automation.steps.Hooks.cleanUp(io.cucumber.java.Scenario)</span>
-                        
-  <span class="lead-duration duration">1m 10s 374ms</span>
-
-          </div>
-
-                      
-
-          
-          
-  
-        </div>
-          </div>
-  </div>
-
-  </div>
-</div>
-
-                  </div>
-
-      </div>
-    </div>
-  </div>
 </div>
 
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-10">
-      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
-        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
-      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
-        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-10">
+            <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+               onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+            <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+               onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+        </div>
     </div>
-  </div>
 </div>
 
 <br>
 
 <nav class="navbar navbar-default" id="footer">
-  <div class="container-fluid">
-    <p class="navbar-text navbar-right">
-        <small>generate Cucumber HTML reports via:&nbsp;</small>
-        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
-        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
-        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
-        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
-        &nbsp;&nbsp;
-    </p>
-  </div>
+    <div class="container-fluid">
+        <p class="navbar-text navbar-right">
+            <small>generate Cucumber HTML reports via:&nbsp;</small>
+            <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+            <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+            <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+            <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+            &nbsp;&nbsp;
+        </p>
+    </div>
 </nav>
 
 </body>
