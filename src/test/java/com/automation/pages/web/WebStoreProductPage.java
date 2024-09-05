@@ -57,9 +57,6 @@ public class WebStoreProductPage extends WebBasePage implements StoreProductPage
     private void addToCart(WebElement element) {
         click(element);
         click(addToCartProductPage);
-//        pause(4000);
-//        waitTillVisible(drawerCloseButton);
-//        click(drawerCloseButton);
     }
 
     @Override

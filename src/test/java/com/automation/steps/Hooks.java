@@ -12,7 +12,7 @@ public class Hooks {
     @Before
     public void setUp(Scenario scenario) {
         ConfigReader.initReader();
-//        ConfigReader.setConfigValue("application.type", System.getProperty("env"));
+        ConfigReader.setConfigValue("application.type", System.getProperty("env"));
         ReportManager.initReporter(scenario);
         DriverManager.createDriver();
     }
@@ -23,10 +23,10 @@ public class Hooks {
             ReportManager.attachScreenshot();
         }
         DriverManager.getDriver().quit();
-//        try {
-//            Thread.sleep(70000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
+        try {
+            Thread.sleep(70000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -93,7 +93,7 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     public boolean isSelectedLocationDisplayed() {
         WebElement locationText = driver.findElement(By.xpath(selectLocationPath));
         String selectedLocation = locationText.getText();
-        return selectedLocation.equals(ConfigReader.getConfigValue("search.location"));
+        return selectedLocation.equalsIgnoreCase(ConfigReader.getConfigValue("search.location"));
     }
 
     @Override
