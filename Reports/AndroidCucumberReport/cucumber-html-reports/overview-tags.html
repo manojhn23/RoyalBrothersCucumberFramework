@@ -48,28 +48,28 @@ $(document).ready(function() {
   $(document).ready(function() {
 
     var chartData = {
-        labels:  [ "@android", ] ,
+        labels:  [ "@android",  "@bugOnWeb",  "@web", ] ,
         datasets: [
             {
                 label: "Passed",
                 backgroundColor: "#92DD96",
-                data:  [ 100.00, ]             },
+                data:  [ 77.88,  100.00,  60.94, ]             },
             {
                 label: "Failed",
                 backgroundColor: "#F2928C",
-                data:  [ 0.00, ]             },
+                data:  [ 8.85,  0.00,  15.62, ]             },
             {
                 label: "Skipped",
                 backgroundColor: "#8AF",
-                data:  [ 0.00, ]             },
+                data:  [ 13.27,  0.00,  23.44, ]             },
             {
                 label: "Pending",
                 backgroundColor: "#F5F28F",
-                data:  [ 0.00, ]             },
+                data:  [ 0.00,  0.00,  0.00, ]             },
             {
                 label: "Undefined",
                 backgroundColor: "#F5B975",
-                data:  [ 0.00, ]             }
+                data:  [ 0.00,  0.00,  0.00, ]             }
         ]
     };
 
@@ -130,7 +130,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>CapstoneProject</td>
               <td>1</td>
-            <td>26 Aug 2024, 17:01</td>
+            <td>04 Sep 2024, 20:59</td>
     </tr>
   </tbody>
 </table>
@@ -194,52 +194,86 @@ $(document).ready(function() {
           <tr>
         <td class="tagname"><a href="report-tag_android.html">@android</a></td>
         
-        <td      class="passed"    >2</td>
+        <td      class="passed"    >88</td>
+        <td      class="failed"    >10</td>
+        <td     class="skipped"   >15</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">113</td>
+
+        <td  class="passed"    >18</td>
+        <td  class="failed"    >12</td>
+        <td class="total">30</td>
+
+        <td class="duration" data-value="11835861624600">3h 17m 15s 861ms</td>
+        <td class="failed">Failed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="report-tag_bugOnWeb.html">@bugOnWeb</a></td>
+        
+        <td      class="passed"    >3</td>
         <td >0</td>
         <td >0</td>
         <td >0</td>
         <td >0</td>
-        <td class="total">2</td>
+        <td class="total">3</td>
 
         <td  class="passed"    >1</td>
         <td >0</td>
         <td class="total">1</td>
 
-        <td class="duration" data-value="51905670000">51s 905ms</td>
+        <td class="duration" data-value="5509255300">5s 509ms</td>
         <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="report-tag_web.html">@web</a></td>
+        
+        <td      class="passed"    >39</td>
+        <td      class="failed"    >10</td>
+        <td     class="skipped"   >15</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">64</td>
+
+        <td  class="passed"    >11</td>
+        <td  class="failed"    >12</td>
+        <td class="total">23</td>
+
+        <td class="duration" data-value="11690312103700">3h 14m 50s 312ms</td>
+        <td class="failed">Failed</td>
       </tr>
       </tbody>
 
   <tfoot class="total">
     <tr>
-      <td>1</td>
-            <td>2</td>
+      <td>3</td>
+            <td>130</td>
+      <td>20</td>
+      <td>30</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
+      <td>180</td>
 
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
+      <td>18</td>
+      <td>36</td>
+      <td>54</td>
 
-      <td class="duration">51s 905ms</td>
+      <td class="duration">6h 32m 11s 682ms</td>
       <td></td>
     </tr>
     <tr>
       <td></td>
-            <td>100.00%</td>
-      <td>0.00%</td>
-      <td>0.00%</td>
+            <td>72.22%</td>
+      <td>11.11%</td>
+      <td>16.67%</td>
       <td>0.00%</td>
       <td>0.00%</td>
       <td></td>
-      <td>100.00%</td>
-      <td>0.00%</td>
+      <td>33.33%</td>
+      <td>66.67%</td>
       <td></td>
       <td></td>
-      <td>100.00%</td>
+      <td>62.50%</td>
     </tr>
   </tfoot>
 </table>

@@ -22,11 +22,11 @@ public class Hooks {
         if (scenario.isFailed()) {
             ReportManager.attachScreenshot();
         }
+        DriverManager.getDriver().quit();
         try {
             Thread.sleep(70000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        DriverManager.getDriver().quit();
     }
 }
