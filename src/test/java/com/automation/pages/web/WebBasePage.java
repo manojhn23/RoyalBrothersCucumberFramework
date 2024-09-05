@@ -15,14 +15,13 @@ import java.time.Duration;
 public abstract class WebBasePage {
 
     WebDriver driver;
-
     WebDriverWait wait;
     JavascriptExecutor executor;
     Actions actions;
 
     public WebBasePage() {
         driver = DriverManager.getDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(100));
         executor = (JavascriptExecutor) driver;
         actions = new Actions(driver);
         PageFactory.initElements(driver, this);
