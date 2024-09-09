@@ -1,5 +1,5 @@
 @android
-Feature: Validate user can logout successfully
+Feature: Validate on user can logout successfully
 
   Background:
     Given the user opens the website or application
@@ -9,7 +9,7 @@ Feature: Validate user can logout successfully
     When user clicks on the menu option
     And selects the login option from the menu
     Then verify user is on the login page
-    When user selects the country "INDIA" with code "(+91)"
+    When user selects the country "login.country" with code "login.country.code"
     And user enter valid phone number "login.phone"
     And click on get otp option
     Then the user should be redirected to the OTP details page

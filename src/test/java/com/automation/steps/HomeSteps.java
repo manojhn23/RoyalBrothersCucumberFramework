@@ -4,7 +4,7 @@ import com.automation.pages.android.AndroidHomePage;
 import com.automation.pages.ui.HomePage;
 import com.automation.pages.web.WebHomePage;
 import com.automation.utils.ConfigReader;
-import com.automation.utils.ReportManager;
+import com.automation.utils.CucumberReportManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -36,13 +36,13 @@ public class HomeSteps {
     @Then("verify user is on the home page")
     public void verify_user_is_on_the_home_page() {
         Assert.assertTrue(homePage.isUserOnHomePage());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @Then("user can view city-specific services")
     public void user_can_view_city_specific_services() {
         Assert.assertTrue(homePage.verifyCitySelected());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user click on login button")
@@ -53,7 +53,7 @@ public class HomeSteps {
     @Then("verify login is successful")
     public void verify_login_is_successful() {
         Assert.assertTrue(homePage.isLoginSuccessFul());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user enters the details for ride {string}, {string}, {string} and {string}")
@@ -84,13 +84,13 @@ public class HomeSteps {
     @Then("verify the location of user chosen")
     public void verify_the_location_of_user_chosen() {
         Assert.assertTrue(homePage.isSelectedLocationDisplayed());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @Then("verify the location of user chosen not getting")
     public void verifyTheLocationOfUserChosenNotGetting() {
         Assert.assertFalse(homePage.isSelectedLocationNotDisplayed());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @And("clicks on clear button")
@@ -102,7 +102,7 @@ public class HomeSteps {
     public void verifyUserCanGetEmptyOnSearchInputField() {
         Assert.assertNull(homePage.getLocationInputText());
         Assert.assertTrue(homePage.isInputFieldNull());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("enters the desired location as {string}")
@@ -117,7 +117,7 @@ public class HomeSteps {
 
     @When("user selects {string} from the menu")
     public void selectsFromTheMenu(String menuOption) {
-        homePage.selectMenuOption(menuOption);
+        homePage.selectMenuOption(ConfigReader.getConfigValue(menuOption));
     }
 
     @When("user click on profile")
@@ -133,13 +133,13 @@ public class HomeSteps {
     @Then("verify successful user logout")
     public void verifySuccessfulUserLogout() {
         Assert.assertTrue(homePage.isLogOutSuccessFull());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @Then("verify user can get a city selection option")
     public void verifyUserCanGetACitySelectionOption() {
         Assert.assertTrue(homePage.isCitySelectionDisplayed());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @Given("user opens application")

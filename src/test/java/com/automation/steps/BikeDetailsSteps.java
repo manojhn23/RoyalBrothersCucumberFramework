@@ -4,7 +4,7 @@ import com.automation.pages.android.AndroidBikeDetailsPage;
 import com.automation.pages.ui.BikeDetailsPage;
 import com.automation.pages.web.WebBikeDetailsPage;
 import com.automation.utils.ConfigReader;
-import com.automation.utils.ReportManager;
+import com.automation.utils.CucumberReportManager;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -24,7 +24,7 @@ public class BikeDetailsSteps {
     @Then("verify user is on bike details page")
     public void verify_user_is_on_bike_details_page() {
         Assert.assertTrue(bikeDetailsPage.isBikeDetailsPageDisplayed());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user clicks on price high to low")
@@ -35,7 +35,7 @@ public class BikeDetailsSteps {
     @Then("verify user can get prices in high to low")
     public void verify_user_can_get_prices_in_high_to_low() {
         Assert.assertTrue(bikeDetailsPage.isPricesInHighToLow());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user clicks on price low to high")
@@ -46,7 +46,7 @@ public class BikeDetailsSteps {
     @Then("verify user can get prices in low to high")
     public void verify_user_can_get_prices_in_low_to_high() {
         Assert.assertTrue(bikeDetailsPage.isPricesInLowToHigh());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user selects the bike model {string}")
@@ -57,7 +57,7 @@ public class BikeDetailsSteps {
     @Then("verify user can get all bikes as selected model")
     public void verify_user_can_get_all_bikes_as_selected_model() {
         Assert.assertTrue(bikeDetailsPage.isSelectedBikeModelsShown());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user selects the bike location {string}")
@@ -68,7 +68,7 @@ public class BikeDetailsSteps {
     @Then("verify user can get all bikes as selected location")
     public void verify_user_can_get_all_bikes_as_selected_location() {
         Assert.assertTrue(bikeDetailsPage.isSelectedBikeLocationShown());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user selects the bike model {string} and location {string}")
@@ -79,7 +79,7 @@ public class BikeDetailsSteps {
     @Then("verify user can get all bikes as selected model and location")
     public void verify_user_can_get_all_bikes_as_selected_model_and_location() {
         Assert.assertTrue(bikeDetailsPage.isSelectedFilterApplied());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user clicks on book of first bike")

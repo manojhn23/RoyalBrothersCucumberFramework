@@ -15,7 +15,7 @@ Feature: Validate on Inter-City booking functionality
     And user select his desired city "city.name"
     And clicks on the entered location
     Then verify login is successful
-    When user selects "Inter-city travel" from the menu
+    When user selects "menu.intercity.option" from the menu
     Then verify user is on Inter-city travel page
     When user enters the details for ride
       | intercity.pickup.date   |

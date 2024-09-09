@@ -1,12 +1,12 @@
 @web @android
-Feature: Validate user can get cart functionalities successfully
+Feature: Validate on user can get cart functionalities successfully
 
   Background:
     Given user opens application
     When user select his desired city "city.name"
     And clicks on the entered location
     Then verify user is on the home page
-    When user selects "Store by RB" from the menu
+    When user selects "menu.store.option" from the menu
     Then verify user is on store page
 
   Scenario: verify user is able to add products to the cart

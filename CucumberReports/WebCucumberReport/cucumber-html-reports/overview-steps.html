@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="js/Chart.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="shortcut icon" href="images/favicon.png"/>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // this will tell tablesorter to try looking for the data-value attribute
+            // if present, it'll sort by that instead
+            // otherwise, it'll sort by the text content of the table cell
+            $("#tablesorter").tablesorter({
+                textAttribute: 'data-value',
+                // ignores the first row of the header, the 'scenario', 'steps', since
+                // sorting those doesn't make sense
+                selectorHeaders: '> thead tr:not(.dont-sort) th',
+                // use a stable sort
+                sortStable: true
+            });
+        });
+    </script>
+
+
+    <title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <p class="navbar-text navbar-left">Cucumber Report</p>
+            <ul class="nav navbar-nav navbar-right">
+                <li role="presentation"><a href="overview-features.html">Features</a></li>
+                <li role="presentation"><a href="overview-tags.html">Tags</a></li>
+                <li role="presentation" class="active"><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation"><a href="overview-failures.html">Failures</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid">
+    <div class="col-md-5 col-md-offset-1">
+
+        <table class="table table-bordered" id="build-info">
+            <thead>
+            <tr>
+                <th>Project</th>
+                <th>Number</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="info">
+                <td>RoyalBrothersWebAutomation</td>
+                <td>1</td>
+                <td>08 Sep 2024, 17:57</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="col-md-3 col-md-offset-2">
+    </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+    <div class="col-md-10 col-md-offset-1">
+        <h2>Steps Statistics</h2>
+        <p>The following graph shows step statistics for this build. Below list is based on results.
+            step does not provide information about result then is not listed below.
+            Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+    </div>
+</div>
+
+<div class="container-fluid" id="report">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <table id="tablesorter" class="stats-table table-hover">
+
+                <thead>
+                <tr class="header">
+                    <th>Implementation</th>
+                    <th>Occurrences</th>
+                    <th>Duration</th>
+                    <th>Average</th>
+                    <th>Ratio</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td class="location">com.automation.steps.BikeCheckoutSteps.verifyUserCanGetMakePaymentOption()</td>
+                    <td>1</td>
+                    <td class="duration" data-value="141991300">141ms</td>
+                    <td class="duration" data-value="141991300">141ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.BikeCheckoutSteps.verifyUserIsOnBikeCheckoutPage()</td>
+                    <td>1</td>
+                    <td class="duration" data-value="166816800">166ms</td>
+                    <td class="duration" data-value="166816800">166ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.BikeDetailsSteps.userClicksOnBookOfFirstBike()</td>
+                    <td>1</td>
+                    <td class="duration" data-value="2798817100">2s 798ms</td>
+                    <td class="duration" data-value="2798817100">2s 798ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.BikeDetailsSteps.user_clicks_on_price_high_to_low()</td>
+                    <td>1</td>
+                    <td class="duration" data-value="60422926400">1m 422ms</td>
+                    <td class="duration" data-value="60422926400">1m 422ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.BikeDetailsSteps.user_clicks_on_price_low_to_high()</td>
+                    <td>1</td>
+                    <td class="duration" data-value="60448246900">1m 448ms</td>
+                    <td class="duration" data-value="60448246900">1m 448ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.BikeDetailsSteps.user_selects_the_bike_location(java.lang.String)
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="3850360400">3s 850ms</td>
+                    <td class="duration" data-value="3850360400">3s 850ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.BikeDetailsSteps.user_selects_the_bike_model(java.lang.String)
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="4062430800">4s 062ms</td>
+                    <td class="duration" data-value="4062430800">4s 062ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.BikeDetailsSteps.user_selects_the_bike_model_and_location(java.lang.String,java.lang.String)
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="4905049100">4s 905ms</td>
+                    <td class="duration" data-value="4905049100">4s 905ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.BikeDetailsSteps.verify_user_can_get_all_bikes_as_selected_location()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="2364885300">2s 364ms</td>
+                    <td class="duration" data-value="2364885300">2s 364ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.BikeDetailsSteps.verify_user_can_get_all_bikes_as_selected_model()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="206003500">206ms</td>
+                    <td class="duration" data-value="206003500">206ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.BikeDetailsSteps.verify_user_can_get_all_bikes_as_selected_model_and_location()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="2199495000">2s 199ms</td>
+                    <td class="duration" data-value="2199495000">2s 199ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.BikeDetailsSteps.verify_user_can_get_prices_in_high_to_low()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="398234400">398ms</td>
+                    <td class="duration" data-value="398234400">398ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.BikeDetailsSteps.verify_user_can_get_prices_in_low_to_high()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="479031500">479ms</td>
+                    <td class="duration" data-value="479031500">479ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.BikeDetailsSteps.verify_user_is_on_bike_details_page()
+                    </td>
+                    <td>6</td>
+                    <td class="duration" data-value="1342129300">1s 342ms</td>
+                    <td class="duration" data-value="223688216">223ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.clicksOnClearButton()</td>
+                    <td>1</td>
+                    <td class="duration" data-value="65629300">065ms</td>
+                    <td class="duration" data-value="65629300">065ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.clicksOnTheLocationOption()</td>
+                    <td>11</td>
+                    <td class="duration" data-value="942070000">942ms</td>
+                    <td class="duration" data-value="85642727">085ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.clicks_on_search_button()</td>
+                    <td>6</td>
+                    <td class="duration" data-value="23565714600">23s 565ms</td>
+                    <td class="duration" data-value="3927619100">3s 927ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.clicks_on_the_entered_location()</td>
+                    <td>50</td>
+                    <td class="duration" data-value="81428838500">1m 21s 428ms</td>
+                    <td class="duration" data-value="1628576770">1s 628ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.entersTheDesiredLocationAs(java.lang.String)
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="159410600">159ms</td>
+                    <td class="duration" data-value="159410600">159ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.enters_the_location_as(java.lang.String)</td>
+                    <td>10</td>
+                    <td class="duration" data-value="1440469000">1s 440ms</td>
+                    <td class="duration" data-value="144046900">144ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.selectsFromTheMenu(java.lang.String)</td>
+                    <td>17</td>
+                    <td class="duration" data-value="53653867100">53s 653ms</td>
+                    <td class="duration" data-value="3156109829">3s 156ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.HomeSteps.theUserSelectsTheLogoutOptionFromTheProfileMenu()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="6224956000">6s 224ms</td>
+                    <td class="duration" data-value="6224956000">6s 224ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.userClickOnProfile()</td>
+                    <td>1</td>
+                    <td class="duration" data-value="4280090500">4s 280ms</td>
+                    <td class="duration" data-value="4280090500">4s 280ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.userOpensApplication()</td>
+                    <td>40</td>
+                    <td class="duration" data-value="208532779700">3m 28s 532ms</td>
+                    <td class="duration" data-value="5213319492">5s 213ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.userSelectHisDesiredCity(java.lang.String)</td>
+                    <td>45</td>
+                    <td class="duration" data-value="177257183400">2m 57s 257ms</td>
+                    <td class="duration" data-value="3939048520">3s 939ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.user_can_view_city_specific_services()</td>
+                    <td>7</td>
+                    <td class="duration" data-value="2857806600">2s 857ms</td>
+                    <td class="duration" data-value="408258085">408ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.user_click_on_login_button()</td>
+                    <td>8</td>
+                    <td class="duration" data-value="39112970400">39s 112ms</td>
+                    <td class="duration" data-value="4889121300">4s 889ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.HomeSteps.user_enters_the_details_for_ride_and(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+                    </td>
+                    <td>6</td>
+                    <td class="duration" data-value="11981153800">11s 981ms</td>
+                    <td class="duration" data-value="1996858966">1s 996ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.verifySuccessfulUserLogout()</td>
+                    <td>1</td>
+                    <td class="duration" data-value="747869700">747ms</td>
+                    <td class="duration" data-value="747869700">747ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.verifyTheLocationOfUserChosenNotGetting()</td>
+                    <td>5</td>
+                    <td class="duration" data-value="1251357500">1s 251ms</td>
+                    <td class="duration" data-value="250271500">250ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.verifyUserCanGetACitySelectionOption()</td>
+                    <td>4</td>
+                    <td class="duration" data-value="1144929900">1s 144ms</td>
+                    <td class="duration" data-value="286232475">286ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.verifyUserCanGetEmptyOnSearchInputField()</td>
+                    <td>1</td>
+                    <td class="duration" data-value="32575600">032ms</td>
+                    <td class="duration" data-value="32575600">032ms</td>
+                    <td class="failed">0.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.verify_login_is_successful()</td>
+                    <td>4</td>
+                    <td class="duration" data-value="1906473800">1s 906ms</td>
+                    <td class="duration" data-value="476618450">476ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.verify_the_location_of_user_chosen()</td>
+                    <td>5</td>
+                    <td class="duration" data-value="2671637600">2s 671ms</td>
+                    <td class="duration" data-value="534327520">534ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.HomeSteps.verify_user_is_on_the_home_page()</td>
+                    <td>40</td>
+                    <td class="duration" data-value="19426040300">19s 426ms</td>
+                    <td class="duration" data-value="485651007">485ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.Hooks.cleanUp(io.cucumber.java.Scenario)</td>
+                    <td>40</td>
+                    <td class="duration" data-value="2824956925400">47m 4s 956ms</td>
+                    <td class="duration" data-value="70623923135">1m 10s 623ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.Hooks.setUp(io.cucumber.java.Scenario)</td>
+                    <td>40</td>
+                    <td class="duration" data-value="150776600800">2m 30s 776ms</td>
+                    <td class="duration" data-value="3769415020">3s 769ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.InterCityBikeDetailsSteps.userClicksOnRequestBookingForFirstBike()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="86047400">086ms</td>
+                    <td class="duration" data-value="86047400">086ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.InterCityBikeDetailsSteps.verifyUserCanAccessConfirmRequestButton()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="219921500">219ms</td>
+                    <td class="duration" data-value="219921500">219ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.InterCityBikeDetailsSteps.verifyUserIsOnIntercityBikeDetailsPage()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="174737000">174ms</td>
+                    <td class="duration" data-value="174737000">174ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.InterCityTravelSteps.clicksOnSearchButtonOnPage()</td>
+                    <td>1</td>
+                    <td class="duration" data-value="1801008200">1s 801ms</td>
+                    <td class="duration" data-value="1801008200">1s 801ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.InterCityTravelSteps.userEntersTheDetailsForRide(java.util.List&lt;java.lang.String&gt;)
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="4767892600">4s 767ms</td>
+                    <td class="duration" data-value="4767892600">4s 767ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.InterCityTravelSteps.verifyUserIsOnInterCityTravelPage()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="345204500">345ms</td>
+                    <td class="duration" data-value="345204500">345ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.LoginSteps.click_on_i_m_not_a_robot_checkbox()</td>
+                    <td>8</td>
+                    <td class="duration" data-value="1633973100">1s 633ms</td>
+                    <td class="duration" data-value="204246637">204ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.LoginSteps.click_on_login_with_password_button()</td>
+                    <td>8</td>
+                    <td class="duration" data-value="381771117800">6m 21s 771ms</td>
+                    <td class="duration" data-value="47721389725">47s 721ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.LoginSteps.userEnterInvalidPhoneNumberAndPassword(java.lang.String,java.lang.String)
+                    </td>
+                    <td>4</td>
+                    <td class="duration" data-value="596905600">596ms</td>
+                    <td class="duration" data-value="149226400">149ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.LoginSteps.user_enter_valid_phone_number_and_password(java.lang.String,java.lang.String)
+                    </td>
+                    <td>4</td>
+                    <td class="duration" data-value="787835700">787ms</td>
+                    <td class="duration" data-value="196958925">196ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.LoginSteps.verifyErrorMessageIsDisplayed(java.lang.String)
+                    </td>
+                    <td>4</td>
+                    <td class="duration" data-value="735674500">735ms</td>
+                    <td class="duration" data-value="183918625">183ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.LoginSteps.verify_user_is_on_the_login_page()</td>
+                    <td>8</td>
+                    <td class="duration" data-value="1586056800">1s 586ms</td>
+                    <td class="duration" data-value="198257100">198ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.OrderSummarySteps.verifyOrderSummaryPageShouldDisplayTheCorrectTotalPaymentAmount()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="177743000">177ms</td>
+                    <td class="duration" data-value="177743000">177ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.OrderSummarySteps.verifyUserIsOnOrderSummaryPage()</td>
+                    <td>1</td>
+                    <td class="duration" data-value="161171400">161ms</td>
+                    <td class="duration" data-value="161171400">161ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.ReachUsSteps.clicksOnSubmitButton()</td>
+                    <td>9</td>
+                    <td class="duration" data-value="21024539400">21s 024ms</td>
+                    <td class="duration" data-value="2336059933">2s 336ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.ReachUsSteps.userEntersTheDetailsAsAnd(java.lang.String,java.lang.String,java.lang.String)
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="214460400">214ms</td>
+                    <td class="duration" data-value="214460400">214ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.ReachUsSteps.userEntersTheDetailsAsAnd(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+                    </td>
+                    <td>8</td>
+                    <td class="duration" data-value="2559726100">2s 559ms</td>
+                    <td class="duration" data-value="319965762">319ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.ReachUsSteps.verifyUserCanGetAMessage(java.lang.String)
+                    </td>
+                    <td>5</td>
+                    <td class="duration" data-value="1234471600">1s 234ms</td>
+                    <td class="duration" data-value="246894320">246ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.ReachUsSteps.verifyUserIsOnReachUsPage()</td>
+                    <td>9</td>
+                    <td class="duration" data-value="1597424700">1s 597ms</td>
+                    <td class="duration" data-value="177491633">177ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.StoreCartSteps.userClickOnCheckOutButton()</td>
+                    <td>1</td>
+                    <td class="duration" data-value="4401710400">4s 401ms</td>
+                    <td class="duration" data-value="4401710400">4s 401ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.StoreCartSteps.userRemovesProductFromTheCart(java.lang.String)
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="71640700">071ms</td>
+                    <td class="duration" data-value="71640700">071ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.StoreCartSteps.verifyProductIsRemovedFromTheCartSuccessfully()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="3172773500">3s 172ms</td>
+                    <td class="duration" data-value="3172773500">3s 172ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.StoreCartSteps.verifyThatTheProductIsSuccessfullyAddedToTheCart()
+                    </td>
+                    <td>3</td>
+                    <td class="duration" data-value="4275119100">4s 275ms</td>
+                    <td class="duration" data-value="1425039700">1s 425ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.StoreProductSteps.addsTheProductToTheCartAnd(java.lang.String,java.lang.String)
+                    </td>
+                    <td>3</td>
+                    <td class="duration" data-value="12312479200">12s 312ms</td>
+                    <td class="duration" data-value="4104159733">4s 104ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.StoreProductSteps.theUserSelectsTheSortByOptionAndChooses(java.lang.String)
+                    </td>
+                    <td>4</td>
+                    <td class="duration" data-value="24389416300">24s 389ms</td>
+                    <td class="duration" data-value="6097354075">6s 097ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.StoreProductSteps.verifyThatThePricesOfAllListedProductsAreDisplayedInAscendingOrder()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="1171328100">1s 171ms</td>
+                    <td class="duration" data-value="1171328100">1s 171ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.StoreProductSteps.verifyThatThePricesOfAllListedProductsAreDisplayedInDescendingOrder()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="1263962500">1s 263ms</td>
+                    <td class="duration" data-value="1263962500">1s 263ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.StoreProductSteps.verifyUserShouldSeeProductNamesSortedAlphabeticallyFromAToZ()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="1233485900">1s 233ms</td>
+                    <td class="duration" data-value="1233485900">1s 233ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">
+                        com.automation.steps.StoreProductSteps.verifyUserShouldSeeProductNamesSortedAlphabeticallyFromZToA()
+                    </td>
+                    <td>1</td>
+                    <td class="duration" data-value="1198220900">1s 198ms</td>
+                    <td class="duration" data-value="1198220900">1s 198ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.StoreSteps.user_selects_the_product(java.lang.String)</td>
+                    <td>7</td>
+                    <td class="duration" data-value="5194286100">5s 194ms</td>
+                    <td class="duration" data-value="742040871">742ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                <tr>
+                    <td class="location">com.automation.steps.StoreSteps.verify_user_is_on_store_page()</td>
+                    <td>7</td>
+                    <td class="duration" data-value="2010653500">2s 010ms</td>
+                    <td class="duration" data-value="287236214">287ms</td>
+                    <td class="passed">100.00%</td>
+                </tr>
+                </tbody>
+
+                <tfoot class="total">
+                <tr>
+                    <td>68</td>
+                    <td>470</td>
+                    <td class="duration">1h 10m 40s 374ms</td>
+                    <td class="duration">9s 022ms</td>
+                    <td>Totals</td>
+                </tr>
+                </tfoot>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+    <div class="container-fluid">
+        <p class="navbar-text navbar-right">
+            <small>generate Cucumber HTML reports via:&nbsp;</small>
+            <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+            <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+            <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+            <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+            &nbsp;&nbsp;
+        </p>
+    </div>
+</nav>
+
+</body>
+</html>

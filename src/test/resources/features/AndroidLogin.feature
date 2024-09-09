@@ -1,9 +1,9 @@
 @android
-Feature: Validate login functionality
+Feature: Validate on login functionality
 
   Background:
     Given the user opens the website or application
-    When user select his desired city "app.city.name"
+    When user select his desired city "city.name"
     And clicks on the entered location
     Then verify user is on the home page
 
@@ -11,7 +11,7 @@ Feature: Validate login functionality
     When user clicks on the menu option
     And selects the login option from the menu
     Then verify user is on the login page
-    When user selects the country "INDIA" with code "(+91)"
+    When user selects the country "login.country" with code "login.country.code"
     And user enter valid phone number "login.phone"
     And click on get otp option
     Then the user should be redirected to the OTP details page
@@ -22,7 +22,7 @@ Feature: Validate login functionality
     When user clicks on the menu option
     And selects the login option from the menu
     Then verify user is on the login page
-    When user selects the country "INDIA" with code "(+91)"
+    When user selects the country "login.country" with code "login.country.code"
     And user enter invalid phone number "<invalid.phone>"
     And click on get otp option
     Then verify error message is displayed "app.error.message"

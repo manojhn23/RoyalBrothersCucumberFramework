@@ -3,7 +3,7 @@ package com.automation.steps;
 import com.automation.pages.ui.ReachUsPage;
 import com.automation.pages.web.WebReachUsPage;
 import com.automation.utils.ConfigReader;
-import com.automation.utils.ReportManager;
+import com.automation.utils.CucumberReportManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -22,7 +22,7 @@ public class ReachUsSteps {
     @Then("verify user is on reach us page")
     public void verifyUserIsOnReachUsPage() {
         Assert.assertTrue(reachUsPage.isReachUsPageDisplayed());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user enters the details as {string},{string},{string} and {string}")
@@ -39,7 +39,7 @@ public class ReachUsSteps {
     public void verifyUserCanGetAMessage(String errorMsg) {
         Assert.assertTrue(reachUsPage.isErrorMsgDisplayed());
         Assert.assertEquals(reachUsPage.getErrorMsg(), ConfigReader.getConfigValue(errorMsg));
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user enters the details as {string},{string} and {string}")

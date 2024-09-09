@@ -4,7 +4,7 @@ import com.automation.pages.android.AndroidLoginPage;
 import com.automation.pages.ui.LoginPage;
 import com.automation.pages.web.WebLoginPage;
 import com.automation.utils.ConfigReader;
-import com.automation.utils.ReportManager;
+import com.automation.utils.CucumberReportManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,7 +25,7 @@ public class LoginSteps {
     @Then("verify user is on the login page")
     public void verify_user_is_on_the_login_page() {
         Assert.assertTrue(loginPage.isUserOnLoginPage());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user enter valid phone number {string} and password {string}")
@@ -51,7 +51,7 @@ public class LoginSteps {
     @Then("verify error message is displayed {string}")
     public void verifyErrorMessageIsDisplayed(String errorMessage) {
         Assert.assertEquals(loginPage.errorMessage(), ConfigReader.getConfigValue(errorMessage));
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user selects the country {string} with code {string}")
@@ -77,7 +77,7 @@ public class LoginSteps {
     @Then("the user should be redirected to the OTP details page")
     public void theUserShouldBeRedirectedToTheOTPDetailsPage() {
         Assert.assertTrue(loginPage.isUserOnOtpDetailsPage());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user enter otp and click on submit button")

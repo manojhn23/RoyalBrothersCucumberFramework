@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "com.automation.steps",
-        plugin = {"json:target/Android/cucumber.json", "html:target/Android/basic_android_report.html"},
+        plugin = {"json:target/Android/cucumber.json", "html:CucumberReports/Android/basic_android_report.html"},
         tags = "@android"
 )
 public class TestRunnerAndroid {

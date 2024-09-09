@@ -6,7 +6,7 @@ Feature: Validate on reach us functionality
     When user select his desired city "city.name"
     And clicks on the entered location
     Then verify user is on the home page
-    When user selects "Reach Us" from the menu
+    When user selects "menu.reach.us.option" from the menu
     Then verify user is on reach us page
 
   Scenario Outline: Verify user can submit with valid details

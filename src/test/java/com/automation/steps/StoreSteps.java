@@ -4,7 +4,7 @@ import com.automation.pages.android.AndroidStorePage;
 import com.automation.pages.ui.StorePage;
 import com.automation.pages.web.WebStorePage;
 import com.automation.utils.ConfigReader;
-import com.automation.utils.ReportManager;
+import com.automation.utils.CucumberReportManager;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -24,7 +24,7 @@ public class StoreSteps {
     @Then("verify user is on store page")
     public void verify_user_is_on_store_page() {
         Assert.assertTrue(storePage.isUserOnStorePage());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user selects the product {string}")

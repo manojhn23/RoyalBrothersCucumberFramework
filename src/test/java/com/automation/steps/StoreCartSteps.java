@@ -4,7 +4,7 @@ import com.automation.pages.android.AndroidStoreCartPage;
 import com.automation.pages.ui.StoreCartPage;
 import com.automation.pages.web.WebStoreCartPage;
 import com.automation.utils.ConfigReader;
-import com.automation.utils.ReportManager;
+import com.automation.utils.CucumberReportManager;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -24,7 +24,7 @@ public class StoreCartSteps {
     @Then("verify that the product is successfully added to the cart")
     public void verifyThatTheProductIsSuccessfullyAddedToTheCart() {
         Assert.assertTrue(cartPage.isProductAddedSuccessFully());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user removes product from the cart {string}")
@@ -35,7 +35,7 @@ public class StoreCartSteps {
     @Then("verify product is removed from the cart successfully")
     public void verifyProductIsRemovedFromTheCartSuccessfully() {
         Assert.assertTrue(cartPage.isProductRemovedSuccessFully());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user click on check out button")

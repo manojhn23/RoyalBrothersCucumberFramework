@@ -4,7 +4,7 @@ import com.automation.pages.android.AndroidOrderSummaryPage;
 import com.automation.pages.ui.OrderSummaryPage;
 import com.automation.pages.web.WebOrderSummaryPage;
 import com.automation.utils.ConfigReader;
-import com.automation.utils.ReportManager;
+import com.automation.utils.CucumberReportManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -24,12 +24,12 @@ public class OrderSummarySteps {
     @Then("verify user is on order summary page")
     public void verifyUserIsOnOrderSummaryPage() {
         Assert.assertTrue(orderSummaryPage.isUserOnOrderSummaryPage());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @And("verify order summary page should display the correct total payment amount")
     public void verifyOrderSummaryPageShouldDisplayTheCorrectTotalPaymentAmount() {
         Assert.assertTrue(orderSummaryPage.validateTotalAmount());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 }

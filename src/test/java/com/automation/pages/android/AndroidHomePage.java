@@ -51,7 +51,7 @@ public class AndroidHomePage extends AndroidBasePage implements HomePage {
     @FindBy(xpath = "//android.widget.HorizontalScrollView//android.widget.ImageView")
     List<WebElement> listOfMenuOptions;
 
-    @FindBy(xpath = "//android.widget.TextView[@text='MENU']")
+    @FindBy(xpath = "//android.widget.TextView[@text='MENU']/..")
     WebElement menuOption;
 
     @FindBy(xpath = "//android.widget.TextView[@text='Log in or Sign up']")

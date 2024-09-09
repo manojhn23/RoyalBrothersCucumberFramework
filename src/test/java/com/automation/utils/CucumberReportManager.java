@@ -4,12 +4,12 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-public class ReportManager {
+public class CucumberReportManager {
 
     static Scenario scenario;
 
     public static void initReporter(Scenario scenario) {
-        ReportManager.scenario = scenario;
+        CucumberReportManager.scenario = scenario;
     }
 
     public static void attachScreenshot() {

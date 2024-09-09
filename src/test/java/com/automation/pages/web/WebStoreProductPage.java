@@ -67,7 +67,7 @@ public class WebStoreProductPage extends WebBasePage implements StoreProductPage
         if (sortByOption.contains("Alphabetically")) {
             alphabeticListBeforeSort = getListOfProductNames();
         }
-        click(prevButton);
+//        click(prevButton);
         sortByButton.click();
         pause(2);
         WebElement sortBy = driver.findElement(By.xpath(String.format(sortByOptionPath, sortByOption)));

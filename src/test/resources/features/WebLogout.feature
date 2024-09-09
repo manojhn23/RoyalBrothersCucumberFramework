@@ -1,5 +1,5 @@
 @web
-Feature: Validate user can logout successfully
+Feature: Validate on user can logout successfully
 
   Background:
     Given user opens application

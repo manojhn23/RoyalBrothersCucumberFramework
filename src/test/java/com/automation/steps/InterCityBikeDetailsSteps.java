@@ -3,7 +3,7 @@ package com.automation.steps;
 import com.automation.pages.ui.InterCityBikeDetailsPage;
 import com.automation.pages.web.WebInterCityBikeDetailsPage;
 import com.automation.utils.ConfigReader;
-import com.automation.utils.ReportManager;
+import com.automation.utils.CucumberReportManager;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -21,7 +21,7 @@ public class InterCityBikeDetailsSteps {
     @Then("verify user is on intercity bike details page")
     public void verifyUserIsOnIntercityBikeDetailsPage() {
         Assert.assertTrue(interCityBikeDetailsPage.isBikeDetailsPageDisplayed());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
     @When("user clicks on request booking for first bike")
@@ -32,7 +32,7 @@ public class InterCityBikeDetailsSteps {
     @Then("verify user can access confirm request button")
     public void verifyUserCanAccessConfirmRequestButton() {
         Assert.assertTrue(interCityBikeDetailsPage.isConfirmRequestBtnDisplayed());
-        ReportManager.attachScreenshot();
+        CucumberReportManager.attachScreenshot();
     }
 
 }
